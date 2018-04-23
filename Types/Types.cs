@@ -7,6 +7,48 @@ using System.Threading.Tasks;
 
 namespace Types
 {
+    public interface IEmployee
+    {
+        int EmpID { get; set; }
+        string FirstName { get; set; }
+        string MiddleInitial { get; set; }
+        string LastName { get; set; }
+        DateTime DateOfBirth { get; set; }
+        string StreetAddress { get; set; }
+        string City { get; set; }
+        string PostalCode { get; set; }
+        string SIN { get; set; }
+        string CellPhoneNumber { get; set; }
+        string EmailAddress { get; set; }
+        DateTime HireDate { get; set; }
+        DateTime JobStartDate { get; set; }
+        Double BiWeeklyRate { get; set; }
+        string WorkPhoneNumber { get; set; }
+        Boolean EmailNotification { get; set; }
+    }
+
+    public interface IDepartment
+    {
+        int DepartmentID { get; set; }
+        string DepartmentName { get; set; }
+        string Supervisor { get; set; }
+    }
+
+    public interface IJob
+    {
+        int JobID { get; set; }
+        Double MaxPay { get; set; }
+        String JobTitle { get; set; }
+    }
+
+    public interface ISalaryIncrease
+    {
+        int SalaryIncreaseID { get; set; }
+        Double PercentageIncrease { get; set; }
+        DateTime DateOfIncrease { get; set; }
+        Byte ReasonForIncrease { get; set; }
+    }
+
     public struct parameters
     {
         public string name;
