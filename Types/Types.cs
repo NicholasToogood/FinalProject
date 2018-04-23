@@ -49,6 +49,11 @@ namespace Types
         Byte ReasonForIncrease { get; set; }
     }
 
+    public interface IPurchaseOrder
+    {
+
+    }
+
     public struct parameters
     {
         public string name;
