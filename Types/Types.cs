@@ -17,7 +17,7 @@ namespace Types
         string StreetAddress { get; set; }
         string City { get; set; }
         string PostalCode { get; set; }
-        string SIN { get; set; }
+        int SIN { get; set; }
         string CellPhoneNumber { get; set; }
         string EmailAddress { get; set; }
         DateTime HireDate { get; set; }
