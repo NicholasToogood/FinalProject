@@ -8,6 +8,5 @@ namespace BusinessLayer
 {
     class EmployeeFactory
     {
-        public static Employee
     }
 }

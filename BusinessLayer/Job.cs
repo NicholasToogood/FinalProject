@@ -14,7 +14,13 @@ namespace BusinessLayer
         internal int _JobID;
         internal Double _MaxPay;
         internal String _JobTitle;
+        internal int _DepartmentID;
 
+        public int DepartmentID
+        {
+            get { return _DepartmentID; }
+            set { _DepartmentID = value; }
+        }
 
         public int JobID
         {

@@ -24,6 +24,8 @@ namespace Types
         DateTime JobStartDate { get; set; }
         string WorkPhoneNumber { get; set; }
         Boolean EmailNotification { get; set; }
+        int JobID { get; set; }
+        int SalaryID { get; set; }
     }
 
     public interface IDepartment
@@ -38,6 +40,7 @@ namespace Types
         int JobID { get; set; }
         Double MaxPay { get; set; }
         String JobTitle { get; set; }
+        int DepartmentID { get; set; }
     }
 
     public interface ISalaryIncrease
@@ -46,6 +49,7 @@ namespace Types
         Double PercentageIncrease { get; set; }
         DateTime DateOfIncrease { get; set; }
         Byte ReasonForIncrease { get; set; }
+        int EmpID { get; set; }
     }
     
     public interface ISalary

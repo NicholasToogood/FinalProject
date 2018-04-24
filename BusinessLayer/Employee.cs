@@ -26,6 +26,8 @@ namespace BusinessLayer
         internal DateTime _JobStartDate;
         internal string _WorkPhoneNumber;
         internal Boolean _EmailNotification;
+        internal int _JobID;
+        internal int _SalaryID;
 
         public int EmpID
         {
@@ -101,6 +103,16 @@ namespace BusinessLayer
         {
             get { return _EmailNotification; }
             set { _EmailNotification = value; }
+        }
+        public int JobID
+        {
+            get { return _JobID; }
+            set { _JobID = value; }
+        }
+        public int SalaryID
+        {
+            get { return _SalaryID; }
+            set { _SalaryID = value; }
         }
     }
 
