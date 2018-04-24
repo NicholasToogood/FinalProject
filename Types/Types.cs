@@ -22,7 +22,6 @@ namespace Types
         string EmailAddress { get; set; }
         DateTime HireDate { get; set; }
         DateTime JobStartDate { get; set; }
-        Double BiWeeklyRate { get; set; }
         string WorkPhoneNumber { get; set; }
         Boolean EmailNotification { get; set; }
     }
@@ -47,6 +46,17 @@ namespace Types
         Double PercentageIncrease { get; set; }
         DateTime DateOfIncrease { get; set; }
         Byte ReasonForIncrease { get; set; }
+    }
+    
+    public interface ISalary
+    {
+        int SalaryID { get; set; }
+        Double BiWeeklyRate { get; set; }
+        Double YearToDateGrossPay { get; set; }
+        Double YearToDateDeductions { get; set; }
+        Double YearToDateCPP { get; set; }
+        Double YearToDateEI { get; set; }
+        Double YearToDateCompanyPensionDeduction { get; set; }
     }
 
     public interface IPurchaseOrder

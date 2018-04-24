@@ -24,7 +24,6 @@ namespace BusinessLayer
         internal string _EmailAddress;
         internal DateTime _HireDate;
         internal DateTime _JobStartDate;
-        internal Double _BiWeeklyRate;
         internal string _WorkPhoneNumber;
         internal Boolean _EmailNotification;
 
@@ -92,11 +91,6 @@ namespace BusinessLayer
         {
             get { return _JobStartDate; }
             set { _JobStartDate = value; }
-        }
-        public Double BiWeeklyRate
-        {
-            get { return _BiWeeklyRate; }
-            set { _BiWeeklyRate = value; }
         }
         public string WorkPhoneNumber
         {
