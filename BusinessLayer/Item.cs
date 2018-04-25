@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Types;
 
 namespace BusinessLayer
 {
@@ -17,6 +18,8 @@ namespace BusinessLayer
         internal double _price;
         internal string _location;
         internal string _justification;
+        internal ItemStatus _itemStatus;
+        internal int _orderNumber;
 
         public int ItemId
         {
@@ -159,6 +162,38 @@ namespace BusinessLayer
                     throw new ArgumentException("Jusitification is not valid");
                 }
                 _justification = value;
+            }
+        }
+
+        public ItemStatus ItemStatus
+        {
+            get
+            {
+                return _itemStatus;
+            }
+            set
+            {
+                if (_itemStatus == value)
+                {
+                    return;
+                }
+                _itemStatus = value;
+            }
+        }
+
+        public int OrderNumber
+        {
+            get
+            {
+                return _orderNumber;
+            }
+            set
+            {
+                if (_orderNumber == value)
+                {
+                    return;
+                }
+                _orderNumber = value;
             }
         }
     }

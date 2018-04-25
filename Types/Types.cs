@@ -68,6 +68,20 @@ namespace Types
 
     }
 
+    public enum ItemStatus
+    {
+        Pending,
+        Approved,
+        Denied
+    }
+
+    public enum OrderStatus
+    {
+        Pending,
+        UnderReview,
+        Closed
+    }
+
     public struct parameters
     {
         public string name;
