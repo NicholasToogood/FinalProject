@@ -63,9 +63,30 @@ namespace Types
         Double YearToDateCompanyPensionDeduction { get; set; }
     }
 
+    public interface IItem
+    {
+        int ItemId { get; set; }
+        string ItemName { get; set; }
+        string Description { get; set; }
+        int Quantity { get; set; }
+        double Price { get; set; }
+        string Location { get; set; }
+        string Justification { get; set; }
+        ItemStatus ItemStatus { get; set; }
+        int OrderNumber { get; set; }
+    }
+
+
     public interface IPurchaseOrder
     {
-
+        int OrderNumber { get; set; }
+        OrderStatus OrderStatus { get; set; }
+        DateTime OrderDate { get; set; }
+        double Total { get; set; }
+        double Tax { get; set; }
+        double GrandTotal { get; set; }
+        int EmpId { get; set; }
+        List<IItem> Items { get; set; }
     }
 
     public enum ItemStatus

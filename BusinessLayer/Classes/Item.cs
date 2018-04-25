@@ -7,7 +7,7 @@ using Types;
 
 namespace BusinessLayer
 {
-    public class Item
+    public class Item : IItem
     {
         internal Item() { }
 
@@ -93,6 +93,22 @@ namespace BusinessLayer
             }
         }
 
+        public int Quantity
+        {
+            get
+            {
+                return _quantity;
+            }
+            set
+            {
+                if (_quantity == value)
+                {
+                    return;
+                }
+                _quantity = value;
+            }
+        }
+
         public double Price
         {
             get
@@ -137,7 +153,7 @@ namespace BusinessLayer
             }
         }
 
-        public string Jusitification
+        public string Justification
         {
             get
             {

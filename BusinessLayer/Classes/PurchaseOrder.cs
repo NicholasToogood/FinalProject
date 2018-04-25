@@ -7,7 +7,7 @@ using Types;
 
 namespace BusinessLayer
 {
-    public class PurchaseOrder
+    public class PurchaseOrder : IPurchaseOrder
     {
         internal PurchaseOrder() { }
 
@@ -18,6 +18,7 @@ namespace BusinessLayer
         internal double _tax;
         internal double _grandTotal;
         internal int _empId;
+        internal List<IItem> _items;
 
         public int OrderNumber
         {
@@ -128,6 +129,22 @@ namespace BusinessLayer
                     return;
                 }
                 _empId = value;
+            }
+        }
+
+        public List<IItem> Items
+        {
+            get
+            {
+                return _items;
+            }
+            set
+            {
+                if (_items == value)
+                {
+                    return;
+                }
+                _items = value;
             }
         }
     }
