@@ -44,6 +44,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{ef796ca5-124c-41f0-b963-923194478f5c}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Types\Types.csproj">
       <Project>{fa10145e-6a22-457e-8d12-1b1d6ce130f8}</Project>
       <Name>Types</Name>
