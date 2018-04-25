@@ -23,16 +23,18 @@ namespace BusinessLayer
 
         public static bool ValidateName(string value)
         {
-            Regex r = new Regex("^[A-z]+$");
+            //Regex r = new Regex("^[a-zA-Z]+$");
 
-            if (r.Match(value).Success)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            //if (r.Match(value).Success)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+
+            return true;
         }
 
         public static bool ValidatePhoneNumber(string number)

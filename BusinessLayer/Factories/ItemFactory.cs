@@ -12,10 +12,5 @@ namespace BusinessLayer.Factories
         {
             return new Item();
         }
-
-        public static Item Create(int itemId)
-        {
-            //DataTable tmpTable = 
-        }
     }
 }
