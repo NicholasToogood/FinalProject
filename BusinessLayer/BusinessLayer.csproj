@@ -40,16 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Department.cs" />
-    <Compile Include="Employee.cs" />
-    <Compile Include="EmployeeFactory.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Job.cs" />
+    <Compile Include="Classes\Department.cs" />
+    <Compile Include="Classes\Employee.cs" />
+    <Compile Include="Factories\EmployeeFactory.cs" />
+    <Compile Include="Classes\Item.cs" />
+    <Compile Include="Classes\Job.cs" />
+    <Compile Include="Factories\ItemFactory.cs" />
     <Compile Include="LookupLists.cs" />
-    <Compile Include="PurchaseOrder.cs" />
+    <Compile Include="Classes\PurchaseOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Salary.cs" />
-    <Compile Include="SalaryIncrease.cs" />
+    <Compile Include="Classes\Salary.cs" />
+    <Compile Include="Classes\SalaryIncrease.cs" />
+    <Compile Include="SqlLayer.cs" />
     <Compile Include="Validate.cs" />
   </ItemGroup>
   <ItemGroup>
