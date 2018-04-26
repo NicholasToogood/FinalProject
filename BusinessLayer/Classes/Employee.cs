@@ -27,7 +27,10 @@ namespace BusinessLayer
         internal string _WorkPhoneNumber;
         internal Boolean _EmailNotification;
         internal int _JobID;
-        internal int _SalaryID;
+        internal int _DepartmentID;
+        internal int _EmpStatus;
+        internal DateTime _DateOfDeparture;
+        internal Double _BiWeeklyRate;
 
         public int EmpID
         {
@@ -109,11 +112,29 @@ namespace BusinessLayer
             get { return _JobID; }
             set { _JobID = value; }
         }
-        public int SalaryID
+        public int DepartmentID
         {
-            get { return _SalaryID; }
-            set { _SalaryID = value; }
+            get { return _DepartmentID; }
+            set { _DepartmentID = value; }
         }
+        public int EmpStatus
+        {
+            get { return _EmpStatus; }
+            set { _EmpStatus = value; }
+        }
+        public DateTime DateOfDeparture
+        {
+            get { return _DateOfDeparture; }
+            set { _DateOfDeparture = value; }
+        }
+        public Double BiWeeklyRate
+        {
+            get { return _BiWeeklyRate; }
+            set { _BiWeeklyRate = value; }
+        }
+
+
+        
     }
 
 }

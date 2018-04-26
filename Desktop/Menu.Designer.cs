@@ -28,13 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.MainTab = new MdiTabControl.TabControl();
             this.SuspendLayout();
+            // 
+            // MainTab
+            // 
+            this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainTab.Location = new System.Drawing.Point(0, 0);
+            this.MainTab.MenuRenderer = null;
+            this.MainTab.Name = "MainTab";
+            this.MainTab.Size = new System.Drawing.Size(600, 366);
+            this.MainTab.TabCloseButtonImage = null;
+            this.MainTab.TabCloseButtonImageDisabled = null;
+            this.MainTab.TabCloseButtonImageHot = null;
+            this.MainTab.TabIndex = 6;
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.MainTab);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Menu";
             this.Text = "Menu";
             this.ResumeLayout(false);
@@ -42,5 +58,7 @@
         }
 
         #endregion
+
+        private MdiTabControl.TabControl MainTab;
     }
 }

@@ -31,7 +31,11 @@ namespace BusinessLayer
         public string WorkPhoneNumber { get; internal set; }
         public Boolean EmailNotification { get; internal set; }
         public int JobID { get; internal set; }
-        public int SalaryID { get; internal set; }
+        public int DepartmentID { get; internal set; }
+        public int EmpStatus { get; internal set; }
+        public DateTime DateOfDeparture { get; internal set; }
+        public Double BiWeeklyRate { get; internal set; }
+
     }
     // DEPARTMENT LOOKUP LIST
     public class DepartmentLookupList
@@ -48,8 +52,8 @@ namespace BusinessLayer
         public int JobID { get; internal set; }
         public Double MaxPay { get; internal set; }
         public String JobTitle { get; internal set; }
-        public int DepartmentID { get; set; }
     }
+
     // SALARY INCREASE LOOKUP LIST
     public class SalaryIncreaseLookupList
     {
@@ -58,19 +62,22 @@ namespace BusinessLayer
         public Double PercentageIncrease { get; internal set; }
         public DateTime DateOfIncrease { get; internal set; }
         public Byte ReasonForIncrease { get; internal set; }
-        public int _EmpID { get; internal set; }
+        public int EmpID { get; internal set; }
+        public Boolean HasBeenApplied { get; internal set; }
     }
-    // SALARY LOOKUP LIST
-    public class SalaryLookupList
-    {
-        internal SalaryLookupList() { }
 
-        internal int _SalaryID;
-        public Double _BiWeeklyRate { get; internal set; }
-        public Double _YearToDateGrossPay { get; internal set; }
-        public Double _YearToDateDeductions { get; internal set; }
-        public Double _YearToDateCPP { get; internal set; }
-        public Double _YearToDateEI { get; internal set; }
-        public Double _YearToDateCompanyPensionDeduction { get; internal set; }
+    // PAY STUBS LOOKUP LIST
+    public class PayStubsLookupList
+    {
+        internal PayStubsLookupList() { }
+
+        public int PayStubID { get; internal set; }
+        public Double GrossPay { get; internal set; }
+        public Double Deductions { get; internal set; }
+        public Double CPP { get; internal set; }
+        public Double EI { get; internal set; }
+        public Double CompanyPensionDeduction { get; internal set; }
+        public int EmpID { get; internal set; }
+        public DateTime CreationDate { get; internal set; }
     }
 }
