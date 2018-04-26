@@ -67,7 +67,7 @@ namespace SqlLayer
     }
     public class HRSQL
     {
-        public int CreateNewEmployee(IEmployee emp)
+        public static int CreateNewEmployee(IEmployee emp)
         {
             List<parameters> parms = new List<parameters>();
             parms.Add(new parameters("@firstName", emp.FirstName, SqlDbType.VarChar, ParameterDirection.Input, 20));

@@ -16,6 +16,7 @@ namespace BusinessLayer
         internal DateTime _DateOfIncrease;
         internal Byte _ReasonForIncrease;
         internal int _EmpID;
+        internal Boolean _HasBeenApplied;
 
         public int SalaryIncreaseID
         {
@@ -41,6 +42,11 @@ namespace BusinessLayer
         {
             get { return _EmpID; }
             set { _EmpID = value; }
+        }
+        public Boolean HasBeenApplied
+        {
+            get { return _HasBeenApplied; }
+            set { _HasBeenApplied = value; }
         }
     }
 }

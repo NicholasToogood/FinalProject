@@ -61,7 +61,7 @@ namespace Types
         DateTime DateOfIncrease { get; set; }
         Byte ReasonForIncrease { get; set; }
         int EmpID { get; set; }
-        Boolean hasBeenApplied { get; set; }
+        Boolean HasBeenApplied { get; set; }
     }
     
     public interface IPayStub

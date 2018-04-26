@@ -48,11 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateEmployee.cs">
+    <Compile Include="CreateEmployeeHR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateEmployee.Designer.cs">
-      <DependentUpon>CreateEmployee.cs</DependentUpon>
+    <Compile Include="CreateEmployeeHR.Designer.cs">
+      <DependentUpon>CreateEmployeeHR.cs</DependentUpon>
     </Compile>
     <Compile Include="CreatePO.cs">
       <SubType>Form</SubType>
@@ -68,8 +68,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CreateEmployee.resx">
-      <DependentUpon>CreateEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="CreateEmployeeHR.resx">
+      <DependentUpon>CreateEmployeeHR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreatePO.resx">
       <DependentUpon>CreatePO.cs</DependentUpon>

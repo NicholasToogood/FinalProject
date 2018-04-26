@@ -13,5 +13,10 @@ namespace BusinessLayer
         {
             return POSQL.CreatePO(po);
         }
+
+        public static int CreateEmp(Employee emp)
+        {
+            return HRSQL.CreateNewEmployee(emp);
+        }
     }
 }
