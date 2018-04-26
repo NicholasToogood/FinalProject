@@ -25,8 +25,20 @@ namespace Types
         string WorkPhoneNumber { get; set; }
         Boolean EmailNotification { get; set; }
         int JobID { get; set; }
-        int SalaryID { get; set; }
+        int DepartmentID { get; set; }
+        int EmpStatus { get; set; } // REPLACE WITH ENUM or some variation
+        DateTime DateOfDeparture { get; set; }
+        Double BiWeeklyRate { get; set; }
+
     }
+
+    public enum empStatus
+    {
+        Active,
+        Retired,
+        Terminated
+    }
+
 
     public interface IDepartment
     {
@@ -40,7 +52,6 @@ namespace Types
         int JobID { get; set; }
         Double MaxPay { get; set; }
         String JobTitle { get; set; }
-        int DepartmentID { get; set; }
     }
 
     public interface ISalaryIncrease
@@ -50,17 +61,19 @@ namespace Types
         DateTime DateOfIncrease { get; set; }
         Byte ReasonForIncrease { get; set; }
         int EmpID { get; set; }
+        Boolean hasBeenApplied { get; set; }
     }
     
-    public interface ISalary
+    public interface IPayStub
     {
-        int SalaryID { get; set; }
-        Double BiWeeklyRate { get; set; }
-        Double YearToDateGrossPay { get; set; }
-        Double YearToDateDeductions { get; set; }
-        Double YearToDateCPP { get; set; }
-        Double YearToDateEI { get; set; }
-        Double YearToDateCompanyPensionDeduction { get; set; }
+        int PayStubID { get; set; }
+        Double GrossPay { get; set; }
+        Double Deductions { get; set; }
+        Double CPP { get; set; }
+        Double EI { get; set; }
+        Double CompanyPensionDeduction { get; set; }
+        int EmpID { get; set; }
+        DateTime CreationDate { get; set; }
     }
 
     public interface IItem

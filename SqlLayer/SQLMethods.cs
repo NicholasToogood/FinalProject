@@ -65,4 +65,34 @@ namespace SqlLayer
             return orderNumber;
         }
     }
+    public class HRSQL
+    {
+        public int CreateNewEmployee(IEmployee emp)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@firstName", emp.FirstName, SqlDbType.VarChar, ParameterDirection.Input, 20));
+            parms.Add(new parameters("@middleInitial", emp.MiddleInitial, SqlDbType.Char, ParameterDirection.Input, 1));
+            parms.Add(new parameters("@lastName", emp.LastName, SqlDbType.VarChar, ParameterDirection.Input, 30));
+            parms.Add(new parameters("@dob", emp.DateOfBirth, SqlDbType.Date, ParameterDirection.Input));
+            parms.Add(new parameters("@address", emp.StreetAddress, SqlDbType.VarChar, ParameterDirection.Input, 30));
+            parms.Add(new parameters("@city", emp.City, SqlDbType.VarChar, ParameterDirection.Input, 30));
+            parms.Add(new parameters("@pCode", emp.DateOfBirth, SqlDbType.VarChar, ParameterDirection.Input, 7));
+            parms.Add(new parameters("@sin", emp.SIN, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@cellPNumber", emp.CellPhoneNumber, SqlDbType.VarChar, ParameterDirection.Input, 15));
+            parms.Add(new parameters("@workPNumber", emp.WorkPhoneNumber, SqlDbType.VarChar, ParameterDirection.Input, 15));
+            parms.Add(new parameters("@email", emp.EmailAddress, SqlDbType.VarChar, ParameterDirection.Input, 40));
+            parms.Add(new parameters("@hireDate", emp.HireDate, SqlDbType.Date, ParameterDirection.Input));
+            parms.Add(new parameters("@jobStartDate", emp.JobStartDate, SqlDbType.Date, ParameterDirection.Input));
+            parms.Add(new parameters("@payrollEmail", emp.EmailNotification, SqlDbType.Bit, ParameterDirection.Input));
+            parms.Add(new parameters("@biWeeklyRate", emp.BiWeeklyRate, SqlDbType.Float, ParameterDirection.Input));
+            parms.Add(new parameters("@jobID", emp.JobID, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@departmentID", emp.JobID, SqlDbType.Int, ParameterDirection.Input));
+            
+            DAL.SendData("CreateEmployee", parms);
+
+            emp.EmpID = Convert.ToInt32(parms[18].value);
+
+            return emp.EmpID;
+        }
+    }
 }
