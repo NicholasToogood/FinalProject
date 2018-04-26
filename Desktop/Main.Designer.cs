@@ -41,7 +41,7 @@
             this.MainTab.Margin = new System.Windows.Forms.Padding(4);
             this.MainTab.MenuRenderer = null;
             this.MainTab.Name = "MainTab";
-            this.MainTab.Size = new System.Drawing.Size(616, 616);
+            this.MainTab.Size = new System.Drawing.Size(942, 616);
             this.MainTab.TabCloseButtonImage = null;
             this.MainTab.TabCloseButtonImageDisabled = null;
             this.MainTab.TabCloseButtonImageHot = null;
@@ -91,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 625);
+            this.ClientSize = new System.Drawing.Size(1214, 625);
             this.Controls.Add(this.btnAddEmp);
             this.Controls.Add(this.btnModPO);
             this.Controls.Add(this.btnCreatePO);

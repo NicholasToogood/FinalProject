@@ -16,6 +16,7 @@ namespace Desktop
     {
         Item item;
         PurchaseOrder po;
+        double orderPrice;
 
         public CreatePO()
         {
@@ -29,19 +30,30 @@ namespace Desktop
                 item = ItemFactory.Create();
                 po = POFactory.Create();
 
+                double itemPrice = Convert.ToDouble(txtPrice.Text);
+                orderPrice += itemPrice;
+
                 item.ItemName = txtName.Text;
                 item.Description = txtDesc.Text;
                 item.Quantity = Convert.ToInt32(txtQty.Text);
-                item.Price = Convert.ToDouble(txtPrice.Text);
+                item.Price = itemPrice;
                 item.Location = txtLocation.Text;
                 item.Justification = txtJustification.Text;
 
                 po.Items = new List<Types.IItem>();
                 po.Items.Add(item);
                 po.OrderNumber = 0;
-                po.EmpId = 1000004;
+                po.EmpId = 10000004;
 
-                CUDMethods.CreatPO(po);
+                int orderNumber = CUDMethods.CreatPO(po);
+
+                lblSubNum.Text = "$" + (orderPrice).ToString("F");
+                lblTaxNum.Text = "$" + (orderPrice * 0.15).ToString("F");
+                lblTotalNum.Text = "$" + (orderPrice * 1.15).ToString("F");
+
+                lblOrderNumber.Text = orderNumber.ToString();
+                lblOrderNumber.Visible = true;
+                lblOrderNumberLabel.Visible = true;
 
                 clear();
             }
