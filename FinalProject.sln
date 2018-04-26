@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Types", "Types\Types.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlLayer", "SqlLayer\SqlLayer.csproj", "{4129F17B-207A-403D-AFE3-8F9D93BD5047}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desktop", "Desktop\Desktop.csproj", "{4AD8CEB0-9F83-4DF8-A7C6-9477685CCF40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desktop", "Desktop\Desktop.csproj", "{F8BA7DB1-7922-43D4-9252-3C5E58684D73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{4129F17B-207A-403D-AFE3-8F9D93BD5047}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4129F17B-207A-403D-AFE3-8F9D93BD5047}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4129F17B-207A-403D-AFE3-8F9D93BD5047}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4AD8CEB0-9F83-4DF8-A7C6-9477685CCF40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4AD8CEB0-9F83-4DF8-A7C6-9477685CCF40}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AD8CEB0-9F83-4DF8-A7C6-9477685CCF40}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AD8CEB0-9F83-4DF8-A7C6-9477685CCF40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8BA7DB1-7922-43D4-9252-3C5E58684D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8BA7DB1-7922-43D4-9252-3C5E58684D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8BA7DB1-7922-43D4-9252-3C5E58684D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8BA7DB1-7922-43D4-9252-3C5E58684D73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

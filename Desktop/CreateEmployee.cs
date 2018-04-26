@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Desktop
 {
-    public partial class AddEmployee : Form
+    public partial class CreateEmployee : Form
     {
-        public AddEmployee()
+        public CreateEmployee()
         {
             InitializeComponent();
         }
