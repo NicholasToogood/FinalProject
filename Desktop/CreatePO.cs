@@ -61,5 +61,10 @@ namespace Desktop
             txtLocation.Text = "";
             txtJustification.Text = "";
         }
+
+        private void CreatePO_Load(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToLongDateString();
+        }
     }
 }
