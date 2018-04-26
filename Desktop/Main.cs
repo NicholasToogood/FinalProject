@@ -14,7 +14,7 @@ namespace Desktop
     {
 
         CreatePO createPO;
-        CreateEmployee createEmployee;
+        CreateEmployeeHR createEmployee;
 
         public Main()
         {

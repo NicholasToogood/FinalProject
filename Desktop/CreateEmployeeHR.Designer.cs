@@ -30,7 +30,6 @@
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtEmailAddress = new System.Windows.Forms.TextBox();
-            this.txtPayrollEmailNotification = new System.Windows.Forms.TextBox();
             this.txtWorkPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtCellPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtSupervisor = new System.Windows.Forms.TextBox();
@@ -41,7 +40,6 @@
             this.dtpSeniorityDate = new System.Windows.Forms.DateTimePicker();
             this.txtSIN = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -68,14 +66,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.chkPayrollEmailNotification = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkPayrollEmailNotification);
             this.groupBox2.Controls.Add(this.txtEmailAddress);
-            this.groupBox2.Controls.Add(this.txtPayrollEmailNotification);
             this.groupBox2.Controls.Add(this.txtWorkPhoneNumber);
             this.groupBox2.Controls.Add(this.txtCellPhoneNumber);
             this.groupBox2.Controls.Add(this.txtSupervisor);
@@ -86,7 +85,6 @@
             this.groupBox2.Controls.Add(this.dtpSeniorityDate);
             this.groupBox2.Controls.Add(this.txtSIN);
             this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label8);
@@ -105,17 +103,10 @@
             // 
             // txtEmailAddress
             // 
-            this.txtEmailAddress.Location = new System.Drawing.Point(134, 260);
+            this.txtEmailAddress.Location = new System.Drawing.Point(134, 239);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(139, 20);
             this.txtEmailAddress.TabIndex = 23;
-            // 
-            // txtPayrollEmailNotification
-            // 
-            this.txtPayrollEmailNotification.Location = new System.Drawing.Point(134, 236);
-            this.txtPayrollEmailNotification.Name = "txtPayrollEmailNotification";
-            this.txtPayrollEmailNotification.Size = new System.Drawing.Size(139, 20);
-            this.txtPayrollEmailNotification.TabIndex = 22;
             // 
             // txtWorkPhoneNumber
             // 
@@ -185,20 +176,11 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(52, 263);
+            this.label18.Location = new System.Drawing.Point(52, 242);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(76, 13);
             this.label18.TabIndex = 10;
             this.label18.Text = "Email Address:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(3, 239);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(125, 13);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "Payroll Email Notification:";
             // 
             // label16
             // 
@@ -418,7 +400,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(323, 252);
+            this.btnCreate.Location = new System.Drawing.Point(323, 240);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(76, 28);
             this.btnCreate.TabIndex = 12;
@@ -428,13 +410,23 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(405, 252);
+            this.btnClear.Location = new System.Drawing.Point(405, 240);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(76, 28);
             this.btnClear.TabIndex = 13;
             this.btnClear.Text = "C&lear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // chkPayrollEmailNotification
+            // 
+            this.chkPayrollEmailNotification.AutoSize = true;
+            this.chkPayrollEmailNotification.Location = new System.Drawing.Point(132, 269);
+            this.chkPayrollEmailNotification.Name = "chkPayrollEmailNotification";
+            this.chkPayrollEmailNotification.Size = new System.Drawing.Size(141, 17);
+            this.chkPayrollEmailNotification.TabIndex = 24;
+            this.chkPayrollEmailNotification.Text = "Payroll Email Notification";
+            this.chkPayrollEmailNotification.UseVisualStyleBackColor = true;
             // 
             // CreateEmployeeHR
             // 
@@ -461,7 +453,6 @@
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtEmailAddress;
-        private System.Windows.Forms.TextBox txtPayrollEmailNotification;
         private System.Windows.Forms.TextBox txtWorkPhoneNumber;
         private System.Windows.Forms.TextBox txtCellPhoneNumber;
         private System.Windows.Forms.TextBox txtSupervisor;
@@ -472,7 +463,6 @@
         private System.Windows.Forms.DateTimePicker dtpSeniorityDate;
         private System.Windows.Forms.TextBox txtSIN;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label8;
@@ -499,5 +489,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.CheckBox chkPayrollEmailNotification;
     }
 }

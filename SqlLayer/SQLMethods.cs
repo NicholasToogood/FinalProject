@@ -67,6 +67,8 @@ namespace SqlLayer
     }
     public class HRSQL
     {
+
+        // INSERTS NEW EMPLOYEE RECORD THEN RETURNS THE ID.
         public static int CreateNewEmployee(IEmployee emp)
         {
             List<parameters> parms = new List<parameters>();
@@ -87,12 +89,24 @@ namespace SqlLayer
             parms.Add(new parameters("@biWeeklyRate", emp.BiWeeklyRate, SqlDbType.Float, ParameterDirection.Input));
             parms.Add(new parameters("@jobID", emp.JobID, SqlDbType.Int, ParameterDirection.Input));
             parms.Add(new parameters("@departmentID", emp.JobID, SqlDbType.Int, ParameterDirection.Input));
-            
+
             DAL.SendData("CreateEmployee", parms);
 
             emp.EmpID = Convert.ToInt32(parms[18].value);
 
             return emp.EmpID;
+        }
+
+        // RETRIEVES ALL DATA FROM DEPARTMENT.
+        public static DataTable RetrieveDepartments()
+        {
+            return DAL.GetData("GetAllDepartments");
+        }
+
+        // RETRIEVES ALL DATA FROM JOB.
+        public static DataTable RetrieveJobs()
+        {
+            return DAL.GetData("GetAllJobs");
         }
     }
 }

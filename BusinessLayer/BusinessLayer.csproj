@@ -43,10 +43,12 @@
     <Compile Include="Classes\Department.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="CUDMethods.cs" />
+    <Compile Include="Factories\DepartmentFactory.cs" />
     <Compile Include="Factories\EmployeeFactory.cs" />
     <Compile Include="Classes\Item.cs" />
     <Compile Include="Classes\Job.cs" />
     <Compile Include="Factories\ItemFactory.cs" />
+    <Compile Include="Factories\JobFactory.cs" />
     <Compile Include="Factories\POFactory.cs" />
     <Compile Include="LookupLists.cs" />
     <Compile Include="Classes\PurchaseOrder.cs" />

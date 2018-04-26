@@ -5,10 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SqlLayer;
+using Types;
 
-namespace BusinessLayer
+namespace BusinessLayer.Factories
 {
-    class EmployeeFactory
+    public class EmployeeFactory
     {
+        public static Employee CreateEmployee()
+        {
+            return new Employee();
+        }
+
+
     }
 }
