@@ -38,8 +38,12 @@ namespace Desktop
 
                 po.Items = new List<Types.IItem>();
                 po.Items.Add(item);
+                po.OrderNumber = 0;
+                po.EmpId = 1000004;
 
                 CUDMethods.CreatPO(po);
+
+                clear();
             }
             catch (Exception ex)
             {
@@ -48,9 +52,14 @@ namespace Desktop
             
         }
 
-        private void CreatePO_Load(object sender, EventArgs e)
+        private void clear()
         {
-
+            txtName.Text = "";
+            txtDesc.Text = "";
+            txtQty.Text = "";
+            txtPrice.Text = "";
+            txtLocation.Text = "";
+            txtJustification.Text = "";
         }
     }
 }
