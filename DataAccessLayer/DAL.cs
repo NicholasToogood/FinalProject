@@ -42,8 +42,8 @@ namespace DataAccessLayer
 
         public static int SendData(string SQLStatement, List<parameters> parms)
         {
-            //SqlConnection cnn = new SqlConnection(Properties.Settings.Default.cnnString);
-            SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["cnn"].ConnectionString);
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.cnn);
+            //SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["cnn"].ConnectionString);
             SqlCommand cmd = CreateCommandObject(SQLStatement, parms);
             cmd.Connection = cnn;
 

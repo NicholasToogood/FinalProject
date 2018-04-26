@@ -176,7 +176,6 @@
             this.Controls.Add(this.lblName);
             this.Name = "CreatePO";
             this.Text = "Create Purchase Order";
-            this.Load += new System.EventHandler(this.CreatePO_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
