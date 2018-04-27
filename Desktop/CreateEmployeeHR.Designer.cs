@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkPayrollEmailNotification = new System.Windows.Forms.CheckBox();
             this.txtEmailAddress = new System.Windows.Forms.TextBox();
             this.txtWorkPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtCellPhoneNumber = new System.Windows.Forms.TextBox();
@@ -66,7 +67,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.chkPayrollEmailNotification = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -101,77 +101,92 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Employment Information";
             // 
+            // chkPayrollEmailNotification
+            // 
+            this.chkPayrollEmailNotification.AutoSize = true;
+            this.chkPayrollEmailNotification.Location = new System.Drawing.Point(132, 269);
+            this.chkPayrollEmailNotification.Name = "chkPayrollEmailNotification";
+            this.chkPayrollEmailNotification.Size = new System.Drawing.Size(141, 17);
+            this.chkPayrollEmailNotification.TabIndex = 10;
+            this.chkPayrollEmailNotification.Text = "Payroll Email Notification";
+            this.chkPayrollEmailNotification.UseVisualStyleBackColor = true;
+            // 
             // txtEmailAddress
             // 
             this.txtEmailAddress.Location = new System.Drawing.Point(134, 239);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(139, 20);
-            this.txtEmailAddress.TabIndex = 23;
+            this.txtEmailAddress.TabIndex = 9;
             // 
             // txtWorkPhoneNumber
             // 
             this.txtWorkPhoneNumber.Location = new System.Drawing.Point(134, 209);
             this.txtWorkPhoneNumber.Name = "txtWorkPhoneNumber";
             this.txtWorkPhoneNumber.Size = new System.Drawing.Size(139, 20);
-            this.txtWorkPhoneNumber.TabIndex = 21;
+            this.txtWorkPhoneNumber.TabIndex = 8;
             // 
             // txtCellPhoneNumber
             // 
             this.txtCellPhoneNumber.Location = new System.Drawing.Point(134, 187);
             this.txtCellPhoneNumber.Name = "txtCellPhoneNumber";
             this.txtCellPhoneNumber.Size = new System.Drawing.Size(139, 20);
-            this.txtCellPhoneNumber.TabIndex = 20;
+            this.txtCellPhoneNumber.TabIndex = 7;
             // 
             // txtSupervisor
             // 
             this.txtSupervisor.Location = new System.Drawing.Point(134, 141);
             this.txtSupervisor.Name = "txtSupervisor";
+            this.txtSupervisor.ReadOnly = true;
             this.txtSupervisor.Size = new System.Drawing.Size(139, 20);
-            this.txtSupervisor.TabIndex = 19;
+            this.txtSupervisor.TabIndex = 5;
             // 
             // cmbDepartment
             // 
+            this.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartment.FormattingEnabled = true;
             this.cmbDepartment.Location = new System.Drawing.Point(134, 118);
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(139, 21);
-            this.cmbDepartment.TabIndex = 18;
+            this.cmbDepartment.TabIndex = 4;
+            this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
             // cmbJobAssignment
             // 
+            this.cmbJobAssignment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbJobAssignment.FormattingEnabled = true;
             this.cmbJobAssignment.Location = new System.Drawing.Point(134, 94);
             this.cmbJobAssignment.Name = "cmbJobAssignment";
             this.cmbJobAssignment.Size = new System.Drawing.Size(139, 21);
-            this.cmbJobAssignment.TabIndex = 17;
+            this.cmbJobAssignment.TabIndex = 3;
+            this.cmbJobAssignment.SelectedIndexChanged += new System.EventHandler(this.cmbJobAssignment_SelectedIndexChanged);
             // 
             // dtpJobStartDate
             // 
             this.dtpJobStartDate.Location = new System.Drawing.Point(134, 73);
             this.dtpJobStartDate.Name = "dtpJobStartDate";
             this.dtpJobStartDate.Size = new System.Drawing.Size(139, 20);
-            this.dtpJobStartDate.TabIndex = 16;
+            this.dtpJobStartDate.TabIndex = 2;
             // 
             // txtBiWeeklyPayRate
             // 
             this.txtBiWeeklyPayRate.Location = new System.Drawing.Point(134, 163);
             this.txtBiWeeklyPayRate.Name = "txtBiWeeklyPayRate";
             this.txtBiWeeklyPayRate.Size = new System.Drawing.Size(139, 20);
-            this.txtBiWeeklyPayRate.TabIndex = 15;
+            this.txtBiWeeklyPayRate.TabIndex = 6;
             // 
             // dtpSeniorityDate
             // 
             this.dtpSeniorityDate.Location = new System.Drawing.Point(134, 50);
             this.dtpSeniorityDate.Name = "dtpSeniorityDate";
             this.dtpSeniorityDate.Size = new System.Drawing.Size(139, 20);
-            this.dtpSeniorityDate.TabIndex = 14;
+            this.dtpSeniorityDate.TabIndex = 1;
             // 
             // txtSIN
             // 
             this.txtSIN.Location = new System.Drawing.Point(134, 26);
             this.txtSIN.Name = "txtSIN";
             this.txtSIN.Size = new System.Drawing.Size(139, 20);
-            this.txtSIN.TabIndex = 14;
+            this.txtSIN.TabIndex = 0;
             // 
             // label18
             // 
@@ -291,49 +306,49 @@
             this.txtPostalCode.Location = new System.Drawing.Point(113, 163);
             this.txtPostalCode.Name = "txtPostalCode";
             this.txtPostalCode.Size = new System.Drawing.Size(139, 20);
-            this.txtPostalCode.TabIndex = 13;
+            this.txtPostalCode.TabIndex = 6;
             // 
             // txtCity
             // 
             this.txtCity.Location = new System.Drawing.Point(113, 141);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(139, 20);
-            this.txtCity.TabIndex = 12;
+            this.txtCity.TabIndex = 5;
             // 
             // txtStreetAddress
             // 
             this.txtStreetAddress.Location = new System.Drawing.Point(113, 118);
             this.txtStreetAddress.Name = "txtStreetAddress";
             this.txtStreetAddress.Size = new System.Drawing.Size(139, 20);
-            this.txtStreetAddress.TabIndex = 11;
+            this.txtStreetAddress.TabIndex = 4;
             // 
             // dtpDateOfBirth
             // 
             this.dtpDateOfBirth.Location = new System.Drawing.Point(113, 97);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(139, 20);
-            this.dtpDateOfBirth.TabIndex = 10;
+            this.dtpDateOfBirth.TabIndex = 3;
             // 
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(113, 72);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(139, 20);
-            this.txtLastName.TabIndex = 9;
+            this.txtLastName.TabIndex = 2;
             // 
             // txtMiddleInitial
             // 
             this.txtMiddleInitial.Location = new System.Drawing.Point(113, 50);
             this.txtMiddleInitial.Name = "txtMiddleInitial";
             this.txtMiddleInitial.Size = new System.Drawing.Size(30, 20);
-            this.txtMiddleInitial.TabIndex = 8;
+            this.txtMiddleInitial.TabIndex = 1;
             // 
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(113, 26);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(139, 20);
-            this.txtFirstName.TabIndex = 7;
+            this.txtFirstName.TabIndex = 0;
             // 
             // label7
             // 
@@ -403,7 +418,7 @@
             this.btnCreate.Location = new System.Drawing.Point(323, 240);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(76, 28);
-            this.btnCreate.TabIndex = 12;
+            this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "&Create";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
@@ -413,20 +428,10 @@
             this.btnClear.Location = new System.Drawing.Point(405, 240);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(76, 28);
-            this.btnClear.TabIndex = 13;
+            this.btnClear.TabIndex = 1;
             this.btnClear.Text = "C&lear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // chkPayrollEmailNotification
-            // 
-            this.chkPayrollEmailNotification.AutoSize = true;
-            this.chkPayrollEmailNotification.Location = new System.Drawing.Point(132, 269);
-            this.chkPayrollEmailNotification.Name = "chkPayrollEmailNotification";
-            this.chkPayrollEmailNotification.Size = new System.Drawing.Size(141, 17);
-            this.chkPayrollEmailNotification.TabIndex = 24;
-            this.chkPayrollEmailNotification.Text = "Payroll Email Notification";
-            this.chkPayrollEmailNotification.UseVisualStyleBackColor = true;
             // 
             // CreateEmployeeHR
             // 
