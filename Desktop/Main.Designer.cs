@@ -80,6 +80,7 @@
             this.btnModPO.TabIndex = 9;
             this.btnModPO.Text = "Modify PO";
             this.btnModPO.UseVisualStyleBackColor = true;
+            this.btnModPO.Click += new System.EventHandler(this.btnModPO_Click);
             // 
             // btnAddEmp
             // 

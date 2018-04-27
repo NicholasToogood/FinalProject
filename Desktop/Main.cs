@@ -14,6 +14,7 @@ namespace Desktop
     {
 
         CreatePO createPO;
+        ModifyPO modifyPO;
         CreateEmployeeHR createEmployee;
         SearchRetrieveEmployeeHR searchEmp;
         CostOfLivingIncreaseHR costOfLiving;
@@ -37,26 +38,47 @@ namespace Desktop
 
         private void btnCreatePO_Click(object sender, EventArgs e)
         {
-            createPO = new CreatePO();
-            DisplayForm(createPO);
+            if (createPO == null || createPO.IsDisposed)
+            {
+                createPO = new CreatePO();
+                DisplayForm(createPO);
+            } 
         }
 
         private void btnAddEmp_Click(object sender, EventArgs e)
         {
-            createEmployee = new CreateEmployeeHR();
-            DisplayForm(createEmployee);
+            if (createEmployee == null || createEmployee.IsDisposed)
+            {
+                createEmployee = new CreateEmployeeHR();
+                DisplayForm(createEmployee);
+            }   
         }
 
         private void btnSearchEmp_Click(object sender, EventArgs e)
         {
-            searchEmp = new SearchRetrieveEmployeeHR();
-            DisplayForm(searchEmp);
+            if (searchEmp == null || searchEmp.IsDisposed)
+            {
+                searchEmp = new SearchRetrieveEmployeeHR();
+                DisplayForm(searchEmp);
+            }           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            costOfLiving = new CostOfLivingIncreaseHR();
-            DisplayForm(costOfLiving);
+            if (costOfLiving == null || costOfLiving.IsDisposed)
+            {
+                costOfLiving = new CostOfLivingIncreaseHR();
+                DisplayForm(costOfLiving);
+            }
+        }
+
+        private void btnModPO_Click(object sender, EventArgs e)
+        {
+            if (modifyPO == null || modifyPO.IsDisposed)
+            {
+                modifyPO = new ModifyPO();
+                DisplayForm(modifyPO);
+            } 
         }
     }
 }

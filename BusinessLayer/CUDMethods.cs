@@ -14,6 +14,11 @@ namespace BusinessLayer
             return POSQL.CreatePO(po);
         }
 
+        //public static bool SearchPOById(int orderNumber)
+        //{
+        //    return POSQL.RetrievePOById(orderNumber);
+        //}
+
         public static int CreateEmp(Employee emp)
         {
             return HRSQL.CreateNewEmployee(emp);
