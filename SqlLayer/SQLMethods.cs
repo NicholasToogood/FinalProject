@@ -44,8 +44,6 @@ namespace SqlLayer
 
         public static int CreatePO(IPurchaseOrder po)
         {
-            int orderNumber = 0;
-
             List<parameters> parms = new List<parameters>();
 
             foreach (var item in po.Items)
@@ -60,8 +58,12 @@ namespace SqlLayer
                 parms.Add(new parameters("@empId", po.EmpId, SqlDbType.Int, ParameterDirection.Input));
                 parms.Add(new parameters("@orderNumberIn", po.OrderNumber, SqlDbType.Int, ParameterDirection.Input));
                 parms.Add(new parameters("@orderNumberOut", 0, SqlDbType.Int, ParameterDirection.Output));
-                orderNumber = DAL.SendData("CreatePO", parms);
+                DAL.SendData("CreatePO", parms);
             }
+
+            parameters myParms = parms[9];
+            int orderNumber = Convert.ToInt32(myParms.value);
+
             return orderNumber;
         }
     }

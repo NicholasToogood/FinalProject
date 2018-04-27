@@ -42,7 +42,7 @@ namespace Desktop
 
                 po.Items = new List<Types.IItem>();
                 po.Items.Add(item);
-                po.OrderNumber = 0;
+                po.OrderNumber = Convert.ToInt32(lblOrderNumber.Text);
                 po.EmpId = 10000004;
 
                 int orderNumber = CUDMethods.CreatPO(po);

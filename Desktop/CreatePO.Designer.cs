@@ -345,9 +345,9 @@
             this.lblOrderNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderNumber.Location = new System.Drawing.Point(773, 118);
             this.lblOrderNumber.Name = "lblOrderNumber";
-            this.lblOrderNumber.Size = new System.Drawing.Size(100, 25);
+            this.lblOrderNumber.Size = new System.Drawing.Size(23, 25);
             this.lblOrderNumber.TabIndex = 51;
-            this.lblOrderNumber.Text = "00000000";
+            this.lblOrderNumber.Text = "0";
             this.lblOrderNumber.Visible = false;
             // 
             // CreatePO
