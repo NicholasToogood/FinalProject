@@ -19,5 +19,14 @@ namespace BusinessLayer
             return HRSQL.CreateNewEmployee(emp);
         }
         
+        public static Boolean CreatePerformanceIncrease(int empID, Double percentage, DateTime dateOfIncrease)
+        {
+            return HRSQL.CreatePerformanceIncrease(empID, percentage, dateOfIncrease);
+        }
+
+        public static Boolean CreateCostOfLivingIncrease(Double percentage, DateTime dateOfIncrease)
+        {
+            return HRSQL.CreateCostOfLivingIncrease(percentage, dateOfIncrease);
+        }
     }
 }

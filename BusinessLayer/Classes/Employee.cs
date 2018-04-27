@@ -133,7 +133,10 @@ namespace BusinessLayer
             set { _BiWeeklyRate = value; }
         }
 
-
+        public string FullName
+        {
+            get { return FirstName + " " + LastName; }
+        }
         
     }
 

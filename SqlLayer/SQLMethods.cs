@@ -90,11 +90,28 @@ namespace SqlLayer
             parms.Add(new parameters("@jobID", emp.JobID, SqlDbType.Int, ParameterDirection.Input));
             parms.Add(new parameters("@departmentID", emp.JobID, SqlDbType.Int, ParameterDirection.Input));
 
+            parms.Add(new parameters("@empID", emp.EmpID, SqlDbType.Int, ParameterDirection.Output));
+
             DAL.SendData("CreateEmployee", parms);
 
-            emp.EmpID = Convert.ToInt32(parms[18].value);
+            emp.EmpID = Convert.ToInt32(parms[17].value);
 
             return emp.EmpID;
+        }
+
+        //RETRIEVES EMPLOYEE BY NAME
+        public static DataTable RetrieveEmployeeByName(String name)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@empName", name, SqlDbType.VarChar, ParameterDirection.Input, 30));
+            return DAL.GetData("SearchForEmployeesByName", parms);
+        }
+        //RETRIEVES EMPLOYEE BY ID
+        public static DataTable RetrieveEmployeeByID(Int32 ID)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@empID", ID, SqlDbType.Int, ParameterDirection.Input));
+            return DAL.GetData("SearchForEmployeesByID", parms);
         }
 
         // RETRIEVES ALL DATA FROM DEPARTMENT.
@@ -108,5 +125,32 @@ namespace SqlLayer
         {
             return DAL.GetData("GetAllJobs");
         }
+
+        public static Boolean CreatePerformanceIncrease(int EmpID, Double percentage, DateTime dateOfIncrease)
+        {
+            List<parameters> parms = new List<parameters>();
+
+            parms.Add(new parameters("@empID", EmpID, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@percentageIncrease", percentage, SqlDbType.VarChar, ParameterDirection.Input, 20));
+            parms.Add(new parameters("@dateOfIncrease", dateOfIncrease, SqlDbType.DateTime, ParameterDirection.Input));
+            
+            DAL.SendData("EmployeePerformanceIncrease", parms);
+            
+            return true;
+        }
+        public static Boolean CreateCostOfLivingIncrease(Double percentage, DateTime dateOfIncrease)
+        {
+            List<parameters> parms = new List<parameters>();
+            
+            parms.Add(new parameters("@percentageIncrease", percentage, SqlDbType.VarChar, ParameterDirection.Input, 20));
+            parms.Add(new parameters("@dateOfIncrease", dateOfIncrease, SqlDbType.DateTime, ParameterDirection.Input));
+
+            DAL.SendData("EmployeeCostOfLivingIncrease", parms);
+
+            return true;
+        }
+
+
+        
     }
 }

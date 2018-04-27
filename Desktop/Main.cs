@@ -15,6 +15,8 @@ namespace Desktop
 
         CreatePO createPO;
         CreateEmployeeHR createEmployee;
+        SearchRetrieveEmployeeHR searchEmp;
+        CostOfLivingIncreaseHR costOfLiving;
 
         public Main()
         {
@@ -37,6 +39,24 @@ namespace Desktop
         {
             createPO = new CreatePO();
             DisplayForm(createPO);
+        }
+
+        private void btnAddEmp_Click(object sender, EventArgs e)
+        {
+            createEmployee = new CreateEmployeeHR();
+            DisplayForm(createEmployee);
+        }
+
+        private void btnSearchEmp_Click(object sender, EventArgs e)
+        {
+            searchEmp = new SearchRetrieveEmployeeHR();
+            DisplayForm(searchEmp);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            costOfLiving = new CostOfLivingIncreaseHR();
+            DisplayForm(costOfLiving);
         }
     }
 }

@@ -14,7 +14,8 @@ namespace DataAccessLayer
         private DAL() { }
         public static DataTable GetData(string SQLStatement, List<parameters> parms)
         {
-            SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["cnn"].ConnectionString);
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.cnn);
+            //SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["cnn"].ConnectionString);
             SqlCommand cmd = CreateCommandObject(SQLStatement, parms);
             cmd.Connection = cnn;
             SqlDataAdapter da = new SqlDataAdapter();
@@ -27,7 +28,8 @@ namespace DataAccessLayer
 
         public static DataTable GetData(string SQLStatement)
         {
-            SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["cnn"].ConnectionString);
+            SqlConnection cnn = new SqlConnection(Properties.Settings.Default.cnn);
+            //SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["cnn"].ConnectionString);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = SQLStatement;
             SqlDataAdapter da = new SqlDataAdapter();

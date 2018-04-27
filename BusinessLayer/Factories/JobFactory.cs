@@ -23,7 +23,7 @@ namespace BusinessLayer.Factories
             foreach (DataRow tempRow in myTable.Rows)
             {
                 Job tmpJobs = new Job();
-                tmpJobs.JobID = Convert.ToInt32(tempRow["id"]);
+                tmpJobs.JobID = Convert.ToInt32(tempRow["jobId"]);
                 tmpJobs.JobTitle = tempRow["jobTitle"].ToString();
                 tmpJobs.MaxPay = Convert.ToDouble(tempRow["maxPay"]);
 

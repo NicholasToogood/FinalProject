@@ -67,5 +67,36 @@ namespace BusinessLayer
             }
 
         }
+
+
+        
+
+        // HR
+
+        public static Boolean IsValidEmployeeID(String attemptEmpID)
+        {
+            int empID;
+            if (int.TryParse(attemptEmpID, out empID))
+            {
+                if(attemptEmpID.Count() == 8)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static Boolean IsValidPercentageIncreaseRequest(String attempt)
+        {
+            Double percentage;
+            if (Double.TryParse(attempt, out percentage))
+            {
+                if (percentage > 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
