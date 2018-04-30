@@ -11,15 +11,6 @@
     <div class="container">
         <form runat="server" class="form-horizontal">
             <div class="row">
-                <%--<div class="col-xs-11" style="background-color: red;">
-                    <h1>Create Pruchase Order</h1>
-                    <h5 id="lblDate" runat="server">DATE</h5>
-                </div>
-                <div class="col-xs-1" style="background-color: blue;">
-                    <h5>Mike Donovan</h5>
-                    <h5>Information Technology</h5>
-                    <h5>John Wick</h5>
-                </div>--%>
                 <div class="col-sm-5 center">
                     <h1>Create Pruchase Order</h1>
                     <h5 id="lblDate" runat="server">DATE</h5>

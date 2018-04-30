@@ -40,7 +40,6 @@ namespace Desktop
             {
                 MessageBox.Show("No Purchase Order Exists with that Order Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void lstOrders_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,8 +51,7 @@ namespace Desktop
                 lblSubNum.Text = "$ " + po.Total.ToString("F");
                 lblTaxNum.Text = "$ " + (po.Total * 0.15).ToString("F");
                 lblTotalNum.Text = "$ " + (po.Total * 1.15).ToString("F");
-            }
-            
+            }  
         }
 
         private void btnSearchDate_Click(object sender, EventArgs e)
