@@ -38,7 +38,15 @@
             this.lblEndDate = new System.Windows.Forms.Label();
             this.btnSearchId = new System.Windows.Forms.Button();
             this.btnSearchDate = new System.Windows.Forms.Button();
-            this.lstOrders = new System.Windows.Forms.ListView();
+            this.lstOrders = new System.Windows.Forms.ListBox();
+            this.dgvItems = new System.Windows.Forms.DataGridView();
+            this.lblSub = new System.Windows.Forms.Label();
+            this.lblTax = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblSubNum = new System.Windows.Forms.Label();
+            this.lblTaxNum = new System.Windows.Forms.Label();
+            this.lblTotalNum = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
             // lblOrderNumber
@@ -122,6 +130,7 @@
             this.btnSearchId.TabIndex = 41;
             this.btnSearchId.Text = "Search By Id";
             this.btnSearchId.UseVisualStyleBackColor = true;
+            this.btnSearchId.Click += new System.EventHandler(this.btnSearchId_Click);
             // 
             // btnSearchDate
             // 
@@ -132,20 +141,103 @@
             this.btnSearchDate.TabIndex = 42;
             this.btnSearchDate.Text = "Search By Date";
             this.btnSearchDate.UseVisualStyleBackColor = true;
+            this.btnSearchDate.Click += new System.EventHandler(this.btnSearchDate_Click);
             // 
             // lstOrders
             // 
-            this.lstOrders.Location = new System.Drawing.Point(17, 144);
+            this.lstOrders.Enabled = false;
+            this.lstOrders.FormattingEnabled = true;
+            this.lstOrders.ItemHeight = 16;
+            this.lstOrders.Location = new System.Drawing.Point(17, 141);
             this.lstOrders.Name = "lstOrders";
-            this.lstOrders.Size = new System.Drawing.Size(214, 324);
-            this.lstOrders.TabIndex = 43;
-            this.lstOrders.UseCompatibleStateImageBehavior = false;
+            this.lstOrders.Size = new System.Drawing.Size(222, 116);
+            this.lstOrders.TabIndex = 44;
+            this.lstOrders.SelectedIndexChanged += new System.EventHandler(this.lstOrders_SelectedIndexChanged);
+            // 
+            // dgvItems
+            // 
+            this.dgvItems.AllowUserToAddRows = false;
+            this.dgvItems.AllowUserToDeleteRows = false;
+            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.Location = new System.Drawing.Point(17, 268);
+            this.dgvItems.Name = "dgvItems";
+            this.dgvItems.RowTemplate.Height = 24;
+            this.dgvItems.Size = new System.Drawing.Size(919, 271);
+            this.dgvItems.TabIndex = 45;
+            this.dgvItems.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellEndEdit);
+            // 
+            // lblSub
+            // 
+            this.lblSub.AutoSize = true;
+            this.lblSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSub.Location = new System.Drawing.Point(400, 141);
+            this.lblSub.Name = "lblSub";
+            this.lblSub.Size = new System.Drawing.Size(95, 25);
+            this.lblSub.TabIndex = 46;
+            this.lblSub.Text = "Sub total:";
+            // 
+            // lblTax
+            // 
+            this.lblTax.AutoSize = true;
+            this.lblTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTax.Location = new System.Drawing.Point(443, 166);
+            this.lblTax.Name = "lblTax";
+            this.lblTax.Size = new System.Drawing.Size(52, 25);
+            this.lblTax.TabIndex = 47;
+            this.lblTax.Text = "Tax:";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(433, 191);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(62, 25);
+            this.lblTotal.TabIndex = 48;
+            this.lblTotal.Text = "Total:";
+            // 
+            // lblSubNum
+            // 
+            this.lblSubNum.AutoSize = true;
+            this.lblSubNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubNum.Location = new System.Drawing.Point(519, 141);
+            this.lblSubNum.Name = "lblSubNum";
+            this.lblSubNum.Size = new System.Drawing.Size(66, 25);
+            this.lblSubNum.TabIndex = 49;
+            this.lblSubNum.Text = "$ 0.00";
+            // 
+            // lblTaxNum
+            // 
+            this.lblTaxNum.AutoSize = true;
+            this.lblTaxNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaxNum.Location = new System.Drawing.Point(519, 166);
+            this.lblTaxNum.Name = "lblTaxNum";
+            this.lblTaxNum.Size = new System.Drawing.Size(66, 25);
+            this.lblTaxNum.TabIndex = 50;
+            this.lblTaxNum.Text = "$ 0.00";
+            // 
+            // lblTotalNum
+            // 
+            this.lblTotalNum.AutoSize = true;
+            this.lblTotalNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNum.Location = new System.Drawing.Point(519, 191);
+            this.lblTotalNum.Name = "lblTotalNum";
+            this.lblTotalNum.Size = new System.Drawing.Size(66, 25);
+            this.lblTotalNum.TabIndex = 51;
+            this.lblTotalNum.Text = "$ 0.00";
             // 
             // ModifyPO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 551);
+            this.Controls.Add(this.lblTotalNum);
+            this.Controls.Add(this.lblTaxNum);
+            this.Controls.Add(this.lblSubNum);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.lblTax);
+            this.Controls.Add(this.lblSub);
+            this.Controls.Add(this.dgvItems);
             this.Controls.Add(this.lstOrders);
             this.Controls.Add(this.btnSearchDate);
             this.Controls.Add(this.btnSearchId);
@@ -159,6 +251,7 @@
             this.Controls.Add(this.txtOrderNumber);
             this.Name = "ModifyPO";
             this.Text = "Modify Purchase Order";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,6 +269,13 @@
         private System.Windows.Forms.Label lblEndDate;
         private System.Windows.Forms.Button btnSearchId;
         private System.Windows.Forms.Button btnSearchDate;
-        private System.Windows.Forms.ListView lstOrders;
+        private System.Windows.Forms.ListBox lstOrders;
+        private System.Windows.Forms.DataGridView dgvItems;
+        private System.Windows.Forms.Label lblSub;
+        private System.Windows.Forms.Label lblTax;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblSubNum;
+        private System.Windows.Forms.Label lblTaxNum;
+        private System.Windows.Forms.Label lblTotalNum;
     }
 }

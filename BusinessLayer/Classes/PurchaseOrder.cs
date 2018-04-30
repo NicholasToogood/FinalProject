@@ -15,8 +15,6 @@ namespace BusinessLayer
         internal OrderStatus _orderStatus;
         internal DateTime _orderDate;
         internal double _total;
-        internal double _tax;
-        internal double _grandTotal;
         internal int _empId;
         internal List<IItem> _items;
 
@@ -81,38 +79,6 @@ namespace BusinessLayer
                     return;
                 }
                 _total = value;
-            }
-        }
-
-        public double Tax
-        {
-            get
-            {
-                return _tax;
-            }
-            set
-            {
-                if (_tax == value)
-                {
-                    return;
-                }
-                _tax = value;
-            }
-        }
-
-        public double GrandTotal
-        {
-            get
-            {
-                return _grandTotal;
-            }
-            set
-            {
-                if (_grandTotal == value)
-                {
-                    return;
-                }
-                _grandTotal = value;
             }
         }
 

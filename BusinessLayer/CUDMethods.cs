@@ -14,14 +14,14 @@ namespace BusinessLayer
             return POSQL.CreatePO(po);
         }
 
-        //public static bool SearchPOById(int orderNumber)
-        //{
-        //    return POSQL.RetrievePOById(orderNumber);
-        //}
-
         public static int CreateEmp(Employee emp)
         {
             return HRSQL.CreateNewEmployee(emp);
+        }
+
+        public static bool UpdateItem(Item item)
+        {
+            return POSQL.UpdatePO(item);
         }
         
         public static Boolean CreatePerformanceIncrease(int empID, Double percentage, DateTime dateOfIncrease)

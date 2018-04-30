@@ -93,6 +93,7 @@ namespace Types
         string Justification { get; set; }
         ItemStatus ItemStatus { get; set; }
         int OrderNumber { get; set; }
+        string ReasonForMod { get; set; }
     }
 
 
@@ -102,22 +103,20 @@ namespace Types
         OrderStatus OrderStatus { get; set; }
         DateTime OrderDate { get; set; }
         double Total { get; set; }
-        double Tax { get; set; }
-        double GrandTotal { get; set; }
         int EmpId { get; set; }
         List<IItem> Items { get; set; }
     }
 
     public enum ItemStatus
     {
-        Pending,
+        Pending = 1,
         Approved,
         Denied
     }
 
     public enum OrderStatus
     {
-        Pending,
+        Pending = 1,
         UnderReview,
         Closed
     }

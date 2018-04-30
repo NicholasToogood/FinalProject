@@ -20,6 +20,7 @@ namespace BusinessLayer
         internal string _justification;
         internal ItemStatus _itemStatus;
         internal int _orderNumber;
+        internal string _reasonForMod;
 
         public int ItemId
         {
@@ -210,6 +211,34 @@ namespace BusinessLayer
                     return;
                 }
                 _orderNumber = value;
+            }
+        }
+
+        public string ReasonForMod
+        {
+            get
+            {
+                return _reasonForMod;
+            }
+            set
+            {
+                //if (_reasonForMod == value)
+                //{
+                //    return;
+                //}
+                //if (string.IsNullOrEmpty(value))
+                //{
+                //    throw new ArgumentNullException("ReasonForMod cannot be null or empty");
+                //}
+                //if (!Validate.ValidateLength(value, 255))
+                //{
+                //    throw new ArgumentException("ReasonForMod must be 255 characters or less");
+                //}
+                //if (!Validate.ValidateName(value))
+                //{
+                //    throw new ArgumentException("ReasonForMod is not valid");
+                //}
+                _reasonForMod = value;
             }
         }
     }

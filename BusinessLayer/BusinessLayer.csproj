@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Classes\Department.cs" />
     <Compile Include="Classes\Employee.cs" />
+    <Compile Include="Classes\Lists.cs" />
     <Compile Include="CUDMethods.cs" />
     <Compile Include="Factories\DepartmentFactory.cs" />
     <Compile Include="Factories\EmployeeFactory.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="Factories\ItemFactory.cs" />
     <Compile Include="Factories\JobFactory.cs" />
     <Compile Include="Factories\PaystubFactory.cs" />
+    <Compile Include="Factories\ListsFactory.cs" />
     <Compile Include="Factories\POFactory.cs" />
     <Compile Include="LookupLists.cs" />
     <Compile Include="Classes\PurchaseOrder.cs" />
