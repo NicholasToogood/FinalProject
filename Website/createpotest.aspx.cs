@@ -2,28 +2,25 @@
 using BusinessLayer.Factories;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
-namespace Desktop
+namespace Website
 {
-    public partial class CreatePO : Form
+    public partial class createpotest : System.Web.UI.Page
     {
         Item item;
         PurchaseOrder po;
         double orderPrice;
 
-        public CreatePO()
+        protected void Page_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
+            lblDate.InnerText = DateTime.Now.ToLongDateString();
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        protected void btnCreate_Click(object sender, EventArgs e)
         {
             try
             {
@@ -42,7 +39,7 @@ namespace Desktop
 
                 po.Items = new List<Types.IItem>();
                 po.Items.Add(item);
-                po.OrderNumber = Convert.ToInt32(lblOrderNumber.Text);
+                po.OrderNumber = Convert.ToInt32(lblOrderNum.Text);
                 po.EmpId = 10000004;
 
                 int orderNumber = CUDMethods.CreatPO(po);
@@ -51,16 +48,15 @@ namespace Desktop
                 lblTaxNum.Text = "$" + (orderPrice * 0.15).ToString("F");
                 lblTotalNum.Text = "$" + (orderPrice * 1.15).ToString("F");
 
-                lblOrderNumber.Text = orderNumber.ToString();
-                lblOrderNumber.Visible = true;
-                lblOrderNumberLabel.Visible = true;
+                lblOrderNum.Text = orderNumber.ToString();
+                lblOrderNum.Visible = true;
+                lblOrder.Visible = true;
 
                 clear();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                //errorProvider1.SetError(sender, ex.Message);
+
             }
         }
 
@@ -72,11 +68,6 @@ namespace Desktop
             txtPrice.Text = "";
             txtLocation.Text = "";
             txtJustification.Text = "";
-        }
-
-        private void CreatePO_Load(object sender, EventArgs e)
-        {
-            lblDate.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

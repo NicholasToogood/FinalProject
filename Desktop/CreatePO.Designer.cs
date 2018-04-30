@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnCreate = new System.Windows.Forms.Button();
             this.txtJustification = new System.Windows.Forms.TextBox();
             this.txtLocation = new System.Windows.Forms.TextBox();
@@ -56,8 +57,10 @@
             this.grpItem = new System.Windows.Forms.GroupBox();
             this.lblOrderNumberLabel = new System.Windows.Forms.Label();
             this.lblOrderNumber = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpTotal.SuspendLayout();
             this.grpItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreate
@@ -350,6 +353,10 @@
             this.lblOrderNumber.Text = "0";
             this.lblOrderNumber.Visible = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // CreatePO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -372,6 +379,7 @@
             this.grpTotal.PerformLayout();
             this.grpItem.ResumeLayout(false);
             this.grpItem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,6 +415,7 @@
         private System.Windows.Forms.GroupBox grpItem;
         private System.Windows.Forms.Label lblOrderNumberLabel;
         private System.Windows.Forms.Label lblOrderNumber;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

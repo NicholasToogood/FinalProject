@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Web.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="index.aspx">Final Project</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li><a href="#">Create Purchase Order</a></li>
+              <li><a href="#">Modify Purchase Order</a></li>
+            </ul>
+          </div>
+        </nav>
+    </asp:ContentPlaceHolder>
+    
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="Content1" runat="server">
+
+    </asp:ContentPlaceHolder>
+</body>
+</html>

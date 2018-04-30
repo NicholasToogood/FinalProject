@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlLayer", "SqlLayer\SqlLay
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desktop", "Desktop\Desktop.csproj", "{F8BA7DB1-7922-43D4-9252-3C5E58684D73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{969BAD06-554C-4186-85E0-A4A32B3137FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F8BA7DB1-7922-43D4-9252-3C5E58684D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8BA7DB1-7922-43D4-9252-3C5E58684D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8BA7DB1-7922-43D4-9252-3C5E58684D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{969BAD06-554C-4186-85E0-A4A32B3137FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{969BAD06-554C-4186-85E0-A4A32B3137FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{969BAD06-554C-4186-85E0-A4A32B3137FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{969BAD06-554C-4186-85E0-A4A32B3137FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
