@@ -79,5 +79,12 @@ namespace BusinessLayer
         public Double CompanyPensionDeduction { get; internal set; }
         public int EmpID { get; internal set; }
         public DateTime CreationDate { get; internal set; }
+
+        //YTD
+        public Double YTDGrossPay { get; internal set; }
+        public Double YTDDeductions { get; internal set; }
+        public Double YTDCPP { get; internal set; }
+        public Double YTDEI { get; internal set; }
+        public Double YTDCompanyPensionDeduction { get; internal set; }
     }
 }

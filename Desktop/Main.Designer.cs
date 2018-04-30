@@ -39,11 +39,10 @@
             // 
             // MainTab
             // 
-            this.MainTab.Location = new System.Drawing.Point(267, 4);
-            this.MainTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MainTab.Location = new System.Drawing.Point(200, 3);
             this.MainTab.MenuRenderer = null;
             this.MainTab.Name = "MainTab";
-            this.MainTab.Size = new System.Drawing.Size(941, 615);
+            this.MainTab.Size = new System.Drawing.Size(706, 500);
             this.MainTab.TabCloseButtonImage = null;
             this.MainTab.TabCloseButtonImageDisabled = null;
             this.MainTab.TabCloseButtonImageHot = null;
@@ -52,19 +51,20 @@
             // lblTitle
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(12, 9);
+            this.lblTitle.Location = new System.Drawing.Point(9, 7);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(247, 70);
+            this.lblTitle.Size = new System.Drawing.Size(185, 57);
             this.lblTitle.TabIndex = 7;
             this.lblTitle.Text = "ABC Academy";
             // 
             // btnCreatePO
             // 
             this.btnCreatePO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreatePO.Location = new System.Drawing.Point(11, 82);
-            this.btnCreatePO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCreatePO.Location = new System.Drawing.Point(8, 67);
+            this.btnCreatePO.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreatePO.Name = "btnCreatePO";
-            this.btnCreatePO.Size = new System.Drawing.Size(248, 39);
+            this.btnCreatePO.Size = new System.Drawing.Size(186, 32);
             this.btnCreatePO.TabIndex = 8;
             this.btnCreatePO.Text = "Create PO";
             this.btnCreatePO.UseVisualStyleBackColor = true;
@@ -73,10 +73,10 @@
             // btnModPO
             // 
             this.btnModPO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModPO.Location = new System.Drawing.Point(11, 128);
-            this.btnModPO.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModPO.Location = new System.Drawing.Point(8, 104);
+            this.btnModPO.Margin = new System.Windows.Forms.Padding(2);
             this.btnModPO.Name = "btnModPO";
-            this.btnModPO.Size = new System.Drawing.Size(248, 39);
+            this.btnModPO.Size = new System.Drawing.Size(186, 32);
             this.btnModPO.TabIndex = 9;
             this.btnModPO.Text = "Modify PO";
             this.btnModPO.UseVisualStyleBackColor = true;
@@ -85,10 +85,10 @@
             // btnAddEmp
             // 
             this.btnAddEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEmp.Location = new System.Drawing.Point(11, 266);
-            this.btnAddEmp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddEmp.Location = new System.Drawing.Point(8, 216);
+            this.btnAddEmp.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddEmp.Name = "btnAddEmp";
-            this.btnAddEmp.Size = new System.Drawing.Size(248, 39);
+            this.btnAddEmp.Size = new System.Drawing.Size(186, 32);
             this.btnAddEmp.TabIndex = 10;
             this.btnAddEmp.Text = "Add Employee";
             this.btnAddEmp.UseVisualStyleBackColor = true;
@@ -97,10 +97,10 @@
             // btnSearchEmp
             // 
             this.btnSearchEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchEmp.Location = new System.Drawing.Point(11, 330);
-            this.btnSearchEmp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchEmp.Location = new System.Drawing.Point(8, 268);
+            this.btnSearchEmp.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchEmp.Name = "btnSearchEmp";
-            this.btnSearchEmp.Size = new System.Drawing.Size(248, 39);
+            this.btnSearchEmp.Size = new System.Drawing.Size(186, 32);
             this.btnSearchEmp.TabIndex = 11;
             this.btnSearchEmp.Text = "Search Employee";
             this.btnSearchEmp.UseVisualStyleBackColor = true;
@@ -109,10 +109,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(11, 395);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(8, 321);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(248, 39);
+            this.button1.Size = new System.Drawing.Size(186, 32);
             this.button1.TabIndex = 12;
             this.button1.Text = "Cost-of-living Increase";
             this.button1.UseVisualStyleBackColor = true;
@@ -120,9 +120,9 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 625);
+            this.ClientSize = new System.Drawing.Size(910, 508);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSearchEmp);
             this.Controls.Add(this.btnAddEmp);
@@ -131,9 +131,9 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.MainTab);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
 
         }

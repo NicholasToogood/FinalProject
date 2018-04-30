@@ -33,5 +33,10 @@ namespace BusinessLayer
         {
             return HRSQL.CreateCostOfLivingIncrease(percentage, dateOfIncrease);
         }
+
+        public static Boolean HasCalculatePayrollBeenRun()
+        {
+            return HRSQL.HasCalculatePayrollBeenRun();
+        }
     }
 }
