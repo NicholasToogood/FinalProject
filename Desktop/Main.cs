@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,10 +19,24 @@ namespace Desktop
         CreateEmployeeHR createEmployee;
         SearchRetrieveEmployeeHR searchEmp;
         CostOfLivingIncreaseHR costOfLiving;
+        CalculatePayroll calculatePayroll;
 
         public Main()
         {
             InitializeComponent();
+
+        }
+        private void Main_Load(object sender, EventArgs e)
+        {
+            initiatePayroll();
+
+            // REMOVE
+            //if (calculatePayroll == null || calculatePayroll.IsDisposed)
+            //{
+            //    calculatePayroll = new CalculatePayroll();
+            //    DisplayForm(calculatePayroll);
+            //}
+            //
         }
 
         private void DisplayForm(Form form)
@@ -80,5 +95,53 @@ namespace Desktop
                 DisplayForm(modifyPO);
             } 
         }
+
+
+
+
+        private Boolean initiatePayroll()
+        {
+            DateTime today = DateTime.Today;
+
+            DateTime myoriginalDate = DateTime.ParseExact("2018-04-13", "yyyy-MM-dd",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+
+            
+
+            
+
+
+            if (today.DayOfWeek == DayOfWeek.Friday)
+            {
+                while (myoriginalDate < today)
+                {
+                    myoriginalDate = myoriginalDate.AddDays(14);
+                    
+                    if((today.Day == myoriginalDate.Day && today.Month == myoriginalDate.Month && today.Year == myoriginalDate.Year))
+                    {
+                        if (!CUDMethods.HasCalculatePayrollBeenRun())
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Want to head to the CalculatePayroll section?", "Today is PayDay!", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                if (calculatePayroll == null || calculatePayroll.IsDisposed)
+                                {
+                                    calculatePayroll = new CalculatePayroll();
+                                    DisplayForm(calculatePayroll);
+                                }
+                            }
+                            else if (dialogResult == DialogResult.No)
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            return false;
+        }
+
     }
 }

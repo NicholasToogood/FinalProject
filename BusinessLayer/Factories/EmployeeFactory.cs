@@ -53,12 +53,35 @@ namespace BusinessLayer.Factories
                 tmpEmp.StreetAddress = tempRow["address"].ToString();
                 tmpEmp.City = tempRow["city"].ToString();
                 tmpEmp.PostalCode = tempRow["pCode"].ToString();
-
                 
                 empList.Add(tmpEmp);
             }
             return empList;
         }
+
+        //EMAIL EMPLOYEES
+        public static List<Employee> RetrieveEmployeesByEmailNotification()
+        {
+            DataTable tmpTable = SqlLayer.HRSQL.RetrieveEmployeesForEmailPaystubs();
+            List<Employee> employeeList = RetrieveEmployeesForEmailRepackage(tmpTable);
+            return employeeList;
+        }
+        private static List<Employee> RetrieveEmployeesForEmailRepackage(DataTable myTable)
+        {
+            List<Employee> empList = new List<Employee>();
+            foreach (DataRow tempRow in myTable.Rows)
+            {
+                Employee tmpEmp = new Employee();
+                tmpEmp.EmpID = Convert.ToInt32(tempRow["empId"]);
+                tmpEmp.FirstName = tempRow["firstName"].ToString();
+                tmpEmp.LastName = tempRow["lastName"].ToString();
+                tmpEmp.EmailAddress = tempRow["email"].ToString();
+                tmpEmp.BiWeeklyRate = Convert.ToDouble(tempRow["biWeeklyRate"]);
+                empList.Add(tmpEmp);
+            }
+            return empList;
+        }
+        //
 
     }
 }

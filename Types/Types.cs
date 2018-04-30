@@ -74,6 +74,12 @@ namespace Types
         Double CompanyPensionDeduction { get; set; }
         int EmpID { get; set; }
         DateTime CreationDate { get; set; }
+        Double YTDGrossPay { get; set; }
+        Double YTDDeductions { get; set; }
+        Double YTDCPP { get; set; }
+        Double YTDEI { get; set; }
+        Double YTDCompanyPensionDeduction { get; set; }
+
     }
 
     public interface IItem

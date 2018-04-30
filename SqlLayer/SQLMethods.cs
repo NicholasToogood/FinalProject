@@ -151,8 +151,59 @@ namespace SqlLayer
 
             return true;
         }
+       public static Boolean HasCalculatePayrollBeenRun()
+        {
 
+            DataTable tmpDataTable = DAL.GetData("HasCalculatePayrollBeenRun");
 
-        
+            if(tmpDataTable.Rows.Count > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // CALCULATES PAYROLL AND GENERATES PAYSTUBS
+        public static Boolean CalculatePayroll()
+        {
+            DAL.GetData("CalculatePayroll");
+
+            return true;
+        }
+
+        //GETS TODAYS PAYSTUBS
+        public static DataTable RetrieveTodaysPayStubs()
+        {
+            DataTable tmpDataTable = DAL.GetData("GetAllPaystubsForToday");
+            
+            return tmpDataTable;
+        }
+
+        //GETS TODAYS PAYSTUBS EMAIL
+        public static DataTable RetrieveTodaysPayStubsEmail()
+        {
+            DataTable tmpDataTable = DAL.GetData("GetAllPaystubsForTodayEMAIL");
+
+            return tmpDataTable;
+        }
+
+        //GETS Employees who want their paystubs sent to them.
+        public static DataTable RetrieveEmployeesForEmailPaystubs()
+        {
+            DataTable tmpDataTable = DAL.GetData("GetAllEmployeesEMAIL");
+
+            return tmpDataTable;
+        }
+        // GETS TODAYS PAYSTUB BY ID
+        public static DataTable RetrieveTodaysPaystubByID(int ID)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@empID", ID, SqlDbType.Int, ParameterDirection.Input));
+            DataTable tmpDataTable = DAL.GetData("GetPaystubForTodayByID", parms);
+
+            return tmpDataTable;
+        }
+
     }
 }
