@@ -18,12 +18,33 @@ namespace SqlLayer
             return DAL.GetData("GetOrderById", parms);
         }
 
-        public static DataTable RetrievePOByDAte(DateTime startDate, DateTime endDate)
+        public static DataTable RetrievePOByDate(DateTime startDate, DateTime endDate)
         {
             List<parameters> parms = new List<parameters>();
             parms.Add(new parameters("@startDate", startDate, SqlDbType.Date, ParameterDirection.Input));
             parms.Add(new parameters("@endDate", endDate, SqlDbType.Date, ParameterDirection.Input));
             return DAL.GetData("GetOrderByDate", parms);
+        }
+
+        public static DataTable RetrieveItemById(int orderNumber)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@orderNumber", orderNumber, SqlDbType.Int, ParameterDirection.Input, 8));
+            return DAL.GetData("GetItemsById", parms);
+        }
+
+        public static bool UpdatePO(IItem item)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@itemId", item.ItemId, SqlDbType.Int, ParameterDirection.Input, 8));
+            parms.Add(new parameters("@name", item.ItemName, SqlDbType.VarChar, ParameterDirection.Input, 30));
+            parms.Add(new parameters("@description", item.Description, SqlDbType.VarChar, ParameterDirection.Input, 255));
+            parms.Add(new parameters("@qty", item.Quantity, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@price", item.Price, SqlDbType.Money, ParameterDirection.Input));
+            parms.Add(new parameters("@location", item.Location, SqlDbType.VarChar, ParameterDirection.Input, 50));
+            parms.Add(new parameters("@jusitification", item.Justification, SqlDbType.VarChar, ParameterDirection.Input, 255));
+            DAL.SendData("ModifyPO", parms);
+            return true;
         }
 
         public static DataTable CreatePO(IItem item, int empId)
