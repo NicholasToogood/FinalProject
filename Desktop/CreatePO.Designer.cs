@@ -58,6 +58,10 @@
             this.lblOrderNumberLabel = new System.Windows.Forms.Label();
             this.lblOrderNumber = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnAddToOrder = new System.Windows.Forms.Button();
+            this.lblEnterOrder = new System.Windows.Forms.Label();
+            this.txtEnterOrder = new System.Windows.Forms.TextBox();
+            this.btnNewOrder = new System.Windows.Forms.Button();
             this.grpTotal.SuspendLayout();
             this.grpItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -357,11 +361,61 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnAddToOrder
+            // 
+            this.btnAddToOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddToOrder.Location = new System.Drawing.Point(593, 307);
+            this.btnAddToOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddToOrder.Name = "btnAddToOrder";
+            this.btnAddToOrder.Size = new System.Drawing.Size(137, 53);
+            this.btnAddToOrder.TabIndex = 39;
+            this.btnAddToOrder.Text = "Add To Existing Order";
+            this.btnAddToOrder.UseVisualStyleBackColor = true;
+            this.btnAddToOrder.Click += new System.EventHandler(this.btnAddToOrder_Click);
+            // 
+            // lblEnterOrder
+            // 
+            this.lblEnterOrder.AutoSize = true;
+            this.lblEnterOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnterOrder.Location = new System.Drawing.Point(588, 263);
+            this.lblEnterOrder.Name = "lblEnterOrder";
+            this.lblEnterOrder.Size = new System.Drawing.Size(142, 25);
+            this.lblEnterOrder.TabIndex = 52;
+            this.lblEnterOrder.Text = "Order Number:";
+            this.lblEnterOrder.Visible = false;
+            // 
+            // txtEnterOrder
+            // 
+            this.txtEnterOrder.Location = new System.Drawing.Point(757, 267);
+            this.txtEnterOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEnterOrder.Name = "txtEnterOrder";
+            this.txtEnterOrder.Size = new System.Drawing.Size(123, 22);
+            this.txtEnterOrder.TabIndex = 39;
+            this.txtEnterOrder.Visible = false;
+            this.txtEnterOrder.TextChanged += new System.EventHandler(this.txtEnterOrder_TextChanged);
+            // 
+            // btnNewOrder
+            // 
+            this.btnNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewOrder.Location = new System.Drawing.Point(743, 307);
+            this.btnNewOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNewOrder.Name = "btnNewOrder";
+            this.btnNewOrder.Size = new System.Drawing.Size(137, 53);
+            this.btnNewOrder.TabIndex = 53;
+            this.btnNewOrder.Text = "New Order";
+            this.btnNewOrder.UseVisualStyleBackColor = true;
+            this.btnNewOrder.Visible = false;
+            this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
+            // 
             // CreatePO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 547);
+            this.Controls.Add(this.btnNewOrder);
+            this.Controls.Add(this.txtEnterOrder);
+            this.Controls.Add(this.lblEnterOrder);
+            this.Controls.Add(this.btnAddToOrder);
             this.Controls.Add(this.lblOrderNumberLabel);
             this.Controls.Add(this.lblOrderNumber);
             this.Controls.Add(this.grpItem);
@@ -416,6 +470,10 @@
         private System.Windows.Forms.Label lblOrderNumberLabel;
         private System.Windows.Forms.Label lblOrderNumber;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnAddToOrder;
+        private System.Windows.Forms.TextBox txtEnterOrder;
+        private System.Windows.Forms.Label lblEnterOrder;
+        private System.Windows.Forms.Button btnNewOrder;
     }
 }
 

@@ -24,19 +24,10 @@ namespace Desktop
         public Main()
         {
             InitializeComponent();
-
         }
         private void Main_Load(object sender, EventArgs e)
         {
             initiatePayroll();
-
-            // REMOVE
-            //if (calculatePayroll == null || calculatePayroll.IsDisposed)
-            //{
-            //    calculatePayroll = new CalculatePayroll();
-            //    DisplayForm(calculatePayroll);
-            //}
-            //
         }
 
         private void DisplayForm(Form form)
