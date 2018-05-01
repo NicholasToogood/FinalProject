@@ -9,12 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Types;
 
 namespace Desktop
 {
     public partial class ModifyPO : Form
     {
         PurchaseOrder po;
+        Main main;
 
         public ModifyPO()
         {
@@ -51,7 +53,7 @@ namespace Desktop
                 lblSubNum.Text = "$ " + po.Total.ToString("F");
                 lblTaxNum.Text = "$ " + (po.Total * 0.15).ToString("F");
                 lblTotalNum.Text = "$ " + (po.Total * 1.15).ToString("F");
-            }  
+            }
         }
 
         private void btnSearchDate_Click(object sender, EventArgs e)
@@ -88,6 +90,21 @@ namespace Desktop
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvItems_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                dgvItems.Rows[e.RowIndex].Cells[0].ReadOnly = true;
+                dgvItems.Rows[e.RowIndex].Cells[7].ReadOnly = true;
+                dgvItems.Rows[e.RowIndex].Cells[8].ReadOnly = true;
+                dgvItems.Rows[e.RowIndex].Cells[9].ReadOnly = true;
+            }
+            catch
+            {
+
             }
         }
     }

@@ -165,6 +165,7 @@
             this.dgvItems.Size = new System.Drawing.Size(919, 271);
             this.dgvItems.TabIndex = 45;
             this.dgvItems.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellEndEdit);
+            this.dgvItems.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvItems_CellMouseClick);
             // 
             // lblSub
             // 
