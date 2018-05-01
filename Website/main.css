@@ -1,0 +1,292 @@
+﻿* {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Raleway;
+    color: #2b2b2b;
+}
+
+    body a {
+        color: #2b2b2b;
+    }
+
+        body a:hover {
+            color: #FAB84A;
+        }
+
+/*Footer styles*/
+footer {
+    margin-top: 30px;
+    background-color: #2E2F33;
+    color: #efefef;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+    footer a {
+        color: #FAB84A;
+    }
+
+    footer hr {
+        width: 50%;
+    }
+
+#footerNav a {
+    padding: 0 5%;
+}
+
+
+
+/*Navigation Styles*/
+nav {
+    background: #efefef;
+    padding: 0 10%;
+    position: fixed;
+    top: 0;
+    width: 80%;
+    padding-bottom: 10px;
+    z-index: 999;
+}
+
+    nav a {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+        nav a:hover {
+            color: #FAB84A;
+        }
+
+#navContent div {
+    display: inline-block;
+}
+
+#LPBlogo {
+    width: 200px;
+}
+
+#navIMG {
+    width: 24%;
+    vertical-align: middle;
+}
+
+#navLinks {
+    text-align: right;
+    width: 40%;
+    vertical-align: middle;
+}
+
+#navSearch {
+    width: 35%;
+    text-align: right;
+    vertical-align: bottom;
+}
+
+#navShoppingCart {
+    width: 24px;
+    vertical-align: middle;
+}
+
+#cart {
+    vertical-align: top;
+    background-color: #e23434;
+    color: #fff;
+    padding: 0 5px;
+    border-radius: 10000px;
+    margin-left: -2px;
+}
+
+/*Master Error Message*/
+#lblErrMessage {
+    text-align: center;
+    font-size: 22px;
+}
+/*Button Styling*/
+.Button {
+    background-color: #E0AB53;
+    color: #fff;
+    font-size: 16px;
+    padding: 3px 10px;
+    border: none;
+    border-bottom: 3px solid #b7893e;
+    margin-right: 10px;
+}
+
+/*TextBox styling*/
+.TextBox {
+    border: none;
+    border: solid thin #E0AB53;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+#bumper {
+    height: 80px;
+}
+
+#MainContent {
+    padding: 0 10%;
+    background-color: #fff;
+}
+
+/*Featured Products*/
+.tableImg {
+    width: 175px;
+    height: 100px;
+    border: thin solid #FAB84A;
+}
+
+#FeaturedDisplay {
+    clear: both;
+}
+
+#FeaturesTemp {
+    display: inline-block;
+    width: 23%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    vertical-align: top;
+}
+
+#leftSide {
+    width: 15%;
+    float: left;
+}
+
+#rightSide {
+    width: 80%;
+    float: right;
+    padding-left: 3%;
+    border-left: thin solid #dbdbdb;
+}
+
+#FeaturesTemp p a {
+    color: #FAB84A;
+    font-weight: bold;
+}
+
+.custHR {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #FAB84A;
+    margin: 1em auto;
+    padding: 0;
+    width: 80%;
+}
+
+#clearBoth {
+    clear: both;
+}
+
+/*Error Message*/
+.errMessage {
+    text-align: center;
+    color: red;
+}
+
+/*Table Styling*/
+
+.nate-table {
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    .nate-table tr:nth-child(even) {
+        background-color: #efefef;
+    }
+
+    .nate-table th, .nate-table td {
+        padding: 8px;
+    }
+
+    .nate-table td {
+        font-size: 1em;
+        vertical-align: top;
+    }
+
+        .nate-table td a {
+            color: #FAB84A;
+            font-weight: bold;
+        }
+
+    .nate-table th {
+        color: #FAB84A;
+        font-size: 1.2em;
+        text-align: left;
+    }
+
+/*More details area*/
+.fvMoreDetailsClass {
+    width: 100%;
+}
+
+#detailsLeft {
+    width: 45%;
+    height: 250px;
+    overflow: hidden;
+    float: left;
+}
+
+#detailsRight {
+    width: 50%;
+    float: right;
+}
+
+    #detailsRight a {
+        font-weight: bold;
+        color: #FAB84A
+    }
+
+.italics {
+    font-style: italic;
+}
+
+/*HeroImg Area*/
+#heroImg {
+    background-image: url('../images/headerImg/defaultPageHero.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 275px;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 4em;
+    animation-name: FadeInSlideDown;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-delay: 0.5s;
+}
+
+@keyframes FadeInSlideDown {
+    0% {
+        margin-top: -35px;
+        opacity: 0;
+    }
+
+    100% {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
+.ErrorDisplay {
+    color: red;
+    font-size: 22px;
+}
