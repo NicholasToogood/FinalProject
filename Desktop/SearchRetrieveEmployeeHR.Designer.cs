@@ -56,6 +56,7 @@
             this.btnSalaryChanges = new System.Windows.Forms.Button();
             this.grpBoxApplySalaryChanges = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.btnRequestIncrease = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
             this.dtpDateOfIncrease = new System.Windows.Forms.DateTimePicker();
@@ -101,7 +102,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.grpBoxSearchEmp = new System.Windows.Forms.GroupBox();
-            this.label29 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -397,6 +397,15 @@
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Salary Increase";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(193, 24);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(15, 13);
+            this.label29.TabIndex = 5;
+            this.label29.Text = "%";
             // 
             // btnRequestIncrease
             // 
@@ -826,15 +835,6 @@
             this.grpBoxSearchEmp.TabIndex = 14;
             this.grpBoxSearchEmp.TabStop = false;
             this.grpBoxSearchEmp.Text = "Employee Search";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(193, 24);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(15, 13);
-            this.label29.TabIndex = 5;
-            this.label29.Text = "%";
             // 
             // SearchRetrieveEmployeeHR
             // 

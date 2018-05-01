@@ -38,5 +38,9 @@ namespace BusinessLayer
         {
             return HRSQL.HasCalculatePayrollBeenRun();
         }
+        public static Boolean CalculatePayroll()
+        {
+            return HRSQL.CalculatePayroll();
+        }
     }
 }

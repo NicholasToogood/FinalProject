@@ -46,8 +46,67 @@ namespace Desktop
             try{
                 String errorMsg = "";
                 Boolean isValid = true;
+                if(txtSIN.Text.Length <= 0 || txtBiWeeklyPayRate.Text.Length <= 0 || txtCellPhoneNumber.Text.Length <= 0 || txtWorkPhoneNumber.Text.Length <= 0 || txtEmailAddress.Text.Length <= 0 || txtFirstName.Text.Length <= 0 || txtLastName.Text.Length <= 0 || txtStreetAddress.Text.Length <= 0 || txtCity.Text.Length <= 0 || txtPostalCode.Text.Length <= 0)
+                {
+                    isValid = false;
+                    errorMsg = "Error Missing fields.";
+                }
+                else
+                {
+                    if (!BusinessLayer.Validate.IsValidSIN(txtSIN.Text))
+                    {
+                        isValid = false;
+                        errorMsg += "Invalid SIN. \n";
+                    }
+                    if (dtpSeniorityDate.Value.Date > dtpJobStartDate.Value.Date)
+                    {
+                        isValid = false;
+                        errorMsg += "Seniority Date must be sooner than or equal to Job Start Date. \n";
+                    }
+                    if (!BusinessLayer.Validate.IsValidBiweeklyPay(txtBiWeeklyPayRate.Text))
+                    {
+                        isValid = false;
+                        errorMsg += "Bi-Weekly Payrate must be a numeric value greater than 0. \n";
+                    }
+                    if (!BusinessLayer.Validate.ValidatePhoneNumber(txtCellPhoneNumber.Text))
+                    {
+                        isValid = false;
+                        errorMsg += "Invalid Cell Phone Number. \n";
+                    }
+                    if (!BusinessLayer.Validate.ValidatePhoneNumber(txtWorkPhoneNumber.Text))
+                    {
+                        isValid = false;
+                        errorMsg += "Invalid Work Phone Number. \n";
+                    }
+                    if (!BusinessLayer.Validate.ValidateEmail(txtEmailAddress.Text))
+                    {
+                        isValid = false;
+                        errorMsg += "Invalid Email Address. \n";
+                    }
+                    if (!BusinessLayer.Validate.ValidateLength(txtFirstName.Text, 20))
+                    {
+                        isValid = false;
+                        errorMsg += "First Name cannot be longer than 20 characters. \n";
+                    }
 
+                    if (!BusinessLayer.Validate.ValidateLength(txtMiddleInitial.Text, 1))
+                    {
+                        isValid = false;
+                        errorMsg += "Middle Initial cannot be longer than 1 character. \n";
+                    }
 
+                    if (!BusinessLayer.Validate.ValidateLength(txtLastName.Text, 30))
+                    {
+                        isValid = false;
+                        errorMsg += "Last Name cannot be longer than 30 characters. \n";
+                    }
+                    if (!BusinessLayer.Validate.IsValidPostalCode(txtPostalCode.Text))
+                    {
+                        isValid = false;
+                        errorMsg += "Invalid Postal Code \n";
+                    }
+                }
+                
                 if (isValid)
                 {
                     Employee emp = EmployeeFactory.CreateEmployee();
@@ -70,9 +129,15 @@ namespace Desktop
                     emp.BiWeeklyRate = Convert.ToDouble(txtBiWeeklyPayRate.Text);
 
 
-                    int newEmpID = CUDMethods.CreateEmp(emp);
+                    //int newEmpID = CUDMethods.CreateEmp(emp);
 
-                    MessageBox.Show("New Employee Created With ID of: " + newEmpID);
+                    //MessageBox.Show("New Employee Created With ID of: " + newEmpID);
+
+                    MessageBox.Show("Worked");
+                }
+                else
+                {
+                    MessageBox.Show(errorMsg);
                 }
             }
             catch(Exception ex)
