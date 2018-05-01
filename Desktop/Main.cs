@@ -132,7 +132,7 @@ namespace Desktop
                             }
                             else if (dialogResult == DialogResult.No)
                             {
-
+                                this.Close();
                             }
                         }
                     }
