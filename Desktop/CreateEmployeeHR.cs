@@ -129,11 +129,11 @@ namespace Desktop
                     emp.BiWeeklyRate = Convert.ToDouble(txtBiWeeklyPayRate.Text);
 
 
-                    //int newEmpID = CUDMethods.CreateEmp(emp);
+                    int newEmpID = CUDMethods.CreateEmp(emp);
 
-                    //MessageBox.Show("New Employee Created With ID of: " + newEmpID);
+                    MessageBox.Show("New Employee Created With ID of: " + newEmpID);
 
-                    MessageBox.Show("Worked");
+                    //MessageBox.Show("Worked");
                 }
                 else
                 {
