@@ -28,6 +28,8 @@ namespace Desktop
 
         private void CalculatePayroll_Load(object sender, EventArgs e)
         {
+            CUDMethods.CalculatePayroll();
+
             sendPayrollEmails();
             loadDataGrid();
         }
@@ -70,7 +72,7 @@ namespace Desktop
                         message.Subject = "Pay Stub for " + date;
                         message.IsBodyHtml = true;
                         message.Body = "<h3>Please find attached PayStub.</h3>";
-                        message.Attachments.Add(new Attachment(new MemoryStream(bytes), "iTextSharpPDF.pdf"));
+                        message.Attachments.Add(new Attachment(new MemoryStream(bytes), "Paystub.pdf"));
                         SmtpClient smtpClient = new SmtpClient("localhost");
                         smtpClient.Send(message);
                     }

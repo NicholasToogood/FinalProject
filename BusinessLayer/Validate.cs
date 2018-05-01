@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -51,8 +52,9 @@ namespace BusinessLayer
                 return false;
             }
         }
+        
 
-        public static Boolean IsValidPostalCode(string postalCode)
+    public static Boolean IsValidPostalCode(string postalCode)
         {
             Regex r = new Regex("[ABCEGHJ-NPRSTVXY]{1}[0-9]{1}[ABCEGHJ-NPRSTV-Z]{1}[ ]?[0-9]{1}[ABCEGHJ-NPRSTV-Z]{1}[0-9]{1}$");
 
@@ -68,10 +70,53 @@ namespace BusinessLayer
 
         }
 
-
-        
-
         // HR
+
+        public static bool ValidateEmail(string email)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(email);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+
+        public static Boolean IsValidSIN(string sin)
+        {
+            Regex r = new Regex(@"^\d{9}$");
+
+            if (r.Match(sin).Success)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        public static Boolean IsValidBiweeklyPay(string BiWeeklyPay)
+        {
+            int n;
+            bool isNumeric = int.TryParse(BiWeeklyPay, out n);
+
+
+            if (isNumeric)
+            {
+                if (n > 0)
+                {
+                    return true;
+
+                }
+            }
+            return false;
+
+        }
 
         public static Boolean IsValidEmployeeID(String attemptEmpID)
         {
