@@ -61,7 +61,7 @@ namespace Desktop
             LoadItems(); ;
 
             po = POFactory.Create(Convert.ToInt32(lstOrders.SelectedValue));
-
+            
             foreach (Item item in po.Items)
             {
                 if (item.ItemStatus == Types.ItemStatus.Pending)
@@ -73,6 +73,9 @@ namespace Desktop
                     CUDMethods.ProcessOrder(po.OrderNumber, Convert.ToByte(2));
                 }
             }
+
+            po = POFactory.Create(Convert.ToInt32(lstOrders.SelectedValue));
+            lblOrderStatus.Text = po.OrderStatus.ToString();
 
             if (askToClose == true)
             {
@@ -122,6 +125,9 @@ namespace Desktop
                     CUDMethods.ProcessOrder(po.OrderNumber, Convert.ToByte(2));
                 }
             }
+
+            po = POFactory.Create(Convert.ToInt32(lstOrders.SelectedValue));
+            lblOrderStatus.Text = po.OrderStatus.ToString();
 
             if (askToClose == true)
             {
@@ -216,8 +222,16 @@ namespace Desktop
                 message.From = new MailAddress("purchaseorders@newroads.com");
                 message.Subject = "Pruchase Order Closed";
                 message.IsBodyHtml = true;
-                message.Body = "<h1>"+date+"</h1>";
-                message.Body = "<h3>Pruchase Order #" + po.OrderNumber + " has been processed!</h3>";
+                message.Body += "<h2>"+date+"</h2>";
+                message.Body += "<h3>Pruchase Order #" + po.OrderNumber + " has been processed!</h3><br />";
+                
+                foreach (Item item in po.Items)
+                {
+                    message.Body += "<p>"+ item.ItemName + " - " + item.ItemStatus +"</p>";
+                }
+
+                message.Body += "<p>Total Order Cost - $" + po.Total + "</p>";
+
                 SmtpClient smtpClient = new SmtpClient("localhost");
                 smtpClient.Send(message);
             }
