@@ -62,6 +62,7 @@
             this.lblEnterOrder = new System.Windows.Forms.Label();
             this.txtEnterOrder = new System.Windows.Forms.TextBox();
             this.btnNewOrder = new System.Windows.Forms.Button();
+            this.lstItems = new System.Windows.Forms.ListBox();
             this.grpTotal.SuspendLayout();
             this.grpItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -153,7 +154,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(56, 187);
+            this.lblPrice.Location = new System.Drawing.Point(62, 186);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(62, 25);
             this.lblPrice.TabIndex = 29;
@@ -213,21 +214,21 @@
             // 
             this.lblEmpName.AutoSize = true;
             this.lblEmpName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpName.Location = new System.Drawing.Point(851, 9);
+            this.lblEmpName.Location = new System.Drawing.Point(777, 9);
             this.lblEmpName.Name = "lblEmpName";
-            this.lblEmpName.Size = new System.Drawing.Size(64, 25);
+            this.lblEmpName.Size = new System.Drawing.Size(138, 25);
             this.lblEmpName.TabIndex = 41;
-            this.lblEmpName.Text = "Name";
+            this.lblEmpName.Text = "Mike Donovan";
             // 
             // lblDept
             // 
             this.lblDept.AutoSize = true;
             this.lblDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDept.Location = new System.Drawing.Point(802, 34);
+            this.lblDept.Location = new System.Drawing.Point(698, 34);
             this.lblDept.Name = "lblDept";
-            this.lblDept.Size = new System.Drawing.Size(113, 25);
+            this.lblDept.Size = new System.Drawing.Size(216, 25);
             this.lblDept.TabIndex = 42;
-            this.lblDept.Text = "Department";
+            this.lblDept.Text = "Information Technology";
             // 
             // lblSuper
             // 
@@ -235,9 +236,9 @@
             this.lblSuper.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSuper.Location = new System.Drawing.Point(809, 59);
             this.lblSuper.Name = "lblSuper";
-            this.lblSuper.Size = new System.Drawing.Size(106, 25);
+            this.lblSuper.Size = new System.Drawing.Size(105, 25);
             this.lblSuper.TabIndex = 43;
-            this.lblSuper.Text = "Supervisor";
+            this.lblSuper.Text = "John Wick";
             // 
             // lblSub
             // 
@@ -339,7 +340,7 @@
             // 
             this.lblOrderNumberLabel.AutoSize = true;
             this.lblOrderNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderNumberLabel.Location = new System.Drawing.Point(609, 118);
+            this.lblOrderNumberLabel.Location = new System.Drawing.Point(588, 97);
             this.lblOrderNumberLabel.Name = "lblOrderNumberLabel";
             this.lblOrderNumberLabel.Size = new System.Drawing.Size(142, 25);
             this.lblOrderNumberLabel.TabIndex = 50;
@@ -350,7 +351,7 @@
             // 
             this.lblOrderNumber.AutoSize = true;
             this.lblOrderNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderNumber.Location = new System.Drawing.Point(773, 118);
+            this.lblOrderNumber.Location = new System.Drawing.Point(752, 97);
             this.lblOrderNumber.Name = "lblOrderNumber";
             this.lblOrderNumber.Size = new System.Drawing.Size(23, 25);
             this.lblOrderNumber.TabIndex = 51;
@@ -407,11 +408,21 @@
             this.btnNewOrder.Visible = false;
             this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
             // 
+            // lstItems
+            // 
+            this.lstItems.FormattingEnabled = true;
+            this.lstItems.ItemHeight = 16;
+            this.lstItems.Location = new System.Drawing.Point(593, 125);
+            this.lstItems.Name = "lstItems";
+            this.lstItems.Size = new System.Drawing.Size(287, 132);
+            this.lstItems.TabIndex = 54;
+            // 
             // CreatePO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 547);
+            this.Controls.Add(this.lstItems);
             this.Controls.Add(this.btnNewOrder);
             this.Controls.Add(this.txtEnterOrder);
             this.Controls.Add(this.lblEnterOrder);
@@ -474,6 +485,7 @@
         private System.Windows.Forms.TextBox txtEnterOrder;
         private System.Windows.Forms.Label lblEnterOrder;
         private System.Windows.Forms.Button btnNewOrder;
+        private System.Windows.Forms.ListBox lstItems;
     }
 }
 

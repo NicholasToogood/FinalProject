@@ -12,6 +12,13 @@ namespace BusinessLayer.Factories
 {
     public class ListsPOFactory
     {
+        public static List<PurchaseOrder> Create()
+        {
+            DataTable dt = POSQL.RetrieveAllPOs();
+            List<PurchaseOrder> lstPurchaseOrderLookup = Repackage(dt);
+            return lstPurchaseOrderLookup;
+        }
+
         public static List<PurchaseOrder> Create(int orderNumber)
         {
             DataTable dt = POSQL.RetrievePOById(orderNumber);

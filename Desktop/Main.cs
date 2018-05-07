@@ -20,6 +20,7 @@ namespace Desktop
         SearchRetrieveEmployeeHR searchEmp;
         CostOfLivingIncreaseHR costOfLiving;
         CalculatePayroll calculatePayroll;
+        ProcessPO processPO;
 
         public Main()
         {
@@ -134,5 +135,13 @@ namespace Desktop
             return false;
         }
 
+        private void btnProcess_Click(object sender, EventArgs e)
+        {
+            if (processPO == null || processPO.IsDisposed)
+            {
+                processPO = new ProcessPO();
+                DisplayForm(processPO);
+            }
+        }
     }
 }
