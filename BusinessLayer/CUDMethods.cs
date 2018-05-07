@@ -24,7 +24,17 @@ namespace BusinessLayer
         {
             return POSQL.UpdatePO(item);
         }
-        
+
+        public static bool ProcessItem(int itemId, byte itemStatus)
+        {
+            return POSQL.ProcessItem(itemId, itemStatus);
+        }
+
+        public static bool ProcessOrder(int orderNumber, byte orderStatus)
+        {
+            return POSQL.ProcessOrder(orderNumber, orderStatus);
+        }
+
         public static Boolean CreatePerformanceIncrease(int empID, Double percentage, DateTime dateOfIncrease)
         {
             return HRSQL.CreatePerformanceIncrease(empID, percentage, dateOfIncrease);

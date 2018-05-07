@@ -57,6 +57,8 @@ namespace Desktop
                 lblOrderNumber.Visible = true;
                 lblOrderNumberLabel.Visible = true;
 
+                lstItems.Items.Add(item.ItemName);
+
                 clear();
             }
             catch (Exception ex)
@@ -94,6 +96,7 @@ namespace Desktop
             lblSubNum.Text = "$0.00";
             lblTaxNum.Text = "$0.00";
             lblTotalNum.Text = "$0.00";
+            lstItems.Items.Clear();
         }
 
         private void btnNewOrder_Click(object sender, EventArgs e)
@@ -109,6 +112,7 @@ namespace Desktop
             lblSubNum.Text = "$0.00";
             lblTaxNum.Text = "$0.00";
             lblTotalNum.Text = "$0.00";
+            lstItems.Items.Clear();
         }
 
         private void txtEnterOrder_TextChanged(object sender, EventArgs e)
@@ -122,12 +126,18 @@ namespace Desktop
                 lblTaxNum.Text = "$" + (po.Total * 0.15).ToString("F");
                 lblTotalNum.Text = "$" + (po.Total * 1.15).ToString("F");
                 orderPrice = po.Total;
+
+                foreach (Item item in po.Items)
+                {
+                    lstItems.Items.Add(item.ItemName);
+                }
             }
             catch
             {
                 lblSubNum.Text = "$0.00";
                 lblTaxNum.Text = "$0.00";
                 lblTotalNum.Text = "$0.00";
+                lstItems.Items.Clear();
             }
         }
     }

@@ -21,6 +21,7 @@ namespace Desktop
         CostOfLivingIncreaseHR costOfLiving;
         CalculatePayroll calculatePayroll;
         CalculatePension calculatePension;
+        ProcessPO processPO;
 
         public Main()
         {
@@ -143,5 +144,6 @@ namespace Desktop
             
             return false;
         }
+
     }
 }

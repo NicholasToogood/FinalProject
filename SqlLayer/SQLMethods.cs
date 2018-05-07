@@ -11,6 +11,12 @@ namespace SqlLayer
 {
     public class POSQL
     {
+        public static DataTable RetrieveAllPOs()
+        {
+            List<parameters> parms = new List<parameters>();
+            return DAL.GetData("GetAllOrders", parms);
+        }
+
         public static DataTable RetrievePOById(int orderNumber)
         {
             List<parameters> parms = new List<parameters>();
@@ -44,6 +50,24 @@ namespace SqlLayer
             parms.Add(new parameters("@location", item.Location, SqlDbType.VarChar, ParameterDirection.Input, 50));
             parms.Add(new parameters("@jusitification", item.Justification, SqlDbType.VarChar, ParameterDirection.Input, 255));
             DAL.SendData("ModifyPO", parms);
+            return true;
+        }
+
+        public static bool ProcessItem(int itemId, byte itemStatus)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@itemId", itemId, SqlDbType.Int, ParameterDirection.Input, 8));
+            parms.Add(new parameters("@itemStatus", itemStatus, SqlDbType.TinyInt, ParameterDirection.Input, 1));
+            DAL.SendData("ProcessItem", parms);
+            return true;
+        }
+
+        public static bool ProcessOrder(int orderNumber, byte orderStatus)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@orderNumber", orderNumber, SqlDbType.Int, ParameterDirection.Input, 8));
+            parms.Add(new parameters("@orderStatus", orderStatus, SqlDbType.TinyInt, ParameterDirection.Input, 1));
+            DAL.SendData("ProcessPO", parms);
             return true;
         }
 
