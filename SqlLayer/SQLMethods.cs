@@ -306,6 +306,11 @@ namespace SqlLayer
             parms.Add(new parameters("@dateOfDeparture", emp.DateOfDeparture, SqlDbType.Date, ParameterDirection.Input));
             parms.Add(new parameters("@biWeeklyRate", emp.BiWeeklyRate, SqlDbType.Float, ParameterDirection.Input));
 
+            //long longVar = BitConverter.ToInt64(emp.lastTouched, 0);
+            //DateTime dateTime = new DateTime(1980, 1, 1).AddMilliseconds(longVar);
+
+            parms.Add(new parameters("@timeStamp", emp.lastTouched, SqlDbType.Timestamp, ParameterDirection.Input));
+            
             DAL.SendData("ModifyEmployee", parms);
             
             return true;
@@ -358,6 +363,7 @@ namespace SqlLayer
             parms.Add(new parameters("@workPhoneNumber", emp.WorkPhoneNumber, SqlDbType.VarChar, ParameterDirection.Input, 15));
             parms.Add(new parameters("@cellPhoneNumber", emp.CellPhoneNumber, SqlDbType.VarChar, ParameterDirection.Input, 15));
             parms.Add(new parameters("@address", emp.StreetAddress, SqlDbType.VarChar, ParameterDirection.Input, 30));
+            parms.Add(new parameters("@timeStamp", emp.lastTouched, SqlDbType.Timestamp, ParameterDirection.Input));
 
             DAL.SendData("EmployeeModifyEmployee", parms);
             return true;

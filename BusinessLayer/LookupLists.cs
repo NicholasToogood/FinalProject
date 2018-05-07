@@ -35,6 +35,7 @@ namespace BusinessLayer
         public int EmpStatus { get; internal set; }
         public DateTime DateOfDeparture { get; internal set; }
         public Double BiWeeklyRate { get; internal set; }
+        public byte[] lastTouched { get; internal set; }
 
     }
     // DEPARTMENT LOOKUP LIST

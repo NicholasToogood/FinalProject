@@ -58,6 +58,7 @@ namespace BusinessLayer.Factories
                 {
                     tmpEmp.DateOfDeparture = Convert.ToDateTime(tempRow["dateOfDeparture"]);
                 }
+                tmpEmp.lastTouched = (byte[]) tempRow["lastTouched"];
                 
                 empList.Add(tmpEmp);
             }
@@ -82,6 +83,7 @@ namespace BusinessLayer.Factories
                 tmpEmp.LastName = tempRow["lastName"].ToString();
                 tmpEmp.EmailAddress = tempRow["email"].ToString();
                 tmpEmp.BiWeeklyRate = Convert.ToDouble(tempRow["biWeeklyRate"]);
+                tmpEmp.lastTouched = (byte[])tempRow["lastTouched"];
                 empList.Add(tmpEmp);
             }
             return empList;

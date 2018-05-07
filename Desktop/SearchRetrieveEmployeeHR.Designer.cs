@@ -153,6 +153,9 @@
             this.grpBoxSearchEmp = new System.Windows.Forms.GroupBox();
             this.grpBoxRecordSickDays = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lblSickDayEndDate = new System.Windows.Forms.Label();
+            this.dtpSickDayEndDate = new System.Windows.Forms.DateTimePicker();
+            this.chkRangeOfSickDates = new System.Windows.Forms.CheckBox();
             this.btnAddSickDay = new System.Windows.Forms.Button();
             this.btnClearSickDay = new System.Windows.Forms.Button();
             this.txtSickDayDescription = new System.Windows.Forms.TextBox();
@@ -162,13 +165,10 @@
             this.label30 = new System.Windows.Forms.Label();
             this.dtpSickDayDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtTotalSickDays = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
             this.dataGridviewSickDays = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
-            this.label53 = new System.Windows.Forms.Label();
-            this.txtTotalSickDays = new System.Windows.Forms.TextBox();
-            this.chkRangeOfSickDates = new System.Windows.Forms.CheckBox();
-            this.dtpSickDayEndDate = new System.Windows.Forms.DateTimePicker();
-            this.lblSickDayEndDate = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -1429,6 +1429,35 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Add New Sick Day";
             // 
+            // lblSickDayEndDate
+            // 
+            this.lblSickDayEndDate.AutoSize = true;
+            this.lblSickDayEndDate.Location = new System.Drawing.Point(6, 51);
+            this.lblSickDayEndDate.Name = "lblSickDayEndDate";
+            this.lblSickDayEndDate.Size = new System.Drawing.Size(101, 13);
+            this.lblSickDayEndDate.TabIndex = 10;
+            this.lblSickDayEndDate.Text = "Sick Day End Date:";
+            this.lblSickDayEndDate.Visible = false;
+            // 
+            // dtpSickDayEndDate
+            // 
+            this.dtpSickDayEndDate.Location = new System.Drawing.Point(116, 48);
+            this.dtpSickDayEndDate.Name = "dtpSickDayEndDate";
+            this.dtpSickDayEndDate.Size = new System.Drawing.Size(142, 20);
+            this.dtpSickDayEndDate.TabIndex = 9;
+            this.dtpSickDayEndDate.Visible = false;
+            // 
+            // chkRangeOfSickDates
+            // 
+            this.chkRangeOfSickDates.AutoSize = true;
+            this.chkRangeOfSickDates.Location = new System.Drawing.Point(318, 27);
+            this.chkRangeOfSickDates.Name = "chkRangeOfSickDates";
+            this.chkRangeOfSickDates.Size = new System.Drawing.Size(101, 17);
+            this.chkRangeOfSickDates.TabIndex = 8;
+            this.chkRangeOfSickDates.Text = "Range of Dates";
+            this.chkRangeOfSickDates.UseVisualStyleBackColor = true;
+            this.chkRangeOfSickDates.CheckedChanged += new System.EventHandler(this.chkRangeOfSickDates_CheckedChanged);
+            // 
             // btnAddSickDay
             // 
             this.btnAddSickDay.Location = new System.Drawing.Point(340, 146);
@@ -1512,6 +1541,23 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Past Sick Days";
             // 
+            // txtTotalSickDays
+            // 
+            this.txtTotalSickDays.Location = new System.Drawing.Point(103, 147);
+            this.txtTotalSickDays.Name = "txtTotalSickDays";
+            this.txtTotalSickDays.ReadOnly = true;
+            this.txtTotalSickDays.Size = new System.Drawing.Size(59, 20);
+            this.txtTotalSickDays.TabIndex = 9;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(14, 150);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(85, 13);
+            this.label53.TabIndex = 8;
+            this.label53.Text = "Total Sick Days:";
+            // 
             // dataGridviewSickDays
             // 
             this.dataGridviewSickDays.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1530,62 +1576,16 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btnReturnToSearch_Click);
             // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(14, 150);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(85, 13);
-            this.label53.TabIndex = 8;
-            this.label53.Text = "Total Sick Days:";
-            // 
-            // txtTotalSickDays
-            // 
-            this.txtTotalSickDays.Location = new System.Drawing.Point(103, 147);
-            this.txtTotalSickDays.Name = "txtTotalSickDays";
-            this.txtTotalSickDays.ReadOnly = true;
-            this.txtTotalSickDays.Size = new System.Drawing.Size(59, 20);
-            this.txtTotalSickDays.TabIndex = 9;
-            // 
-            // chkRangeOfSickDates
-            // 
-            this.chkRangeOfSickDates.AutoSize = true;
-            this.chkRangeOfSickDates.Location = new System.Drawing.Point(318, 27);
-            this.chkRangeOfSickDates.Name = "chkRangeOfSickDates";
-            this.chkRangeOfSickDates.Size = new System.Drawing.Size(101, 17);
-            this.chkRangeOfSickDates.TabIndex = 8;
-            this.chkRangeOfSickDates.Text = "Range of Dates";
-            this.chkRangeOfSickDates.UseVisualStyleBackColor = true;
-            this.chkRangeOfSickDates.CheckedChanged += new System.EventHandler(this.chkRangeOfSickDates_CheckedChanged);
-            // 
-            // dtpSickDayEndDate
-            // 
-            this.dtpSickDayEndDate.Location = new System.Drawing.Point(116, 48);
-            this.dtpSickDayEndDate.Name = "dtpSickDayEndDate";
-            this.dtpSickDayEndDate.Size = new System.Drawing.Size(142, 20);
-            this.dtpSickDayEndDate.TabIndex = 9;
-            this.dtpSickDayEndDate.Visible = false;
-            // 
-            // lblSickDayEndDate
-            // 
-            this.lblSickDayEndDate.AutoSize = true;
-            this.lblSickDayEndDate.Location = new System.Drawing.Point(6, 51);
-            this.lblSickDayEndDate.Name = "lblSickDayEndDate";
-            this.lblSickDayEndDate.Size = new System.Drawing.Size(101, 13);
-            this.lblSickDayEndDate.TabIndex = 10;
-            this.lblSickDayEndDate.Text = "Sick Day End Date:";
-            this.lblSickDayEndDate.Visible = false;
-            // 
             // SearchRetrieveEmployeeHR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(759, 558);
-            this.Controls.Add(this.grpBoxRecordSickDays);
-            this.Controls.Add(this.grpBoxSearchEmp);
-            this.Controls.Add(this.grpBoxApplySalaryChanges);
             this.Controls.Add(this.grpBoxModify);
+            this.Controls.Add(this.grpBoxRecordSickDays);
+            this.Controls.Add(this.grpBoxApplySalaryChanges);
+            this.Controls.Add(this.grpBoxSearchEmp);
             this.Name = "SearchRetrieveEmployeeHR";
             this.Text = "Employee Search";
             this.Load += new System.EventHandler(this.SearchRetrieveEmployeeHR_Load);

@@ -15,9 +15,10 @@
         <nav>
             <div id="navContent">
                 <div id="navLinks">
-                    <a runat="server" href="#">Home</a>
-                    <a runat="server" href="~/CreatePO.aspx">Create Purchase Order</a>
-                    <a runat="server" href="~/ModifyPO.aspx">Modify Purchase Order</a>
+                    <a runat="server" href="#">Home</a> |
+                    <a runat="server" href="~/CreatePO.aspx">Create Purchase Order</a> |
+                    <a runat="server" href="~/ModifyPO.aspx">Modify Purchase Order</a> |
+                    <a runat="server" href="~/ModifyPersonalInformation.aspx">Modify Personal Info</a>
                 </div>
             </div>
             <div id="errorArea">

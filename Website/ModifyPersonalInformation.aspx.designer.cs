@@ -13,22 +13,22 @@ namespace Website {
     public partial class ModifyPersonalInformation {
         
         /// <summary>
-        /// form1 control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// lblIntroduction control.
+        /// lblSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIntroduction;
+        protected global::System.Web.UI.WebControls.Label lblSuccess;
         
         /// <summary>
         /// lblWorkPhone control.
