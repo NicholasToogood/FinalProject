@@ -145,5 +145,13 @@ namespace Desktop
             return false;
         }
 
+        private void btnProcessPO_Click(object sender, EventArgs e)
+        {
+            if (processPO == null || processPO.IsDisposed)
+            {
+                processPO = new ProcessPO();
+                DisplayForm(processPO);
+            }
+        }
     }
 }
