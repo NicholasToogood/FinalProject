@@ -216,6 +216,7 @@ namespace Desktop
                 message.From = new MailAddress("purchaseorders@newroads.com");
                 message.Subject = "Pruchase Order Closed";
                 message.IsBodyHtml = true;
+                message.Body = "<h1>"+date+"</h1>";
                 message.Body = "<h3>Pruchase Order #" + po.OrderNumber + " has been processed!</h3>";
                 SmtpClient smtpClient = new SmtpClient("localhost");
                 smtpClient.Send(message);
