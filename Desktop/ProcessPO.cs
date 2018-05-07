@@ -46,6 +46,8 @@ namespace Desktop
                 lblDate.Text = po.OrderDate.ToShortDateString();
                 lblTotal.Text = "$" + po.Total.ToString();
                 lblOrderStatus.Text = po.OrderStatus.ToString();
+
+                grpTop.Visible = true;
             }
         }
 
