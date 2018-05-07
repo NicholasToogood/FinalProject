@@ -1,4 +1,5 @@
-﻿using SqlLayer;
+﻿using BusinessLayer.Classes;
+using SqlLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,5 +53,26 @@ namespace BusinessLayer
         {
             return HRSQL.CalculatePayroll();
         }
+
+        public static Boolean ValidatePayrollCode(string entryCode)
+        {
+            return HRSQL.ValidatePayrollCode(entryCode);
+        }
+
+        public static Boolean ModifyEmployee(Employee emp)
+        {
+            return HRSQL.ModifyEmployee(emp);
+        }
+
+        public static Boolean CreateNewSickDay(SickDays sickDays)
+        {
+            return HRSQL.CreateNewSickDay(sickDays);
+        }
+
+        public static Boolean UpdateEmployeeEmp(Employee emp)
+        {
+            return HRSQL.UpdateEmployeeEmp(emp);
+        }
+
     }
 }

@@ -72,6 +72,7 @@ namespace Types
         Double CPP { get; set; }
         Double EI { get; set; }
         Double CompanyPensionDeduction { get; set; }
+        Double Netpay { get; set; }
         int EmpID { get; set; }
         DateTime CreationDate { get; set; }
         Double YTDGrossPay { get; set; }
@@ -79,6 +80,7 @@ namespace Types
         Double YTDCPP { get; set; }
         Double YTDEI { get; set; }
         Double YTDCompanyPensionDeduction { get; set; }
+        Double YTDNetpay { get; set; }
 
     }
 
@@ -107,6 +109,16 @@ namespace Types
         List<IItem> Items { get; set; }
     }
 
+    public interface ISickDays
+    {
+        int SickDayID { get; set; }
+        DateTime SickDayDate { get; set; }
+        Double SickDayLength { get; set; }
+        String SickDayDescription { get; set; }
+        int empId { get; set; }
+    }
+
+
     public enum ItemStatus
     {
         Pending = 1,
@@ -120,6 +132,19 @@ namespace Types
         UnderReview,
         Closed
     }
+    public enum EmpStatus
+    {
+        Active = 1,
+        Retired = 2,
+        Terminated = 3
+    }
+
+    public enum SickDayLength
+    {
+        Full, 
+        Half
+    }
+
 
     public struct parameters
     {

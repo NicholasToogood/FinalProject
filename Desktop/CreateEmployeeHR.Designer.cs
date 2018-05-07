@@ -124,6 +124,8 @@
             this.txtWorkPhoneNumber.Name = "txtWorkPhoneNumber";
             this.txtWorkPhoneNumber.Size = new System.Drawing.Size(139, 20);
             this.txtWorkPhoneNumber.TabIndex = 8;
+            this.txtWorkPhoneNumber.Enter += new System.EventHandler(this.txtWorkPhoneNumber_Enter);
+            this.txtWorkPhoneNumber.Leave += new System.EventHandler(this.txtWorkPhoneNumber_Leave);
             // 
             // txtCellPhoneNumber
             // 
@@ -131,6 +133,8 @@
             this.txtCellPhoneNumber.Name = "txtCellPhoneNumber";
             this.txtCellPhoneNumber.Size = new System.Drawing.Size(139, 20);
             this.txtCellPhoneNumber.TabIndex = 7;
+            this.txtCellPhoneNumber.Enter += new System.EventHandler(this.txtCellPhoneNumber_Enter);
+            this.txtCellPhoneNumber.Leave += new System.EventHandler(this.txtCellPhoneNumber_Leave);
             // 
             // txtSupervisor
             // 
@@ -187,6 +191,8 @@
             this.txtSIN.Name = "txtSIN";
             this.txtSIN.Size = new System.Drawing.Size(139, 20);
             this.txtSIN.TabIndex = 0;
+            this.txtSIN.Enter += new System.EventHandler(this.txtSIN_Enter);
+            this.txtSIN.Leave += new System.EventHandler(this.txtSIN_Leave);
             // 
             // label18
             // 

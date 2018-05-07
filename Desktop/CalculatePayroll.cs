@@ -131,6 +131,28 @@ namespace Desktop
                     //COLUMN HEADERS
                         sb.Append("<th>Employee ID</th>");
                         sb.Append("<th>Bi-Weekly Rate</th>");
+                    sb.Append("</tr>");
+
+                    sb.Append("<tr>");
+
+                        sb.Append("<td>");
+                        sb.Append(payStub.EmpID);
+                        sb.Append("</td>");
+
+                        sb.Append("<td>");
+                        sb.Append(emp.BiWeeklyRate);
+                        sb.Append("</td>");
+
+                    sb.Append("</tr>");
+                    sb.Append("</table>");
+
+                    sb.Append("<br />");
+
+                    sb.Append("<table border = '1'>");
+
+                    sb.Append("<tr>");
+
+                        sb.Append("<th>NetPay</th>");
                         sb.Append("<th>Gross Pay</th>");
 
                         sb.Append("<th>");
@@ -148,17 +170,14 @@ namespace Desktop
                         sb.Append("<th>");
                         sb.Append("Company Pension Deductions");
                         sb.Append("</th>");
+
                     sb.Append("</tr>");
 
                     //BODY
                     sb.Append("<tr>");
 
                         sb.Append("<td>");
-                        sb.Append(payStub.EmpID);
-                        sb.Append("</td>");
-
-                        sb.Append("<td>");
-                        sb.Append(emp.BiWeeklyRate);
+                        sb.Append(payStub.Netpay);
                         sb.Append("</td>");
 
                         sb.Append("<td>");
@@ -189,6 +208,9 @@ namespace Desktop
                     // YTD
                     sb.Append("<table border = '1'>");
                     sb.Append("<tr>");
+                        sb.Append("<th>");
+                        sb.Append("YTD NetPay");
+                        sb.Append("</th>");
 
                         sb.Append("<th>");
                         sb.Append("YTD Gross Pay");
@@ -213,24 +235,29 @@ namespace Desktop
 
                     //BODY
                     sb.Append("<tr>");
+                        
                         sb.Append("<td>");
-                        sb.Append(payStub.YTDGrossPay.ToString());
+                        sb.Append(payStub.YTDNetpay);
                         sb.Append("</td>");
 
                         sb.Append("<td>");
-                        sb.Append(payStub.YTDDeductions.ToString());
+                        sb.Append(payStub.YTDGrossPay);
                         sb.Append("</td>");
 
                         sb.Append("<td>");
-                        sb.Append(payStub.YTDCPP.ToString());
+                        sb.Append(payStub.YTDDeductions);
                         sb.Append("</td>");
 
                         sb.Append("<td>");
-                        sb.Append(payStub.YTDEI.ToString());
+                        sb.Append(payStub.YTDCPP);
                         sb.Append("</td>");
 
                         sb.Append("<td>");
-                        sb.Append(payStub.YTDCompanyPensionDeduction.ToString());
+                        sb.Append(payStub.YTDEI);
+                        sb.Append("</td>");
+
+                        sb.Append("<td>");
+                        sb.Append(payStub.YTDCompanyPensionDeduction);
                         sb.Append("</td>");
 
                     sb.Append("</tr>");

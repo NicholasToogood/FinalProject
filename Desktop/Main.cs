@@ -20,6 +20,7 @@ namespace Desktop
         SearchRetrieveEmployeeHR searchEmp;
         CostOfLivingIncreaseHR costOfLiving;
         CalculatePayroll calculatePayroll;
+        CalculatePension calculatePension;
         ProcessPO processPO;
 
         public Main()
@@ -88,8 +89,15 @@ namespace Desktop
             } 
         }
 
-
-
+        private void btnCalculatePension_Click(object sender, EventArgs e)
+        {
+            if (calculatePension == null || calculatePension.IsDisposed)
+            {
+                calculatePension = new CalculatePension();
+                DisplayForm(calculatePension);
+            }
+        }
+        
 
         private Boolean initiatePayroll()
         {
@@ -113,29 +121,31 @@ namespace Desktop
                     {
                         if (!CUDMethods.HasCalculatePayrollBeenRun())
                         {
-                            DialogResult dialogResult = MessageBox.Show("Want to head to the CalculatePayroll section?", "Today is PayDay!", MessageBoxButtons.YesNo);
-                            if (dialogResult == DialogResult.Yes)
+                            ConfirmCalculaltePayroll confirmCalculaltePayroll = new ConfirmCalculaltePayroll();
+                            confirmCalculaltePayroll.ShowDialog();
+
+                            if (confirmCalculaltePayroll.DialogResult != System.Windows.Forms.DialogResult.OK)
                             {
+                                this.Close();
+                            }
+                            else
+                            {
+                                
                                 if (calculatePayroll == null || calculatePayroll.IsDisposed)
                                 {
                                     calculatePayroll = new CalculatePayroll();
                                     DisplayForm(calculatePayroll);
                                 }
                             }
-                            else if (dialogResult == DialogResult.No)
-                            {
-                                this.Close();
-                            }
                         }
                     }
                 }
             }
-
-
+            
             return false;
         }
 
-        private void btnProcess_Click(object sender, EventArgs e)
+        private void btnProcessPO_Click(object sender, EventArgs e)
         {
             if (processPO == null || processPO.IsDisposed)
             {

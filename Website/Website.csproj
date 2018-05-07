@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="createpotest.aspx" />
+    <Content Include="ModifyPersonalInformation.aspx" />
     <Content Include="ModifyPO.aspx" />
     <Content Include="modifypotest.aspx" />
     <Content Include="Web.config" />
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyPersonalInformation.aspx.cs">
+      <DependentUpon>ModifyPersonalInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModifyPersonalInformation.aspx.designer.cs">
+      <DependentUpon>ModifyPersonalInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModifyPO.aspx.cs">
       <DependentUpon>ModifyPO.aspx</DependentUpon>
