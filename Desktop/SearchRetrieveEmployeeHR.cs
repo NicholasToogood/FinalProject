@@ -78,9 +78,17 @@ namespace Desktop
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            searchByID = rdoSearchByID.Checked;
-            searchText = txtSearch.Text;
-            searchEmployee();
+            try
+            {
+
+                searchByID = rdoSearchByID.Checked;
+                searchText = txtSearch.Text;
+                searchEmployee();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void searchEmployee()
@@ -135,19 +143,27 @@ namespace Desktop
 
         private void listBoxResults_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                // Search
+                txtFirstName.Text = emp[listBoxResults.SelectedIndex].FirstName.ToString();
+                txtMiddleInitial.Text = emp[listBoxResults.SelectedIndex].MiddleInitial.ToString();
+                txtLastName.Text = emp[listBoxResults.SelectedIndex].LastName.ToString();
+                txtStreetAddress.Text = emp[listBoxResults.SelectedIndex].StreetAddress.ToString();
+                txtWorkPhoneNumber.Text = emp[listBoxResults.SelectedIndex].WorkPhoneNumber.ToString();
+                txtCellPhoneNumber.Text = emp[listBoxResults.SelectedIndex].CellPhoneNumber.ToString();
+                txtEmailAddress.Text = emp[listBoxResults.SelectedIndex].EmailAddress.ToString();
+                chkPayrollEmailNotification.Checked = emp[listBoxResults.SelectedIndex].EmailNotification;
 
-            // Search
-            txtFirstName.Text = emp[listBoxResults.SelectedIndex].FirstName.ToString();
-            txtMiddleInitial.Text = emp[listBoxResults.SelectedIndex].MiddleInitial.ToString();
-            txtLastName.Text = emp[listBoxResults.SelectedIndex].LastName.ToString();
-            txtStreetAddress.Text = emp[listBoxResults.SelectedIndex].StreetAddress.ToString();
-            txtWorkPhoneNumber.Text = emp[listBoxResults.SelectedIndex].WorkPhoneNumber.ToString();
-            txtCellPhoneNumber.Text = emp[listBoxResults.SelectedIndex].CellPhoneNumber.ToString();
-            txtEmailAddress.Text = emp[listBoxResults.SelectedIndex].EmailAddress.ToString();
-            chkPayrollEmailNotification.Checked = emp[listBoxResults.SelectedIndex].EmailNotification;
+                displaySCSigns();
+                displaySignsModify();
+            }
+            
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-            displaySCSigns();
-            displaySignsModify();
         }
         private void displaySCSigns()
         {
@@ -221,83 +237,123 @@ namespace Desktop
 
         private void cmbSCDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selectedDept;
-            String supervisorName = "";
-
-            if (int.TryParse(cmbSCDepartment.SelectedValue.ToString(), out selectedDept))
+            try
             {
-                for (int i = 0; i < dept.Count; i++)
+                int selectedDept;
+                String supervisorName = "";
+
+                if (int.TryParse(cmbSCDepartment.SelectedValue.ToString(), out selectedDept))
                 {
-                    if (dept[i].DepartmentID == selectedDept)
+                    for (int i = 0; i < dept.Count; i++)
                     {
-                        supervisorName = dept[i].Supervisor;
+                        if (dept[i].DepartmentID == selectedDept)
+                        {
+                            supervisorName = dept[i].Supervisor;
+                        }
                     }
                 }
-            }
-            else
-            {
-                if (dept.Count > 0)
+                else
                 {
-                    supervisorName = dept[0].Supervisor;
+                    if (dept.Count > 0)
+                    {
+                        supervisorName = dept[0].Supervisor;
+                    }
                 }
+
+                txtSCSupervisor.Text = supervisorName;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
-            txtSCSupervisor.Text = supervisorName;
+
         }
 
         private void btnSalaryChanges_Click(object sender, EventArgs e)
         {
-            if(listBoxResults.Items.Count > 0)
+            try
             {
-                grpBoxApplySalaryChanges.Visible = true;
-                grpBoxSearchEmp.Visible = false;
-                grpBoxModify.Visible = false;
-                grpBoxRecordSickDays.Visible = false;
+                if (listBoxResults.Items.Count > 0)
+                {
+                    grpBoxApplySalaryChanges.Visible = true;
+                    grpBoxSearchEmp.Visible = false;
+                    grpBoxModify.Visible = false;
+                    grpBoxRecordSickDays.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Must select an employee before entering this section.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Must select an employee before entering this section.");
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnReturnToSearch_Click(object sender, EventArgs e)
         {
-            grpBoxApplySalaryChanges.Visible = false;
-            grpBoxSearchEmp.Visible = true;
-            grpBoxModify.Visible = false;
-            grpBoxRecordSickDays.Visible = false;
-            cancelButton();
+            try
+            {
+                grpBoxApplySalaryChanges.Visible = false;
+                grpBoxSearchEmp.Visible = true;
+                grpBoxModify.Visible = false;
+                grpBoxRecordSickDays.Visible = false;
+                cancelButton();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnModifyEmp_Click(object sender, EventArgs e)
         {
-            if (listBoxResults.Items.Count > 0)
+            try
             {
-                grpBoxApplySalaryChanges.Visible = false;
-                grpBoxSearchEmp.Visible = false;
-                grpBoxModify.Visible = true;
-                grpBoxRecordSickDays.Visible = false;
+                if (listBoxResults.Items.Count > 0)
+                {
+                    grpBoxApplySalaryChanges.Visible = false;
+                    grpBoxSearchEmp.Visible = false;
+                    grpBoxModify.Visible = true;
+                    grpBoxRecordSickDays.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Must select an employee before entering this section.");
+                }
+
             }
-            else
+
+            catch (Exception ex)
             {
-                MessageBox.Show("Must select an employee before entering this section.");
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnSickDays_Click(object sender, EventArgs e)
         {
-            if (listBoxResults.Items.Count > 0)
+            try
             {
-                grpBoxApplySalaryChanges.Visible = false;
-                grpBoxSearchEmp.Visible = false;
-                grpBoxModify.Visible = false;
-                grpBoxRecordSickDays.Visible = true;
-                RetrieveSickDays(emp[listBoxResults.SelectedIndex].EmpID);
+                if (listBoxResults.Items.Count > 0)
+                {
+                    grpBoxApplySalaryChanges.Visible = false;
+                    grpBoxSearchEmp.Visible = false;
+                    grpBoxModify.Visible = false;
+                    grpBoxRecordSickDays.Visible = true;
+                    RetrieveSickDays(emp[listBoxResults.SelectedIndex].EmpID);
+                }
+                else
+                {
+                    MessageBox.Show("Must select an employee before entering this section.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Must select an employee before entering this section.");
+                MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void btnRequestIncrease_Click(object sender, EventArgs e)
@@ -327,39 +383,53 @@ namespace Desktop
 
         private void btnModifyEmployee_Click(object sender, EventArgs e)
         {
-            btnSave.Visible = true;
-            btnCancel.Visible = true;
-            btnModifyEmployee.Visible = false;
+            try
+            {
+                btnSave.Visible = true;
+                btnCancel.Visible = true;
+                btnModifyEmployee.Visible = false;
 
-            txtSINModify.ReadOnly = false;
-            dtpJobStartDateModify.Enabled = true;
-            dtpSeniorityDateModify.Enabled = true;
-            txtBiWeeklyRateModify.ReadOnly = false;
-            txtCellPhoneNumberModify.ReadOnly = false;
-            txtWorkPhoneNumberModify.ReadOnly = false;
-            txtEmailAddressModify.ReadOnly = false;
-            chkPayrollEmailModify.Enabled = true;
-            txtFirstNameModify.ReadOnly = false;
-            txtMiddleInitialModify.ReadOnly = false;
-            txtLastNameModify.ReadOnly = false;
-            dtpDateOfBirthModify.Enabled = true;
-            txtStreetAddressModify.ReadOnly = false;
-            txtCityModify.ReadOnly = false;
-            txtPostalCodeModify.ReadOnly = false;
-            
-            if(emp[listBoxResults.SelectedIndex].EmpStatus == 2)
-            {
-                dtpEmpEndModify.Enabled = false;
+                txtSINModify.ReadOnly = false;
+                dtpJobStartDateModify.Enabled = true;
+                dtpSeniorityDateModify.Enabled = true;
+                txtBiWeeklyRateModify.ReadOnly = false;
+                txtCellPhoneNumberModify.ReadOnly = false;
+                txtWorkPhoneNumberModify.ReadOnly = false;
+                txtEmailAddressModify.ReadOnly = false;
+                chkPayrollEmailModify.Enabled = true;
+                txtFirstNameModify.ReadOnly = false;
+                txtMiddleInitialModify.ReadOnly = false;
+                txtLastNameModify.ReadOnly = false;
+                dtpDateOfBirthModify.Enabled = true;
+                txtStreetAddressModify.ReadOnly = false;
+                txtCityModify.ReadOnly = false;
+                txtPostalCodeModify.ReadOnly = false;
+
+                if (emp[listBoxResults.SelectedIndex].EmpStatus == 2)
+                {
+                    dtpEmpEndModify.Enabled = false;
+                }
+                else
+                {
+                    dtpEmpEndModify.Enabled = true;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                dtpEmpEndModify.Enabled = true;
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            cancelButton();
+            try
+            {
+                cancelButton();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void cancelButton()
         {
@@ -489,10 +559,11 @@ namespace Desktop
                     modifiedEmp.JobID = Convert.ToInt32(cmbJobAssignmentModify.SelectedValue);
                     modifiedEmp.DepartmentID = Convert.ToInt32(cmbDepartmentModify.SelectedValue);
                     modifiedEmp.BiWeeklyRate = Convert.ToDouble(txtBiWeeklyRateModify.Text);
-                    
+                    modifiedEmp.lastTouched = emp[listBoxResults.SelectedIndex].lastTouched;
+
                     modifiedEmp.EmpStatus = Convert.ToInt32(cmbEmpStatusModify.SelectedValue);
                     modifiedEmp.DateOfDeparture = dtpEmpEndModify.Value;
-
+                    
                     if (CUDMethods.ModifyEmployee(modifiedEmp))
                     {
                         MessageBox.Show("Employee Succesfully Modified!");
@@ -509,7 +580,7 @@ namespace Desktop
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex);
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -525,77 +596,84 @@ namespace Desktop
 
         private void btnAddSickDay_Click(object sender, EventArgs e)
         {
-
-            if(txtSickDayDescription.Text == "")
+            try
             {
-                MessageBox.Show("Error Missing Sick Day Description.");
-            }
-            else if(dtpSickDayDate.Value.Date > DateTime.Now.Date || dtpSickDayEndDate.Value.Date > DateTime.Now.Date)
-            {
-                MessageBox.Show("Error sick date cannot be in the future.");
-            }
-            else if(dtpSickDayDate.Value.Date > dtpSickDayEndDate.Value.Date)
-            {
-                MessageBox.Show("Error sick start date must be before sick end date.");
-            }
-            else
-            {
-                List<SickDays> sickDays = new List<SickDays>();
-
-                if (chkRangeOfSickDates.Checked)
+                if (txtSickDayDescription.Text == "")
                 {
-                    //TimeSpan difference = (dtpSickDayEndDate.Value.Date - dtpSickDayDate.Value.Date);
-
-                    DateTime tmpDate = dtpSickDayDate.Value.Date;
-
-                    while (tmpDate.Date <= dtpSickDayEndDate.Value.Date)
-                    {
-
-                        SickDays tmpSickDay = SickDaysFactory.SickDaysCreate();
-                        tmpSickDay.empId = emp[listBoxResults.SelectedIndex].EmpID;
-                        tmpSickDay.SickDayDate = tmpDate;
-                        tmpSickDay.SickDayDescription = txtSickDayDescription.Text;
-                        if (cmbLenthOfDay.SelectedValue.ToString() == "Full")
-                        {
-                            tmpSickDay.SickDayLength = 1;
-                        }
-                        else
-                        {
-                            tmpSickDay.SickDayLength = 0.5;
-                        }
-
-                        sickDays.Add(tmpSickDay);
-
-                        tmpDate = tmpDate.AddDays(1);
-                    }
+                    MessageBox.Show("Error Missing Sick Day Description.");
+                }
+                else if (dtpSickDayDate.Value.Date > DateTime.Now.Date || dtpSickDayEndDate.Value.Date > DateTime.Now.Date)
+                {
+                    MessageBox.Show("Error sick date cannot be in the future.");
+                }
+                else if (dtpSickDayDate.Value.Date > dtpSickDayEndDate.Value.Date)
+                {
+                    MessageBox.Show("Error sick start date must be before sick end date.");
                 }
                 else
                 {
-                    SickDays tmpSickDaySingular = SickDaysFactory.SickDaysCreate();
-                    tmpSickDaySingular.empId = emp[listBoxResults.SelectedIndex].EmpID;
-                    tmpSickDaySingular.SickDayDate = dtpSickDayDate.Value;
-                    tmpSickDaySingular.SickDayDescription = txtSickDayDescription.Text;
-                    if (cmbLenthOfDay.SelectedValue.ToString() == "Full")
+                    List<SickDays> sickDays = new List<SickDays>();
+
+                    if (chkRangeOfSickDates.Checked)
                     {
-                        tmpSickDaySingular.SickDayLength = 1;
+                        //TimeSpan difference = (dtpSickDayEndDate.Value.Date - dtpSickDayDate.Value.Date);
+
+                        DateTime tmpDate = dtpSickDayDate.Value.Date;
+
+                        while (tmpDate.Date <= dtpSickDayEndDate.Value.Date)
+                        {
+
+                            SickDays tmpSickDay = SickDaysFactory.SickDaysCreate();
+                            tmpSickDay.empId = emp[listBoxResults.SelectedIndex].EmpID;
+                            tmpSickDay.SickDayDate = tmpDate;
+                            tmpSickDay.SickDayDescription = txtSickDayDescription.Text;
+                            if (cmbLenthOfDay.SelectedValue.ToString() == "Full")
+                            {
+                                tmpSickDay.SickDayLength = 1;
+                            }
+                            else
+                            {
+                                tmpSickDay.SickDayLength = 0.5;
+                            }
+
+                            sickDays.Add(tmpSickDay);
+
+                            tmpDate = tmpDate.AddDays(1);
+                        }
                     }
                     else
                     {
-                        tmpSickDaySingular.SickDayLength = 0.5;
+                        SickDays tmpSickDaySingular = SickDaysFactory.SickDaysCreate();
+                        tmpSickDaySingular.empId = emp[listBoxResults.SelectedIndex].EmpID;
+                        tmpSickDaySingular.SickDayDate = dtpSickDayDate.Value;
+                        tmpSickDaySingular.SickDayDescription = txtSickDayDescription.Text;
+                        if (cmbLenthOfDay.SelectedValue.ToString() == "Full")
+                        {
+                            tmpSickDaySingular.SickDayLength = 1;
+                        }
+                        else
+                        {
+                            tmpSickDaySingular.SickDayLength = 0.5;
+                        }
+
+                        sickDays.Add(tmpSickDaySingular);
                     }
 
-                    sickDays.Add(tmpSickDaySingular);
+                    foreach (SickDays tmpAddSickDay in sickDays)
+                    {
+                        CUDMethods.CreateNewSickDay(tmpAddSickDay);
+                    }
+
+                    MessageBox.Show("Sick Day Added.");
+                    RetrieveSickDays(emp[listBoxResults.SelectedIndex].EmpID);
+                    clearSickDayInfo();
                 }
-                
-                foreach(SickDays tmpAddSickDay in sickDays)
-                {
-                    CUDMethods.CreateNewSickDay(tmpAddSickDay);
-                }
-                
-                MessageBox.Show("Sick Day Added.");
-                RetrieveSickDays(emp[listBoxResults.SelectedIndex].EmpID);
-                clearSickDayInfo();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
         private void clearSickDayInfo()
         {

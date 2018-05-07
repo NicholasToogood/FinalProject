@@ -31,6 +31,7 @@ namespace BusinessLayer
         internal int _EmpStatus;
         internal DateTime _DateOfDeparture;
         internal Double _BiWeeklyRate;
+        internal byte[] _lastTouched;
 
         public int EmpID
         {
@@ -132,12 +133,20 @@ namespace BusinessLayer
             get { return _BiWeeklyRate; }
             set { _BiWeeklyRate = value; }
         }
+        public byte[] lastTouched
+        {
+            get { return _lastTouched; }
+            set { _lastTouched = value; }
+        }
+
 
         public string FullName
         {
             get { return FirstName + " " + LastName; }
         }
+
         
+
     }
 
 }

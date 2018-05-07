@@ -29,6 +29,7 @@ namespace Types
         int EmpStatus { get; set; } // REPLACE WITH ENUM or some variation
         DateTime DateOfDeparture { get; set; }
         Double BiWeeklyRate { get; set; }
+        byte[] lastTouched { get; set; }
 
     }
 
