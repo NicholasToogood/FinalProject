@@ -62,6 +62,18 @@
     <Compile Include="CalculatePayroll.Designer.cs">
       <DependentUpon>CalculatePayroll.cs</DependentUpon>
     </Compile>
+    <Compile Include="CalculatePension.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalculatePension.Designer.cs">
+      <DependentUpon>CalculatePension.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmCalculaltePayroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmCalculaltePayroll.Designer.cs">
+      <DependentUpon>ConfirmCalculaltePayroll.cs</DependentUpon>
+    </Compile>
     <Compile Include="CostOfLivingIncreaseHR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,12 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="CalculatePayroll.resx">
       <DependentUpon>CalculatePayroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalculatePension.resx">
+      <DependentUpon>CalculatePension.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmCalculaltePayroll.resx">
+      <DependentUpon>ConfirmCalculaltePayroll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CostOfLivingIncreaseHR.resx">
       <DependentUpon>CostOfLivingIncreaseHR.cs</DependentUpon>

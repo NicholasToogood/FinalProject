@@ -101,7 +101,7 @@ namespace SqlLayer
             parms.Add(new parameters("@dob", emp.DateOfBirth, SqlDbType.Date, ParameterDirection.Input));
             parms.Add(new parameters("@address", emp.StreetAddress, SqlDbType.VarChar, ParameterDirection.Input, 30));
             parms.Add(new parameters("@city", emp.City, SqlDbType.VarChar, ParameterDirection.Input, 30));
-            parms.Add(new parameters("@pCode", emp.DateOfBirth, SqlDbType.VarChar, ParameterDirection.Input, 7));
+            parms.Add(new parameters("@pCode", emp.PostalCode, SqlDbType.VarChar, ParameterDirection.Input, 7));
             parms.Add(new parameters("@sin", emp.SIN, SqlDbType.Int, ParameterDirection.Input));
             parms.Add(new parameters("@cellPNumber", emp.CellPhoneNumber, SqlDbType.VarChar, ParameterDirection.Input, 15));
             parms.Add(new parameters("@workPNumber", emp.WorkPhoneNumber, SqlDbType.VarChar, ParameterDirection.Input, 15));
@@ -226,5 +226,96 @@ namespace SqlLayer
             return tmpDataTable;
         }
 
+        public static Boolean ValidatePayrollCode(string entryCode)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@entryText", entryCode, SqlDbType.VarChar, ParameterDirection.Input, 8));
+
+            DataTable tmpDataTable = DAL.GetData("[ValidatePaystub]", parms);
+            
+            Boolean tmpBool = Convert.ToBoolean(tmpDataTable.Rows[0]["result"]);
+            return tmpBool;
+        }
+        
+        public static Boolean ModifyEmployee(IEmployee emp)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@empID", emp.EmpID, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@firstName", emp.FirstName, SqlDbType.VarChar, ParameterDirection.Input, 20));
+            parms.Add(new parameters("@middleInitial", emp.MiddleInitial, SqlDbType.Char, ParameterDirection.Input, 1));
+            parms.Add(new parameters("@lastName", emp.LastName, SqlDbType.VarChar, ParameterDirection.Input, 30));
+            parms.Add(new parameters("@dob", emp.DateOfBirth, SqlDbType.Date, ParameterDirection.Input));
+            parms.Add(new parameters("@address", emp.StreetAddress, SqlDbType.VarChar, ParameterDirection.Input, 30));
+            parms.Add(new parameters("@city", emp.City, SqlDbType.VarChar, ParameterDirection.Input, 30));
+            parms.Add(new parameters("@pCode", emp.PostalCode, SqlDbType.VarChar, ParameterDirection.Input, 7));
+            parms.Add(new parameters("@sin", emp.SIN, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@cellPNumber", emp.CellPhoneNumber, SqlDbType.VarChar, ParameterDirection.Input, 15));
+            parms.Add(new parameters("@workPNumber", emp.WorkPhoneNumber, SqlDbType.VarChar, ParameterDirection.Input, 15));
+            parms.Add(new parameters("@email", emp.EmailAddress, SqlDbType.VarChar, ParameterDirection.Input, 40));
+            parms.Add(new parameters("@hireDate", emp.HireDate, SqlDbType.Date, ParameterDirection.Input));
+            parms.Add(new parameters("@jobStartDate", emp.JobStartDate, SqlDbType.Date, ParameterDirection.Input));
+            parms.Add(new parameters("@payrollEmail", emp.EmailNotification, SqlDbType.Bit, ParameterDirection.Input));
+            parms.Add(new parameters("@jobID", emp.JobID, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@departmentID", emp.DepartmentID, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@empStatus", emp.EmpStatus, SqlDbType.SmallInt, ParameterDirection.Input));
+            parms.Add(new parameters("@dateOfDeparture", emp.DateOfDeparture, SqlDbType.Date, ParameterDirection.Input));
+            parms.Add(new parameters("@biWeeklyRate", emp.BiWeeklyRate, SqlDbType.Float, ParameterDirection.Input));
+
+            DAL.SendData("ModifyEmployee", parms);
+            
+            return true;
+        }
+
+        // RETRIEVE 
+        public static DataTable RetrieveSickDaysByempID(int ID)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@empID", ID, SqlDbType.Int, ParameterDirection.Input));
+            DataTable tmpDataTable = DAL.GetData("GetSickDaysByID", parms);
+
+            return tmpDataTable;
+        }
+        public static Boolean CreateNewSickDay(ISickDays sickDay)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@sickDayDate", sickDay.SickDayDate, SqlDbType.Date, ParameterDirection.Input));
+            parms.Add(new parameters("@sickDayLength", sickDay.SickDayLength, SqlDbType.Float, ParameterDirection.Input));
+            parms.Add(new parameters("@sickDayDescription", sickDay.SickDayDescription, SqlDbType.VarChar, ParameterDirection.Input, 255));
+            parms.Add(new parameters("@empId", sickDay.empId, SqlDbType.Int, ParameterDirection.Input));
+            
+            DAL.SendData("CreateSickDay", parms);
+
+            return true;
+        }
+
+        public static DataTable RetrieveNumberOfSickDays(int empID)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@empID", empID, SqlDbType.Int, ParameterDirection.Input));
+
+            return DAL.GetData("GetSumOfSickDays", parms);
+        }
+
+        // GET FULL PENSION AMOUNT
+        public static DataTable RetrieveEmployeePension(int empID)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@empID", empID, SqlDbType.Int, ParameterDirection.Input));
+
+            return DAL.GetData("CalculatePension", parms);
+        }
+
+        // EMPLOYEE UPDATE INFO
+        public static Boolean UpdateEmployeeEmp(IEmployee emp)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@empID", emp.EmpID, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@workPhoneNumber", emp.WorkPhoneNumber, SqlDbType.VarChar, ParameterDirection.Input, 15));
+            parms.Add(new parameters("@cellPhoneNumber", emp.CellPhoneNumber, SqlDbType.VarChar, ParameterDirection.Input, 15));
+            parms.Add(new parameters("@address", emp.StreetAddress, SqlDbType.VarChar, ParameterDirection.Input, 30));
+
+            DAL.SendData("EmployeeModifyEmployee", parms);
+            return true;
+        }
     }
 }

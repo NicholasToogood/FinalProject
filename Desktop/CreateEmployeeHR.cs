@@ -24,6 +24,13 @@ namespace Desktop
         private void CreateEmployeeHR_Load(object sender, EventArgs e)
         {
             loadList();
+
+            txtCellPhoneNumber.Text = "XXX-XXX-XXXX";
+            txtCellPhoneNumber.ForeColor = Color.Gray;
+            txtWorkPhoneNumber.Text = "XXX-XXX-XXXX";
+            txtWorkPhoneNumber.ForeColor = Color.Gray;
+            txtSIN.Text = "XXXXXXXXX";
+            txtSIN.ForeColor = Color.Gray;
         }
 
         private void loadList()
@@ -150,7 +157,6 @@ namespace Desktop
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtSIN.Text = "";
-            txtSupervisor.Text = "";
             cmbJobAssignment.SelectedIndex = 0;
             cmbDepartment.SelectedIndex = 0;
             txtBiWeeklyPayRate.Text = "";
@@ -168,6 +174,13 @@ namespace Desktop
             dtpSeniorityDate.Value = DateTime.Today;
             dtpJobStartDate.Value = DateTime.Today;
             dtpDateOfBirth.Value = DateTime.Today;
+
+            txtCellPhoneNumber.Text = "XXX-XXX-XXXX";
+            txtCellPhoneNumber.ForeColor = Color.Gray;
+            txtWorkPhoneNumber.Text = "XXX-XXX-XXXX";
+            txtWorkPhoneNumber.ForeColor = Color.Gray;
+            txtSIN.Text = "XXXXXXXXX";
+            txtSIN.ForeColor = Color.Gray;
         }
 
         private void cmbJobAssignment_SelectedIndexChanged(object sender, EventArgs e)
@@ -199,6 +212,60 @@ namespace Desktop
             }
             
             txtSupervisor.Text = supervisorName;
+        }
+
+        private void txtCellPhoneNumber_Enter(object sender, EventArgs e)
+        {
+            if(txtCellPhoneNumber.Text == "XXX-XXX-XXXX")
+            {
+                txtCellPhoneNumber.Text = "";
+                txtCellPhoneNumber.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtCellPhoneNumber_Leave(object sender, EventArgs e)
+        {
+            if (txtCellPhoneNumber.Text == "")
+            {
+                txtCellPhoneNumber.Text = "XXX-XXX-XXXX";
+                txtCellPhoneNumber.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtWorkPhoneNumber_Enter(object sender, EventArgs e)
+        {
+            if (txtWorkPhoneNumber.Text == "XXX-XXX-XXXX")
+            {
+                txtWorkPhoneNumber.Text = "";
+                txtWorkPhoneNumber.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtWorkPhoneNumber_Leave(object sender, EventArgs e)
+        {
+            if (txtWorkPhoneNumber.Text == "")
+            {
+                txtWorkPhoneNumber.Text = "XXX-XXX-XXXX";
+                txtWorkPhoneNumber.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtSIN_Enter(object sender, EventArgs e)
+        {
+            if (txtSIN.Text == "XXXXXXXXX")
+            {
+                txtSIN.Text = "";
+                txtSIN.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtSIN_Leave(object sender, EventArgs e)
+        {
+            if (txtSIN.Text == "")
+            {
+                txtSIN.Text = "XXXXXXXXX";
+                txtSIN.ForeColor = Color.Gray;
+            }
         }
     }
 }

@@ -17,6 +17,7 @@ namespace BusinessLayer
         internal Double _CPP;
         internal Double _EI;
         internal Double _CompanyPensionDeduction;
+        internal Double _Netpay;
         internal DateTime _CreationDate;
         internal int _EmpID;
 
@@ -25,6 +26,7 @@ namespace BusinessLayer
         internal Double _YTDCPP;
         internal Double _YTDEI;
         internal Double _YTDCompanyPensionDeduction;
+        internal Double _YTDNetpay;
 
 
         public int PayStubID
@@ -56,6 +58,11 @@ namespace BusinessLayer
         {
             get { return _CompanyPensionDeduction; }
             set { _CompanyPensionDeduction = value; }
+        }
+        public Double Netpay
+        {
+            get { return _Netpay; }
+            set { _Netpay = value; }
         }
         public DateTime CreationDate
         {
@@ -93,6 +100,11 @@ namespace BusinessLayer
         {
             get { return _YTDCompanyPensionDeduction; }
             set { _YTDCompanyPensionDeduction = value; }
+        }
+        public Double YTDNetpay
+        {
+            get { return _YTDNetpay; }
+            set { _YTDNetpay = value; }
         }
 
     }

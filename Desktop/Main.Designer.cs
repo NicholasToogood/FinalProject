@@ -35,6 +35,7 @@
             this.btnAddEmp = new System.Windows.Forms.Button();
             this.btnSearchEmp = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnCalculatePension = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MainTab
@@ -97,7 +98,7 @@
             // btnSearchEmp
             // 
             this.btnSearchEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchEmp.Location = new System.Drawing.Point(8, 268);
+            this.btnSearchEmp.Location = new System.Drawing.Point(8, 252);
             this.btnSearchEmp.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchEmp.Name = "btnSearchEmp";
             this.btnSearchEmp.Size = new System.Drawing.Size(186, 32);
@@ -109,7 +110,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(8, 321);
+            this.button1.Location = new System.Drawing.Point(8, 288);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(186, 32);
@@ -118,11 +119,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnCalculatePension
+            // 
+            this.btnCalculatePension.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalculatePension.Location = new System.Drawing.Point(8, 363);
+            this.btnCalculatePension.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCalculatePension.Name = "btnCalculatePension";
+            this.btnCalculatePension.Size = new System.Drawing.Size(186, 32);
+            this.btnCalculatePension.TabIndex = 13;
+            this.btnCalculatePension.Text = "Calculate Pension";
+            this.btnCalculatePension.UseVisualStyleBackColor = true;
+            this.btnCalculatePension.Click += new System.EventHandler(this.btnCalculatePension_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 508);
+            this.Controls.Add(this.btnCalculatePension);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSearchEmp);
             this.Controls.Add(this.btnAddEmp);
@@ -147,5 +161,6 @@
         private System.Windows.Forms.Button btnAddEmp;
         private System.Windows.Forms.Button btnSearchEmp;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCalculatePension;
     }
 }

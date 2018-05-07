@@ -53,6 +53,11 @@ namespace BusinessLayer.Factories
                 tmpEmp.StreetAddress = tempRow["address"].ToString();
                 tmpEmp.City = tempRow["city"].ToString();
                 tmpEmp.PostalCode = tempRow["pCode"].ToString();
+                tmpEmp.EmpStatus = Convert.ToInt32(tempRow["empStatus"]);
+                if(!String.IsNullOrEmpty(tempRow["dateOfDeparture"].ToString()))
+                {
+                    tmpEmp.DateOfDeparture = Convert.ToDateTime(tempRow["dateOfDeparture"]);
+                }
                 
                 empList.Add(tmpEmp);
             }
@@ -83,5 +88,20 @@ namespace BusinessLayer.Factories
         }
         //
 
+        //EMPLOYEE PENSION
+
+        public static Double RetrieveEmployeePossiblePension(int empID)
+        {
+            DataTable tmpTable = SqlLayer.HRSQL.RetrieveEmployeePension(empID);
+            Double employeeList = RetrieveEmployeePossiblePensionRepackage(tmpTable);
+            return employeeList;
+        }
+        private static Double RetrieveEmployeePossiblePensionRepackage(DataTable myTable)
+        {
+            Double pension = Convert.ToDouble(myTable.Rows[0]["returnValue"]);
+
+            return pension;
+        }
+        //
     }
 }
