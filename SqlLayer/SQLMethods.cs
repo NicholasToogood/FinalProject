@@ -156,7 +156,7 @@ namespace SqlLayer
             parms.Add(new parameters("@payrollEmail", emp.EmailNotification, SqlDbType.Bit, ParameterDirection.Input));
             parms.Add(new parameters("@biWeeklyRate", emp.BiWeeklyRate, SqlDbType.Float, ParameterDirection.Input));
             parms.Add(new parameters("@jobID", emp.JobID, SqlDbType.Int, ParameterDirection.Input));
-            parms.Add(new parameters("@departmentID", emp.JobID, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@departmentID", emp.DepartmentID, SqlDbType.Int, ParameterDirection.Input));
 
             parms.Add(new parameters("@empID", emp.EmpID, SqlDbType.Int, ParameterDirection.Output));
 

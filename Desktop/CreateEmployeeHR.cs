@@ -149,7 +149,7 @@ namespace Desktop
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error: " + ex);
+                MessageBox.Show("Error: " + ex.Message);
             }
             
         }
