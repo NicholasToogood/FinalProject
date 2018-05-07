@@ -18,6 +18,7 @@ namespace Desktop
         List<PurchaseOrder> pos;
         PurchaseOrder po;
         bool askToClose = true;
+        byte orderStatus = 1;
 
         public ProcessPO()
         {
@@ -26,9 +27,9 @@ namespace Desktop
 
         private void ProcessPO_Load(object sender, EventArgs e)
         {
-            pos = ListsPOFactory.Create();
+            pos = ListsPOFactory.CreatePending();
 
-            lstOrders.DataSource = ListsPOFactory.Create();
+            lstOrders.DataSource = ListsPOFactory.CreatePending();
             lstOrders.DisplayMember = "orderNumber";
             lstOrders.ValueMember = "orderNumber";
             lstOrders.SelectedIndex = -1;
@@ -137,6 +138,64 @@ namespace Desktop
                 {
 
                 }
+            }
+        }
+
+        private void rdoPending_CheckedChanged(object sender, EventArgs e)
+        {
+            pos = ListsPOFactory.CreatePending();
+
+            lstOrders.DataSource = ListsPOFactory.CreatePending();
+            lstOrders.DisplayMember = "orderNumber";
+            lstOrders.ValueMember = "orderNumber";
+            lstOrders.SelectedIndex = -1;
+
+            orderStatus = 1;
+        }
+
+        private void rdoClosed_CheckedChanged(object sender, EventArgs e)
+        {
+            pos = ListsPOFactory.CreateClosed();
+
+            lstOrders.DataSource = ListsPOFactory.CreateClosed();
+            lstOrders.DisplayMember = "orderNumber";
+            lstOrders.ValueMember = "orderNumber";
+            lstOrders.SelectedIndex = -1;
+
+            orderStatus = 3;
+        }
+
+        private void rdoAll_CheckedChanged(object sender, EventArgs e)
+        {
+            pos = ListsPOFactory.Create();
+
+            lstOrders.DataSource = ListsPOFactory.Create();
+            lstOrders.DisplayMember = "orderNumber";
+            lstOrders.ValueMember = "orderNumber";
+            lstOrders.SelectedIndex = -1;
+        }
+
+        private void btnSearchDate_Click(object sender, EventArgs e)
+        {
+            dgvItems.DataSource = null;
+
+            if (rdoAll.Checked)
+            {
+                pos = ListsPOFactory.Create(dtpStart.Value, dtpEnd.Value);
+
+                lstOrders.DataSource = ListsPOFactory.Create(dtpStart.Value, dtpEnd.Value);
+                lstOrders.DisplayMember = "orderNumber";
+                lstOrders.ValueMember = "orderNumber";
+                lstOrders.SelectedIndex = -1;
+            }
+            else
+            {
+                pos = ListsPOFactory.CreateDate(orderStatus, dtpStart.Value, dtpEnd.Value);
+
+                lstOrders.DataSource = ListsPOFactory.CreateDate(orderStatus, dtpStart.Value, dtpEnd.Value);
+                lstOrders.DisplayMember = "orderNumber";
+                lstOrders.ValueMember = "orderNumber";
+                lstOrders.SelectedIndex = -1;
             }
         }
     }

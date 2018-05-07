@@ -82,6 +82,7 @@
     <Content Include="ModifyPersonalInformation.aspx" />
     <Content Include="ModifyPO.aspx" />
     <Content Include="modifypotest.aspx" />
+    <Content Include="ProcessPO.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="modifypotest.aspx.designer.cs">
       <DependentUpon>modifypotest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessPO.aspx.cs">
+      <DependentUpon>ProcessPO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProcessPO.aspx.designer.cs">
+      <DependentUpon>ProcessPO.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

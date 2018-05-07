@@ -19,6 +19,27 @@ namespace BusinessLayer.Factories
             return lstPurchaseOrderLookup;
         }
 
+        public static List<PurchaseOrder> CreatePending()
+        {
+            DataTable dt = POSQL.RetrieveAllPendingPOs();
+            List<PurchaseOrder> lstPurchaseOrderLookup = Repackage(dt);
+            return lstPurchaseOrderLookup;
+        }
+
+        public static List<PurchaseOrder> CreateClosed()
+        {
+            DataTable dt = POSQL.RetrieveAllClosedPOs();
+            List<PurchaseOrder> lstPurchaseOrderLookup = Repackage(dt);
+            return lstPurchaseOrderLookup;
+        }
+
+        public static List<PurchaseOrder> CreateDate(byte orderStatus, DateTime startDate, DateTime endDate)
+        {
+            DataTable dt = POSQL.RetrieveAllPOsByDate(orderStatus, startDate, endDate);
+            List<PurchaseOrder> lstPurchaseOrderLookup = Repackage(dt);
+            return lstPurchaseOrderLookup;
+        }
+
         public static List<PurchaseOrder> Create(int orderNumber)
         {
             DataTable dt = POSQL.RetrievePOById(orderNumber);
