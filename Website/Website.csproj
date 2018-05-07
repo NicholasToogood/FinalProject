@@ -78,10 +78,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="createpotest.aspx" />
     <Content Include="ModifyPersonalInformation.aspx" />
     <Content Include="ModifyPO.aspx" />
-    <Content Include="modifypotest.aspx" />
     <Content Include="ProcessPO.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -92,13 +90,6 @@
     </Compile>
     <Compile Include="CreatePO.aspx.designer.cs">
       <DependentUpon>CreatePO.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="createpotest.aspx.cs">
-      <DependentUpon>createpotest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="createpotest.aspx.designer.cs">
-      <DependentUpon>createpotest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>
@@ -120,13 +111,6 @@
     </Compile>
     <Compile Include="ModifyPO.aspx.designer.cs">
       <DependentUpon>ModifyPO.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="modifypotest.aspx.cs">
-      <DependentUpon>modifypotest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="modifypotest.aspx.designer.cs">
-      <DependentUpon>modifypotest.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProcessPO.aspx.cs">
       <DependentUpon>ProcessPO.aspx</DependentUpon>
