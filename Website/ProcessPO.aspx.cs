@@ -3,6 +3,7 @@ using BusinessLayer.Factories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -159,9 +160,9 @@ namespace Website
         }
 
         protected void btnClose_Click(object sender, EventArgs e)
-        {
-            CUDMethods.ProcessOrder(po.OrderNumber, Convert.ToByte(3));
+        { 
             po = POFactory.Create(Convert.ToInt32(lstOrders.SelectedValue));
+            CUDMethods.ProcessOrder(po.OrderNumber, Convert.ToByte(3));
             LoadItems();
             lblOrderNumber.Text = po.OrderNumber.ToString();
             lblDate.Text = po.OrderDate.ToShortDateString();
@@ -173,7 +174,33 @@ namespace Website
 
         private void sendEmail()
         {
+            try
+            {
+                var date = DateTime.Now.ToShortDateString();
+                List<Employee> emp = EmployeeFactory.RetrieveEmployeesByID(po.EmpId);
 
+                MailMessage message = new MailMessage();
+                message.To.Add(emp[0].EmailAddress);
+                message.From = new MailAddress("purchaseorders@newroads.com");
+                message.Subject = "Pruchase Order Closed";
+                message.IsBodyHtml = true;
+                message.Body += "<h2>" + date + "</h2>";
+                message.Body += "<h3>Pruchase Order #" + po.OrderNumber + " has been processed!</h3><br />";
+
+                foreach (Item item in po.Items)
+                {
+                    message.Body += "<p>" + item.ItemName + " - " + item.ItemStatus + "</p>";
+                }
+
+                message.Body += "<p>Total Order Cost - $" + po.Total + "</p>";
+
+                SmtpClient smtpClient = new SmtpClient("localhost");
+                smtpClient.Send(message);
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }
