@@ -8,7 +8,7 @@
         <form runat="server">
             <div class="row">
                 <div class="col-sm-2 col-xs-6">
-                    <asp:ListBox ID="lstOrders" runat="server"></asp:ListBox>
+                    <asp:ListBox ID="lstOrders" AutoPostBack="true" runat="server" OnSelectedIndexChanged="lstOrders_SelectedIndexChanged"></asp:ListBox>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <asp:RadioButton ID="rdoPending" AutoPostBack="true" runat="server" GroupName="rdoSrh" Text="Pending" Checked="true" OnCheckedChanged="rdoPending_CheckedChanged" /><br />
@@ -22,6 +22,41 @@
                         <br />
                         <br />
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <asp:Label ID="lblOrderNumberLabel" CssClass="control-label" runat="server" Text="Order Number:"></asp:Label>
+                    <asp:Label ID="lblOrderNumber" CssClass="control-label" runat="server" Text="00000000"></asp:Label>
+                    <br />
+                    <asp:Label ID="lblEmpNameLabel" CssClass="control-label" runat="server" Text="Employee Name:"></asp:Label>
+                    <asp:Label ID="lblEmpNameOrder" CssClass="control-label" runat="server" Text="Mike Donovan"></asp:Label>
+                </div>
+                <div class="col-sm-5">
+                    <asp:Label ID="lblDateLabel" CssClass="control-label" runat="server" Text="Date:"></asp:Label>
+                    <asp:Label ID="lblDate" CssClass="control-label" runat="server" Text="DATE"></asp:Label>
+                    <br />
+                    <asp:Label ID="lblTotalLabel" CssClass="control-label" runat="server" Text="Total:"></asp:Label>
+                    <asp:Label ID="lblTotal" CssClass="control-label" runat="server" Text="$190.93"></asp:Label>
+                    <br />
+                    <asp:Label ID="lblOrderStatusLabel" CssClass="control-label" runat="server" Text="Order Status:"></asp:Label>
+                    <asp:Label ID="lblOrderStatus" CssClass="control-label" runat="server" Text="Pending"></asp:Label>
+                </div>
+                <div class="col-sm-2">
+                    <asp:Button ID="btnSearchName" runat="server" Text="Search By Name" />
+                    <asp:Button ID="btnSearchDate" runat="server" Text="Search By Date" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <asp:GridView ID="grvItems" runat="server" AutoGenerateSelectButton="True" OnSelectedIndexChanged="grvItems_SelectedIndexChanged"></asp:GridView>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <asp:Button ID="btnApprove" runat="server" Text="Approve" Visible="false" OnClick="btnApprove_Click" />
+                    <asp:Button ID="btnDeny" runat="server" Text="Deny" Visible="false" OnClick="btnDeny_Click" />
+                    <asp:Button ID="btnClose" runat="server" Text="Close Purchase Order" Visible="false" OnClick="btnClose_Click" />
                 </div>
             </div>
         </form>

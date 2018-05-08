@@ -14,8 +14,8 @@ namespace Website
         PurchaseOrder po;
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtStartDate.Text = DateTime.Today.ToShortDateString();
-            txtEndDate.Text = DateTime.Today.ToShortDateString();
+            //txtStartDate.Text = DateTime.Today.ToShortDateString();
+            //txtEndDate.Text = DateTime.Today.ToShortDateString();
             lblDate.InnerText = DateTime.Now.ToLongDateString();
         }
 

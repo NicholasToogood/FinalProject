@@ -44,9 +44,9 @@
             this.dgvItems = new System.Windows.Forms.DataGridView();
             this.grpTop = new System.Windows.Forms.GroupBox();
             this.grpSrcType = new System.Windows.Forms.GroupBox();
-            this.rdoPending = new System.Windows.Forms.RadioButton();
-            this.rdoClosed = new System.Windows.Forms.RadioButton();
             this.rdoAll = new System.Windows.Forms.RadioButton();
+            this.rdoClosed = new System.Windows.Forms.RadioButton();
+            this.rdoPending = new System.Windows.Forms.RadioButton();
             this.btnSearchDate = new System.Windows.Forms.Button();
             this.btnSearchName = new System.Windows.Forms.Button();
             this.lblEndDate = new System.Windows.Forms.Label();
@@ -239,18 +239,16 @@
             this.grpSrcType.TabIndex = 64;
             this.grpSrcType.TabStop = false;
             // 
-            // rdoPending
+            // rdoAll
             // 
-            this.rdoPending.AutoSize = true;
-            this.rdoPending.Checked = true;
-            this.rdoPending.Location = new System.Drawing.Point(30, 21);
-            this.rdoPending.Name = "rdoPending";
-            this.rdoPending.Size = new System.Drawing.Size(81, 21);
-            this.rdoPending.TabIndex = 0;
-            this.rdoPending.TabStop = true;
-            this.rdoPending.Text = "Pending";
-            this.rdoPending.UseVisualStyleBackColor = true;
-            this.rdoPending.CheckedChanged += new System.EventHandler(this.rdoPending_CheckedChanged);
+            this.rdoAll.AutoSize = true;
+            this.rdoAll.Location = new System.Drawing.Point(30, 77);
+            this.rdoAll.Name = "rdoAll";
+            this.rdoAll.Size = new System.Drawing.Size(92, 21);
+            this.rdoAll.TabIndex = 2;
+            this.rdoAll.Text = "All Orders";
+            this.rdoAll.UseVisualStyleBackColor = true;
+            this.rdoAll.CheckedChanged += new System.EventHandler(this.rdoAll_CheckedChanged);
             // 
             // rdoClosed
             // 
@@ -263,16 +261,18 @@
             this.rdoClosed.UseVisualStyleBackColor = true;
             this.rdoClosed.CheckedChanged += new System.EventHandler(this.rdoClosed_CheckedChanged);
             // 
-            // rdoAll
+            // rdoPending
             // 
-            this.rdoAll.AutoSize = true;
-            this.rdoAll.Location = new System.Drawing.Point(30, 77);
-            this.rdoAll.Name = "rdoAll";
-            this.rdoAll.Size = new System.Drawing.Size(92, 21);
-            this.rdoAll.TabIndex = 2;
-            this.rdoAll.Text = "All Orders";
-            this.rdoAll.UseVisualStyleBackColor = true;
-            this.rdoAll.CheckedChanged += new System.EventHandler(this.rdoAll_CheckedChanged);
+            this.rdoPending.AutoSize = true;
+            this.rdoPending.Checked = true;
+            this.rdoPending.Location = new System.Drawing.Point(30, 21);
+            this.rdoPending.Name = "rdoPending";
+            this.rdoPending.Size = new System.Drawing.Size(81, 21);
+            this.rdoPending.TabIndex = 0;
+            this.rdoPending.TabStop = true;
+            this.rdoPending.Text = "Pending";
+            this.rdoPending.UseVisualStyleBackColor = true;
+            this.rdoPending.CheckedChanged += new System.EventHandler(this.rdoPending_CheckedChanged);
             // 
             // btnSearchDate
             // 
@@ -371,7 +371,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1185, 591);
+            this.ClientSize = new System.Drawing.Size(936, 591);
             this.Controls.Add(this.btnSearchDate);
             this.Controls.Add(this.btnSearchName);
             this.Controls.Add(this.lblEndDate);

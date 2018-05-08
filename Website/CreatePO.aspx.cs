@@ -52,6 +52,9 @@ namespace Website
                 lblOrderNum.Visible = true;
                 lblOrder.Visible = true;
 
+                btnCreate.Text = "Add";
+                lstItems.Items.Add(item.ItemName);
+
                 clear();
             }
             catch (Exception ex)

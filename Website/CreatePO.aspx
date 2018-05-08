@@ -67,6 +67,7 @@
                         <asp:Label ID="lblTotalNum" runat="server" Text="$ 0.00"></asp:Label>
                         <br />
                         <br />
+                        <asp:ListBox ID="lstItems" runat="server"></asp:ListBox>
                     </div>
                 </div>
             </form>
