@@ -363,6 +363,8 @@ namespace SqlLayer
             parms.Add(new parameters("@workPhoneNumber", emp.WorkPhoneNumber, SqlDbType.VarChar, ParameterDirection.Input, 15));
             parms.Add(new parameters("@cellPhoneNumber", emp.CellPhoneNumber, SqlDbType.VarChar, ParameterDirection.Input, 15));
             parms.Add(new parameters("@address", emp.StreetAddress, SqlDbType.VarChar, ParameterDirection.Input, 30));
+            parms.Add(new parameters("@city", emp.City, SqlDbType.VarChar, ParameterDirection.Input, 30));
+            parms.Add(new parameters("@postalCode", emp.PostalCode, SqlDbType.VarChar, ParameterDirection.Input, 7));
             parms.Add(new parameters("@timeStamp", emp.lastTouched, SqlDbType.Timestamp, ParameterDirection.Input));
 
             DAL.SendData("EmployeeModifyEmployee", parms);

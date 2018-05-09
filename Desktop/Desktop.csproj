@@ -98,6 +98,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyEmployeeHR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyEmployeeHR.Designer.cs">
+      <DependentUpon>ModifyEmployeeHR.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModifyPO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,11 +118,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchRetrieveEmployeeHR.cs">
+    <Compile Include="SalaryChangesHR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchRetrieveEmployeeHR.Designer.cs">
-      <DependentUpon>SearchRetrieveEmployeeHR.cs</DependentUpon>
+    <Compile Include="SalaryChangesHR.Designer.cs">
+      <DependentUpon>SalaryChangesHR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSickDayHR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSickDayHR.Designer.cs">
+      <DependentUpon>AddSickDayHR.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="CalculatePayroll.resx">
@@ -140,6 +152,9 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModifyEmployeeHR.resx">
+      <DependentUpon>ModifyEmployeeHR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModifyPO.resx">
       <DependentUpon>ModifyPO.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,8 +170,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SearchRetrieveEmployeeHR.resx">
-      <DependentUpon>SearchRetrieveEmployeeHR.cs</DependentUpon>
+    <EmbeddedResource Include="SalaryChangesHR.resx">
+      <DependentUpon>SalaryChangesHR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSickDayHR.resx">
+      <DependentUpon>AddSickDayHR.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

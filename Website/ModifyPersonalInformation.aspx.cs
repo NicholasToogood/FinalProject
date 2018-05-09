@@ -27,6 +27,8 @@ namespace Website
                     txtCellPhone.Text = emp[0].CellPhoneNumber;
                     txtWorkPhone.Text = emp[0].WorkPhoneNumber;
                     txtHomeAddress.Text = emp[0].StreetAddress;
+                    txtCity.Text = emp[0].City;
+                    txtPostalCode.Text = emp[0].PostalCode;
                 }
             }
             catch (Exception ex)
@@ -44,17 +46,27 @@ namespace Website
             String errorMsg = "\n";
             if (!BusinessLayer.Validate.ValidatePhoneNumber(txtWorkPhone.Text))
             {
-                errorMsg += "Invalid Work Number.\n";
+                errorMsg += "Invalid Work Number. <br/>";
                 IsValid = false;
             }
             if (!BusinessLayer.Validate.ValidatePhoneNumber(txtCellPhone.Text))
             {
-                errorMsg += "Invalid Cell Number.\n";
+                errorMsg += "Invalid Cell Number. <br/>";
                 IsValid = false;
             }
             if(txtHomeAddress.Text == String.Empty)
             {
-                errorMsg += "Invalid Address.\n";
+                errorMsg += "Invalid Address.<br/>";
+                IsValid = false;
+            }
+            if (txtCity.Text == String.Empty)
+            {
+                errorMsg += "Invalid City. <br/>";
+                IsValid = false;
+            }
+            if (!BusinessLayer.Validate.IsValidPostalCode(txtPostalCode.Text))
+            {
+                errorMsg += "Invalid Postal Code. <br/>";
                 IsValid = false;
             }
 
@@ -68,6 +80,9 @@ namespace Website
                 tmpEmp.WorkPhoneNumber = txtWorkPhone.Text;
                 tmpEmp.CellPhoneNumber = txtCellPhone.Text;
                 tmpEmp.StreetAddress = txtHomeAddress.Text;
+                tmpEmp.City = txtCity.Text;
+                tmpEmp.PostalCode = txtPostalCode.Text;
+
                 tmpEmp.lastTouched = lastChecked;
 
                 try
@@ -86,7 +101,7 @@ namespace Website
             }
             else
             {
-                lblError.Text = "Some fields were not valid: \n" + errorMsg;
+                lblError.Text = "Some fields were not valid: <br/>" + errorMsg;
             }
         }
     }
