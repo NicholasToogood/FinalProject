@@ -34,8 +34,16 @@
                             <asp:TextBox ID="txtCellPhone" runat="server"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <asp:Label ID="lblHomeAddress" runat="server" Text="Home Address: "></asp:Label><br />
+                            <asp:Label ID="lblHomeAddress" runat="server" Text="Street Address: "></asp:Label><br />
                             <asp:TextBox ID="txtHomeAddress" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblCity" runat="server" Text="City: "></asp:Label><br />
+                            <asp:TextBox ID="txtCity" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Label ID="lblPostalCode" runat="server" Text="Postal Code: "></asp:Label><br />
+                            <asp:TextBox ID="txtPostalCode" runat="server"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <asp:Button ID="btnUpdatePersonalInfo" runat="server" Text="Save" OnClick="btnUpdatePersonalInfo_Click" />

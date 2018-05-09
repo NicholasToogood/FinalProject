@@ -17,11 +17,13 @@ namespace Desktop
         CreatePO createPO;
         ModifyPO modifyPO;
         CreateEmployeeHR createEmployee;
-        SearchRetrieveEmployeeHR searchEmp;
+        AddSickDayHR searchEmp;
         CostOfLivingIncreaseHR costOfLiving;
         CalculatePayroll calculatePayroll;
         CalculatePension calculatePension;
         ProcessPO processPO;
+        ModifyEmployeeHR modifyEmployeeHR;
+        SalaryChangesHR salaryChangesHR;
 
         public Main()
         {
@@ -62,11 +64,11 @@ namespace Desktop
             }   
         }
 
-        private void btnSearchEmp_Click(object sender, EventArgs e)
+        private void btnSickDays_Click(object sender, EventArgs e)
         {
             if (searchEmp == null || searchEmp.IsDisposed)
             {
-                searchEmp = new SearchRetrieveEmployeeHR();
+                searchEmp = new AddSickDayHR();
                 DisplayForm(searchEmp);
             }           
         }
@@ -97,7 +99,23 @@ namespace Desktop
                 DisplayForm(calculatePension);
             }
         }
-        
+        private void btnModifyEmployee_Click(object sender, EventArgs e)
+        {
+            if (modifyEmployeeHR == null || modifyEmployeeHR.IsDisposed)
+            {
+                modifyEmployeeHR = new ModifyEmployeeHR();
+                DisplayForm(modifyEmployeeHR);
+            }
+        }
+        private void btnSalaryChanges_Click(object sender, EventArgs e)
+        {
+            if (salaryChangesHR == null || salaryChangesHR.IsDisposed)
+            {
+                salaryChangesHR = new SalaryChangesHR();
+                DisplayForm(salaryChangesHR);
+            }
+        }
+
 
         private Boolean initiatePayroll()
         {
@@ -153,5 +171,6 @@ namespace Desktop
                 DisplayForm(processPO);
             }
         }
+
     }
 }
