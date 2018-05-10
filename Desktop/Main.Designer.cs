@@ -34,7 +34,7 @@
             this.btnModPO = new System.Windows.Forms.Button();
             this.btnAddEmp = new System.Windows.Forms.Button();
             this.btnSickDays = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCostOfLiving = new System.Windows.Forms.Button();
             this.btnProcessPO = new System.Windows.Forms.Button();
             this.btnCalculatePension = new System.Windows.Forms.Button();
             this.btnModifyEmployee = new System.Windows.Forms.Button();
@@ -72,6 +72,7 @@
             this.btnCreatePO.TabIndex = 8;
             this.btnCreatePO.Text = "Create PO";
             this.btnCreatePO.UseVisualStyleBackColor = true;
+            this.btnCreatePO.Visible = false;
             this.btnCreatePO.Click += new System.EventHandler(this.btnCreatePO_Click);
             // 
             // btnModPO
@@ -84,6 +85,7 @@
             this.btnModPO.TabIndex = 9;
             this.btnModPO.Text = "Modify PO";
             this.btnModPO.UseVisualStyleBackColor = true;
+            this.btnModPO.Visible = false;
             this.btnModPO.Click += new System.EventHandler(this.btnModPO_Click);
             // 
             // btnAddEmp
@@ -96,6 +98,7 @@
             this.btnAddEmp.TabIndex = 10;
             this.btnAddEmp.Text = "Add Employee";
             this.btnAddEmp.UseVisualStyleBackColor = true;
+            this.btnAddEmp.Visible = false;
             this.btnAddEmp.Click += new System.EventHandler(this.btnAddEmp_Click);
             // 
             // btnSickDays
@@ -108,19 +111,21 @@
             this.btnSickDays.TabIndex = 11;
             this.btnSickDays.Text = "Add Sick Days";
             this.btnSickDays.UseVisualStyleBackColor = true;
+            this.btnSickDays.Visible = false;
             this.btnSickDays.Click += new System.EventHandler(this.btnSickDays_Click);
             // 
-            // button1
+            // btnCostOfLiving
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(6, 236);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(186, 32);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Cost-of-living Increase";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCostOfLiving.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCostOfLiving.Location = new System.Drawing.Point(6, 236);
+            this.btnCostOfLiving.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCostOfLiving.Name = "btnCostOfLiving";
+            this.btnCostOfLiving.Size = new System.Drawing.Size(186, 32);
+            this.btnCostOfLiving.TabIndex = 12;
+            this.btnCostOfLiving.Text = "Cost-of-living Increase";
+            this.btnCostOfLiving.UseVisualStyleBackColor = true;
+            this.btnCostOfLiving.Visible = false;
+            this.btnCostOfLiving.Click += new System.EventHandler(this.btnCostOfLiving_Click);
             // 
             // btnProcessPO
             // 
@@ -132,6 +137,7 @@
             this.btnProcessPO.TabIndex = 13;
             this.btnProcessPO.Text = "Process PO";
             this.btnProcessPO.UseVisualStyleBackColor = true;
+            this.btnProcessPO.Visible = false;
             this.btnProcessPO.Click += new System.EventHandler(this.btnProcessPO_Click);
             // 
             // btnCalculatePension
@@ -144,6 +150,7 @@
             this.btnCalculatePension.TabIndex = 14;
             this.btnCalculatePension.Text = "Calculate Pension";
             this.btnCalculatePension.UseVisualStyleBackColor = true;
+            this.btnCalculatePension.Visible = false;
             this.btnCalculatePension.Click += new System.EventHandler(this.btnCalculatePension_Click);
             // 
             // btnModifyEmployee
@@ -156,6 +163,7 @@
             this.btnModifyEmployee.TabIndex = 15;
             this.btnModifyEmployee.Text = "Modify Employee";
             this.btnModifyEmployee.UseVisualStyleBackColor = true;
+            this.btnModifyEmployee.Visible = false;
             this.btnModifyEmployee.Click += new System.EventHandler(this.btnModifyEmployee_Click);
             // 
             // btnSalaryChanges
@@ -166,8 +174,9 @@
             this.btnSalaryChanges.Name = "btnSalaryChanges";
             this.btnSalaryChanges.Size = new System.Drawing.Size(186, 32);
             this.btnSalaryChanges.TabIndex = 16;
-            this.btnSalaryChanges.Text = "Salary Changes";
+            this.btnSalaryChanges.Text = "Employee Raise";
             this.btnSalaryChanges.UseVisualStyleBackColor = true;
+            this.btnSalaryChanges.Visible = false;
             this.btnSalaryChanges.Click += new System.EventHandler(this.btnSalaryChanges_Click);
             // 
             // Main
@@ -179,7 +188,7 @@
             this.Controls.Add(this.btnModifyEmployee);
             this.Controls.Add(this.btnCalculatePension);
             this.Controls.Add(this.btnProcessPO);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCostOfLiving);
             this.Controls.Add(this.btnSickDays);
             this.Controls.Add(this.btnAddEmp);
             this.Controls.Add(this.btnModPO);
@@ -202,7 +211,7 @@
         private System.Windows.Forms.Button btnModPO;
         private System.Windows.Forms.Button btnAddEmp;
         private System.Windows.Forms.Button btnSickDays;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCostOfLiving;
         private System.Windows.Forms.Button btnProcessPO;
         private System.Windows.Forms.Button btnCalculatePension;
         private System.Windows.Forms.Button btnModifyEmployee;

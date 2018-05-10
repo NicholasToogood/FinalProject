@@ -105,5 +105,18 @@ namespace BusinessLayer.Factories
             return pension;
         }
         //
+
+        // Employee Login
+        public static Boolean AuthenticateEmployee(int empID, string password)
+        {
+            DataTable tmpTable = SqlLayer.HRSQL.AuthenticateEmployee(empID, password);
+            return AuthenticateEmployeeRepackager(tmpTable);
+        }
+        private static Boolean AuthenticateEmployeeRepackager(DataTable myTable)
+        {
+            return Convert.ToBoolean(myTable.Rows[0]["returnValue"]);
+        }
+
+        //
     }
 }

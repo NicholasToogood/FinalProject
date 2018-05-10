@@ -194,6 +194,16 @@ namespace SqlLayer
             return DAL.GetData("GetAllJobs");
         }
 
+        //RETRIEVES JOB BY EMPID
+        public static DataTable RetrieveJobByEmpID(int empID)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@empID", empID, SqlDbType.Int, ParameterDirection.Input));
+            
+            return DAL.GetData("getJobByEmpID", parms);
+        }
+
+
         public static Boolean CreatePerformanceIncrease(int EmpID, Double percentage, DateTime dateOfIncrease)
         {
             List<parameters> parms = new List<parameters>();
@@ -369,6 +379,16 @@ namespace SqlLayer
 
             DAL.SendData("EmployeeModifyEmployee", parms);
             return true;
+        }
+
+        // AUTHENTICATE LOGIN
+        public static DataTable AuthenticateEmployee(int empId, string password)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@empID", empId, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@password", password, SqlDbType.VarChar, ParameterDirection.Input, 30));
+            
+            return DAL.GetData("AuthenticateUser", parms);
         }
     }
 }

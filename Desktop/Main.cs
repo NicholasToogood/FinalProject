@@ -1,4 +1,5 @@
 ﻿using BusinessLayer;
+using BusinessLayer.Factories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,13 +26,68 @@ namespace Desktop
         ModifyEmployeeHR modifyEmployeeHR;
         SalaryChangesHR salaryChangesHR;
 
+        int empID;
+
         public Main()
         {
             InitializeComponent();
         }
         private void Main_Load(object sender, EventArgs e)
         {
-            initiatePayroll();
+            Splash mySplash = new Splash();
+            mySplash.ShowDialog();
+
+            Login myLogin = new Login();
+            myLogin.ShowDialog();
+            if (myLogin.DialogResult != System.Windows.Forms.DialogResult.OK)
+            {
+                this.Close();
+            }
+            empID = myLogin.empID;
+            // if employee JOB is HR
+            Job empJob = JobFactory.JobByEmpID(myLogin.empID);
+            if (empJob.JobID == 1)
+            { // REGULAR EMPLOYEE
+                btnCreatePO.Visible = true;
+                btnModPO.Visible = true;
+            }
+            else if(empJob.JobID == 3)
+            { // HR EMPLOYEE
+                btnCreatePO.Visible = true;
+                btnModPO.Visible = true;
+
+                btnAddEmp.Visible = true;
+                btnCostOfLiving.Visible = true;
+                btnCalculatePension.Visible = true;
+
+                btnSickDays.Visible = true;
+                btnSalaryChanges.Visible = true;
+                btnModifyEmployee.Visible = true;
+            }
+            else if (empJob.JobID == 4)
+            { // SUPERVISOR
+                btnCreatePO.Visible = true;
+                btnModPO.Visible = true;
+                btnProcessPO.Visible = true;
+            }
+            else if (empJob.JobID == 5)
+            { // HR SUPERVISOR
+                
+                initiatePayroll();
+
+                btnCreatePO.Visible = true;
+                btnModPO.Visible = true;
+                btnProcessPO.Visible = true;
+
+                btnAddEmp.Visible = true;
+                btnCostOfLiving.Visible = true;
+                btnCalculatePension.Visible = true;
+
+                btnSickDays.Visible = true;
+                btnSalaryChanges.Visible = true;
+                btnModifyEmployee.Visible = true;
+            }
+
         }
 
         private void DisplayForm(Form form)
@@ -73,7 +129,7 @@ namespace Desktop
             }           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCostOfLiving_Click(object sender, EventArgs e)
         {
             if (costOfLiving == null || costOfLiving.IsDisposed)
             {
@@ -103,7 +159,7 @@ namespace Desktop
         {
             if (modifyEmployeeHR == null || modifyEmployeeHR.IsDisposed)
             {
-                modifyEmployeeHR = new ModifyEmployeeHR();
+                modifyEmployeeHR = new ModifyEmployeeHR(empID);
                 DisplayForm(modifyEmployeeHR);
             }
         }

@@ -19,15 +19,20 @@ namespace Desktop
         private List<Department> dept;
         private List<Employee> emp;
 
+        private int currentEmployeeID;
+
         Boolean searchByID;
         String searchText;
 
-        public ModifyEmployeeHR()
+        public ModifyEmployeeHR(int empID)
         {
+            currentEmployeeID = empID;
+
             InitializeComponent();
         }
         private void ModifyEmployeeHR_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(currentEmployeeID.ToString());
             rdoSearchByID.Checked = true;
             loadList();
         }

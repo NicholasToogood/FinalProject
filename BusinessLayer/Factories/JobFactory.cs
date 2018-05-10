@@ -9,6 +9,11 @@ namespace BusinessLayer.Factories
 {
     public class JobFactory
     {
+        public static Job createJob()
+        {
+            return new Job();
+        }
+
         public static List<Job> JobsCreateList()
         {
             DataTable tmpTable = SqlLayer.HRSQL.RetrieveJobs();
@@ -29,6 +34,24 @@ namespace BusinessLayer.Factories
 
                 jobs.Add(tmpJobs);
             }
+            return jobs;
+        }
+
+        public static Job JobByEmpID(int empID)
+        {
+            DataTable tmpTable = SqlLayer.HRSQL.RetrieveJobByEmpID(empID);
+            Job retrievedJobs = new Job();
+            retrievedJobs = JobByEmpIDRepackager(tmpTable);
+            return retrievedJobs;
+        }
+
+        private static Job JobByEmpIDRepackager(DataTable myTable)
+        {
+            Job jobs = new Job();
+            jobs.JobID = Convert.ToInt32(myTable.Rows[0]["jobId"]);
+            jobs.JobTitle = myTable.Rows[0]["jobTitle"].ToString();
+            jobs.MaxPay = Convert.ToDouble(myTable.Rows[0]["maxPay"]);
+            
             return jobs;
         }
     }
