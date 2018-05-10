@@ -107,8 +107,8 @@ namespace Desktop
             if (createPO == null || createPO.IsDisposed)
             {
                 createPO = new CreatePO();
-                DisplayForm(createPO);
-            } 
+            }
+            DisplayForm(createPO);
         }
 
         private void btnAddEmp_Click(object sender, EventArgs e)
@@ -116,8 +116,8 @@ namespace Desktop
             if (createEmployee == null || createEmployee.IsDisposed)
             {
                 createEmployee = new CreateEmployeeHR();
-                DisplayForm(createEmployee);
-            }   
+            }
+            DisplayForm(createEmployee);
         }
 
         private void btnSickDays_Click(object sender, EventArgs e)
@@ -125,8 +125,8 @@ namespace Desktop
             if (searchEmp == null || searchEmp.IsDisposed)
             {
                 searchEmp = new AddSickDayHR();
-                DisplayForm(searchEmp);
-            }           
+            }
+            DisplayForm(searchEmp);
         }
 
         private void btnCostOfLiving_Click(object sender, EventArgs e)
@@ -134,8 +134,8 @@ namespace Desktop
             if (costOfLiving == null || costOfLiving.IsDisposed)
             {
                 costOfLiving = new CostOfLivingIncreaseHR();
-                DisplayForm(costOfLiving);
             }
+            DisplayForm(costOfLiving);
         }
 
         private void btnModPO_Click(object sender, EventArgs e)
@@ -143,8 +143,8 @@ namespace Desktop
             if (modifyPO == null || modifyPO.IsDisposed)
             {
                 modifyPO = new ModifyPO();
-                DisplayForm(modifyPO);
-            } 
+            }
+            DisplayForm(modifyPO);
         }
 
         private void btnCalculatePension_Click(object sender, EventArgs e)
@@ -152,39 +152,42 @@ namespace Desktop
             if (calculatePension == null || calculatePension.IsDisposed)
             {
                 calculatePension = new CalculatePension();
-                DisplayForm(calculatePension);
             }
+            DisplayForm(calculatePension);
         }
         private void btnModifyEmployee_Click(object sender, EventArgs e)
         {
             if (modifyEmployeeHR == null || modifyEmployeeHR.IsDisposed)
             {
                 modifyEmployeeHR = new ModifyEmployeeHR(empID);
-                DisplayForm(modifyEmployeeHR);
             }
+            DisplayForm(modifyEmployeeHR);
         }
         private void btnSalaryChanges_Click(object sender, EventArgs e)
         {
             if (salaryChangesHR == null || salaryChangesHR.IsDisposed)
             {
                 salaryChangesHR = new SalaryChangesHR();
-                DisplayForm(salaryChangesHR);
             }
+            DisplayForm(salaryChangesHR);
         }
+        private void btnProcessPO_Click(object sender, EventArgs e)
+        {
+            if (processPO == null || processPO.IsDisposed)
+            {
+                processPO = new ProcessPO();
+            }
+            DisplayForm(processPO);
+        }
+
 
 
         private Boolean initiatePayroll()
         {
             DateTime today = DateTime.Today;
 
-            DateTime myoriginalDate = DateTime.ParseExact("2018-04-13", "yyyy-MM-dd",
-                                       System.Globalization.CultureInfo.InvariantCulture);
-
+            DateTime myoriginalDate = DateTime.ParseExact("2018-04-13", "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
             
-
-            
-
-
             if (today.DayOfWeek == DayOfWeek.Friday)
             {
                 while (myoriginalDate < today)
@@ -219,14 +222,6 @@ namespace Desktop
             return false;
         }
 
-        private void btnProcessPO_Click(object sender, EventArgs e)
-        {
-            if (processPO == null || processPO.IsDisposed)
-            {
-                processPO = new ProcessPO();
-                DisplayForm(processPO);
-            }
-        }
 
     }
 }
