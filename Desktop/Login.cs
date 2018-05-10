@@ -31,7 +31,7 @@ namespace Desktop
             try
             {
                 bool fields = true;
-                //errorProvider1.Clear();
+                errorProvider1.Clear();
                 if (String.IsNullOrEmpty(txtPassword.Text.Trim()))
                 {
                     errorProvider1.SetError(txtPassword, "Please enter your password.");

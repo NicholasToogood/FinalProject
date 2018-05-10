@@ -13,13 +13,14 @@
 <body>
     <header></header>
         <nav>
-            <div id="navContent">
+            <div id="navContent" runat="server">
                 <div id="navLinks">
-                    <a runat="server" href="#">Home</a> |
-                    <a runat="server" href="~/CreatePO.aspx">Create Purchase Order</a> |
-                    <a runat="server" href="~/ModifyPO.aspx">Modify Purchase Order</a> |
-                    <a runat="server" href="~/ProcessPO.aspx">Process Purchase Order</a> |
-                    <a runat="server" href="~/ModifyPersonalInformation.aspx">Modify Personal Info</a>
+                    <a runat="server" id="home" href="#">Home</a> 
+                    <a runat="server" id="createPO" href="~/CreatePO.aspx" visible="false">Create Purchase Order</a> 
+                    <a runat="server" id="modifyPO" href="~/ModifyPO.aspx" visible="false">Modify Purchase Order</a> 
+                    <a runat="server" id="processPO" href="~/ProcessPO.aspx" visible="false">Process Purchase Order</a> 
+                    <a runat="server" id="modifyPersonalInformation" href="~/ModifyPersonalInformation.aspx" visible="false">Modify Personal Info</a> 
+                    <a runat="server" id="login" href="~/Login.aspx">Logout</a>
                 </div>
             </div>
             <div id="errorArea">
