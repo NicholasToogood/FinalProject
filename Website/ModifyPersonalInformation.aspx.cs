@@ -11,12 +11,13 @@ namespace Website
 {
     public partial class ModifyPersonalInformation : System.Web.UI.Page
     {
-        int empID = 10000001;
+        int empID;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
+                empID = Convert.ToInt32(Session["empID"]);
                 lblError.Text = "";
                 if (!IsPostBack)
                 {

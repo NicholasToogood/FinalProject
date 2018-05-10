@@ -59,7 +59,7 @@ namespace Website
                         modifyPersonalInformation.Visible = true;
                     }
 
-                    if(Request.RawUrl == "/ProcessPO.aspx" && (empJob.JobID != 5 || empJob.JobID != 4))
+                    if(Request.RawUrl == "/ProcessPO.aspx" && empJob.JobID != 5 && empJob.JobID != 4)
                     {
                         Response.Redirect("~/login.aspx");
                     }
