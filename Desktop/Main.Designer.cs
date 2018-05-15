@@ -39,6 +39,7 @@
             this.btnCalculatePension = new System.Windows.Forms.Button();
             this.btnModifyEmployee = new System.Windows.Forms.Button();
             this.btnSalaryChanges = new System.Windows.Forms.Button();
+            this.btnInquirePayroll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MainTab
@@ -143,7 +144,7 @@
             // btnCalculatePension
             // 
             this.btnCalculatePension.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalculatePension.Location = new System.Drawing.Point(6, 284);
+            this.btnCalculatePension.Location = new System.Drawing.Point(8, 272);
             this.btnCalculatePension.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalculatePension.Name = "btnCalculatePension";
             this.btnCalculatePension.Size = new System.Drawing.Size(186, 32);
@@ -179,11 +180,25 @@
             this.btnSalaryChanges.Visible = false;
             this.btnSalaryChanges.Click += new System.EventHandler(this.btnSalaryChanges_Click);
             // 
+            // btnInquirePayroll
+            // 
+            this.btnInquirePayroll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInquirePayroll.Location = new System.Drawing.Point(9, 308);
+            this.btnInquirePayroll.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInquirePayroll.Name = "btnInquirePayroll";
+            this.btnInquirePayroll.Size = new System.Drawing.Size(186, 32);
+            this.btnInquirePayroll.TabIndex = 17;
+            this.btnInquirePayroll.Text = "Inquire Payroll Info";
+            this.btnInquirePayroll.UseVisualStyleBackColor = true;
+            this.btnInquirePayroll.Visible = false;
+            this.btnInquirePayroll.Click += new System.EventHandler(this.btnInquirePayroll_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(901, 501);
+            this.Controls.Add(this.btnInquirePayroll);
             this.Controls.Add(this.btnSalaryChanges);
             this.Controls.Add(this.btnModifyEmployee);
             this.Controls.Add(this.btnCalculatePension);
@@ -216,5 +231,6 @@
         private System.Windows.Forms.Button btnCalculatePension;
         private System.Windows.Forms.Button btnModifyEmployee;
         private System.Windows.Forms.Button btnSalaryChanges;
+        private System.Windows.Forms.Button btnInquirePayroll;
     }
 }

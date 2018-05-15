@@ -82,7 +82,7 @@ namespace Types
         Double YTDEI { get; set; }
         Double YTDCompanyPensionDeduction { get; set; }
         Double YTDNetpay { get; set; }
-
+        Double BiWeeklyRate { get; set; }
     }
 
     public interface IItem

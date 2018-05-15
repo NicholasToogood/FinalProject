@@ -28,6 +28,8 @@ namespace BusinessLayer
         internal Double _YTDCompanyPensionDeduction;
         internal Double _YTDNetpay;
 
+        internal Double _biWeeklyRate;
+
 
         public int PayStubID
         {
@@ -106,6 +108,11 @@ namespace BusinessLayer
             get { return _YTDNetpay; }
             set { _YTDNetpay = value; }
         }
-
+        public Double BiWeeklyRate
+        {
+            get { return _biWeeklyRate; }
+            set { _biWeeklyRate = value; }
+        }
+        
     }
 }

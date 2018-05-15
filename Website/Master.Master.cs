@@ -33,6 +33,7 @@ namespace Website
                         browsePO.Visible = true;
                         createPO.Visible = true;
                         modifyPO.Visible = true;
+                        inquireEmpInfo.Visible = true;
 
                         modifyPersonalInformation.Visible = true;
                     }
@@ -41,6 +42,7 @@ namespace Website
                         browsePO.Visible = true;
                         createPO.Visible = true;
                         modifyPO.Visible = true;
+                        inquireEmpInfo.Visible = true;
 
                         modifyPersonalInformation.Visible = true;
                     }
@@ -50,6 +52,7 @@ namespace Website
                         createPO.Visible = true;
                         modifyPO.Visible = true;
                         processPO.Visible = true;
+                        inquireEmpInfo.Visible = true;
 
                         modifyPersonalInformation.Visible = true;
                     }
@@ -59,6 +62,7 @@ namespace Website
                         createPO.Visible = true;
                         modifyPO.Visible = true;
                         processPO.Visible = true;
+                        inquireEmpInfo.Visible = true;
 
                         modifyPersonalInformation.Visible = true;
                     }

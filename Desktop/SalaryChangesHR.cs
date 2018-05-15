@@ -19,11 +19,15 @@ namespace Desktop
         private List<Department> dept;
         private List<Employee> emp;
 
+        int currentEmployeeID;
+
         Boolean searchByID;
         String searchText;
 
-        public SalaryChangesHR()
+        public SalaryChangesHR(int empID)
         {
+            currentEmployeeID = empID;
+
             InitializeComponent();
         }
 
@@ -220,6 +224,17 @@ namespace Desktop
             txtSCStreetAddress.Text = emp[listBoxResults.SelectedIndex].StreetAddress.ToString();
             txtSCCity.Text = emp[listBoxResults.SelectedIndex].City.ToString();
             txtSCPostalCode.Text = emp[listBoxResults.SelectedIndex].PostalCode.ToString();
+
+
+
+            if (currentEmployeeID == emp[listBoxResults.SelectedIndex].EmpID)
+            {
+                grpBoxSalaryIncrease.Enabled = false;
+            }
+            else
+            {
+                grpBoxSalaryIncrease.Enabled = true;
+            }
 
         }
 

@@ -92,6 +92,12 @@
     <Compile Include="CreatePO.Designer.cs">
       <DependentUpon>CreatePO.cs</DependentUpon>
     </Compile>
+    <Compile Include="InquirePayroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InquirePayroll.Designer.cs">
+      <DependentUpon>InquirePayroll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreatePO.resx">
       <DependentUpon>CreatePO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquirePayroll.resx">
+      <DependentUpon>InquirePayroll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

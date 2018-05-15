@@ -56,7 +56,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSalaryChanges = new System.Windows.Forms.Button();
             this.grpBoxApplySalaryChanges = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.grpBoxSalaryIncrease = new System.Windows.Forms.GroupBox();
             this.label29 = new System.Windows.Forms.Label();
             this.btnRequestIncrease = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
@@ -107,7 +107,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.grpBoxApplySalaryChanges.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.grpBoxSalaryIncrease.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.txtSCLastName.SuspendLayout();
             this.SuspendLayout();
@@ -383,32 +383,32 @@
             // 
             // grpBoxApplySalaryChanges
             // 
-            this.grpBoxApplySalaryChanges.Controls.Add(this.groupBox3);
+            this.grpBoxApplySalaryChanges.Controls.Add(this.grpBoxSalaryIncrease);
             this.grpBoxApplySalaryChanges.Controls.Add(this.btnReturnToSearch);
             this.grpBoxApplySalaryChanges.Controls.Add(this.groupBox5);
             this.grpBoxApplySalaryChanges.Controls.Add(this.txtSCLastName);
             this.grpBoxApplySalaryChanges.Location = new System.Drawing.Point(12, 12);
             this.grpBoxApplySalaryChanges.Name = "grpBoxApplySalaryChanges";
-            this.grpBoxApplySalaryChanges.Size = new System.Drawing.Size(604, 510);
+            this.grpBoxApplySalaryChanges.Size = new System.Drawing.Size(604, 440);
             this.grpBoxApplySalaryChanges.TabIndex = 16;
             this.grpBoxApplySalaryChanges.TabStop = false;
             this.grpBoxApplySalaryChanges.Text = "Apply Salary Changes";
             this.grpBoxApplySalaryChanges.Visible = false;
             // 
-            // groupBox3
+            // grpBoxSalaryIncrease
             // 
-            this.groupBox3.Controls.Add(this.label29);
-            this.groupBox3.Controls.Add(this.btnRequestIncrease);
-            this.groupBox3.Controls.Add(this.label28);
-            this.groupBox3.Controls.Add(this.dtpDateOfIncrease);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Controls.Add(this.txtPercentageIncreaseRequest);
-            this.groupBox3.Location = new System.Drawing.Point(19, 378);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(442, 86);
-            this.groupBox3.TabIndex = 19;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Salary Increase";
+            this.grpBoxSalaryIncrease.Controls.Add(this.label29);
+            this.grpBoxSalaryIncrease.Controls.Add(this.btnRequestIncrease);
+            this.grpBoxSalaryIncrease.Controls.Add(this.label28);
+            this.grpBoxSalaryIncrease.Controls.Add(this.dtpDateOfIncrease);
+            this.grpBoxSalaryIncrease.Controls.Add(this.label27);
+            this.grpBoxSalaryIncrease.Controls.Add(this.txtPercentageIncreaseRequest);
+            this.grpBoxSalaryIncrease.Location = new System.Drawing.Point(18, 327);
+            this.grpBoxSalaryIncrease.Name = "grpBoxSalaryIncrease";
+            this.grpBoxSalaryIncrease.Size = new System.Drawing.Size(442, 86);
+            this.grpBoxSalaryIncrease.TabIndex = 19;
+            this.grpBoxSalaryIncrease.TabStop = false;
+            this.grpBoxSalaryIncrease.Text = "Salary Increase";
             // 
             // label29
             // 
@@ -496,7 +496,7 @@
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.label14);
             this.groupBox5.Controls.Add(this.label19);
-            this.groupBox5.Location = new System.Drawing.Point(18, 68);
+            this.groupBox5.Location = new System.Drawing.Point(294, 19);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(283, 292);
             this.groupBox5.TabIndex = 13;
@@ -710,7 +710,7 @@
             this.txtSCLastName.Controls.Add(this.label24);
             this.txtSCLastName.Controls.Add(this.label25);
             this.txtSCLastName.Controls.Add(this.label26);
-            this.txtSCLastName.Location = new System.Drawing.Point(317, 68);
+            this.txtSCLastName.Location = new System.Drawing.Point(18, 108);
             this.txtSCLastName.Name = "txtSCLastName";
             this.txtSCLastName.Size = new System.Drawing.Size(270, 203);
             this.txtSCLastName.TabIndex = 12;
@@ -841,8 +841,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 601);
-            this.Controls.Add(this.grpBoxSearchEmp);
             this.Controls.Add(this.grpBoxApplySalaryChanges);
+            this.Controls.Add(this.grpBoxSearchEmp);
             this.Name = "SalaryChangesHR";
             this.Text = "SalaryChanges";
             this.Load += new System.EventHandler(this.SalaryChangesHR_Load);
@@ -853,8 +853,8 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.grpBoxApplySalaryChanges.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.grpBoxSalaryIncrease.ResumeLayout(false);
+            this.grpBoxSalaryIncrease.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.txtSCLastName.ResumeLayout(false);
@@ -893,7 +893,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSalaryChanges;
         private System.Windows.Forms.GroupBox grpBoxApplySalaryChanges;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grpBoxSalaryIncrease;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button btnRequestIncrease;
         private System.Windows.Forms.Label label28;

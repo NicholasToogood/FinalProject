@@ -25,6 +25,7 @@ namespace Desktop
         ProcessPO processPO;
         ModifyEmployeeHR modifyEmployeeHR;
         SalaryChangesHR salaryChangesHR;
+        InquirePayroll inquirePayroll;
 
         public static int empID;
 
@@ -61,6 +62,7 @@ namespace Desktop
                     btnAddEmp.Visible = true;
                     btnCostOfLiving.Visible = true;
                     btnCalculatePension.Visible = true;
+                    btnInquirePayroll.Visible = true;
 
                     btnSickDays.Visible = true;
                     btnSalaryChanges.Visible = true;
@@ -84,6 +86,7 @@ namespace Desktop
                     btnAddEmp.Visible = true;
                     btnCostOfLiving.Visible = true;
                     btnCalculatePension.Visible = true;
+                    btnInquirePayroll.Visible = true;
 
                     btnSickDays.Visible = true;
                     btnSalaryChanges.Visible = true;
@@ -153,7 +156,7 @@ namespace Desktop
         {
             if (calculatePension == null || calculatePension.IsDisposed)
             {
-                calculatePension = new CalculatePension();
+                calculatePension = new CalculatePension(empID);
             }
             DisplayForm(calculatePension);
         }
@@ -169,7 +172,7 @@ namespace Desktop
         {
             if (salaryChangesHR == null || salaryChangesHR.IsDisposed)
             {
-                salaryChangesHR = new SalaryChangesHR();
+                salaryChangesHR = new SalaryChangesHR(empID);
             }
             DisplayForm(salaryChangesHR);
         }
@@ -181,7 +184,16 @@ namespace Desktop
             }
             DisplayForm(processPO);
         }
-
+        private void btnInquirePayroll_Click(object sender, EventArgs e)
+        {
+            if (inquirePayroll == null || inquirePayroll.IsDisposed)
+            {
+                inquirePayroll = new InquirePayroll();
+            }
+            DisplayForm(inquirePayroll);
+        }
+        
+        
 
 
         private Boolean initiatePayroll()
@@ -223,7 +235,5 @@ namespace Desktop
             
             return false;
         }
-
-
     }
 }

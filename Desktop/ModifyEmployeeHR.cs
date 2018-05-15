@@ -18,6 +18,7 @@ namespace Desktop
 
         private List<Department> dept;
         private List<Employee> emp;
+        private List<Job> job;
 
         private int currentEmployeeID;
 
@@ -46,7 +47,7 @@ namespace Desktop
                 cmbDepartmentModify.DisplayMember = "DepartmentName";
                 cmbDepartmentModify.ValueMember = "DepartmentID";
 
-                List<Job> job = JobFactory.JobsCreateList();
+                job = JobFactory.JobsCreateList();
 
                 cmbJobAssignmentModify.DataSource = job;
                 cmbJobAssignmentModify.DisplayMember = "jobTitle";
@@ -206,34 +207,75 @@ namespace Desktop
         {
             try
             {
-                btnSave.Visible = true;
-                btnCancel.Visible = true;
-                btnModifyEmployee.Visible = false;
-
-                txtSINModify.ReadOnly = false;
-                dtpJobStartDateModify.Enabled = true;
-                dtpSeniorityDateModify.Enabled = true;
-                txtBiWeeklyRateModify.ReadOnly = false;
-                txtCellPhoneNumberModify.ReadOnly = false;
-                txtWorkPhoneNumberModify.ReadOnly = false;
-                txtEmailAddressModify.ReadOnly = false;
-                chkPayrollEmailModify.Enabled = true;
-                txtFirstNameModify.ReadOnly = false;
-                txtMiddleInitialModify.ReadOnly = false;
-                txtLastNameModify.ReadOnly = false;
-                dtpDateOfBirthModify.Enabled = true;
-                txtStreetAddressModify.ReadOnly = false;
-                txtCityModify.ReadOnly = false;
-                txtPostalCodeModify.ReadOnly = false;
-
-                if (emp[listBoxResults.SelectedIndex].EmpStatus == 2)
+                if(emp[listBoxResults.SelectedIndex].EmpID == currentEmployeeID)
                 {
-                    dtpEmpEndModify.Enabled = false;
+                    btnSave.Visible = true;
+                    btnCancel.Visible = true;
+                    btnModifyEmployee.Visible = false;
+
+
+
+
+                    txtSINModify.ReadOnly = false;
+                    txtCellPhoneNumberModify.ReadOnly = false;
+                    txtWorkPhoneNumberModify.ReadOnly = false;
+                    txtEmailAddressModify.ReadOnly = false;
+                    chkPayrollEmailModify.Enabled = true;
+                    txtFirstNameModify.ReadOnly = false;
+                    txtMiddleInitialModify.ReadOnly = false;
+                    txtLastNameModify.ReadOnly = false;
+                    dtpDateOfBirthModify.Enabled = true;
+                    txtStreetAddressModify.ReadOnly = false;
+                    txtCityModify.ReadOnly = false;
+                    txtPostalCodeModify.ReadOnly = false;
+
+                    if (emp[listBoxResults.SelectedIndex].EmpStatus == 2)
+                    {
+                        dtpEmpEndModify.Enabled = false;
+                    }
+                    else
+                    {
+                        dtpEmpEndModify.Enabled = true;
+                    }
                 }
                 else
                 {
-                    dtpEmpEndModify.Enabled = true;
+                    btnSave.Visible = true;
+                    btnCancel.Visible = true;
+                    btnModifyEmployee.Visible = false;
+
+                    txtJobAssigment.Visible = false;
+                    txtDepartment.Visible = false;
+
+                    cmbDepartmentModify.Visible = true;
+                    cmbJobAssignmentModify.Visible = true;
+
+                    txtSINModify.ReadOnly = false;
+                    dtpJobStartDateModify.Enabled = true;
+                    dtpSeniorityDateModify.Enabled = true;
+                    txtBiWeeklyRateModify.ReadOnly = false;
+                    txtCellPhoneNumberModify.ReadOnly = false;
+                    txtWorkPhoneNumberModify.ReadOnly = false;
+                    txtEmailAddressModify.ReadOnly = false;
+                    chkPayrollEmailModify.Enabled = true;
+                    txtFirstNameModify.ReadOnly = false;
+                    txtMiddleInitialModify.ReadOnly = false;
+                    txtLastNameModify.ReadOnly = false;
+                    dtpDateOfBirthModify.Enabled = true;
+                    txtStreetAddressModify.ReadOnly = false;
+                    txtCityModify.ReadOnly = false;
+                    txtPostalCodeModify.ReadOnly = false;
+
+                    if (emp[listBoxResults.SelectedIndex].EmpStatus == 2)
+                    {
+                        dtpEmpEndModify.Enabled = false;
+                    }
+                    else
+                    {
+                        dtpEmpEndModify.Enabled = true;
+                    }
                 }
+                
             }
             catch (Exception ex)
             {
@@ -385,6 +427,12 @@ namespace Desktop
             btnCancel.Visible = false;
             btnModifyEmployee.Visible = true;
 
+            cmbJobAssignmentModify.Visible = false;
+            cmbDepartmentModify.Visible = false;
+
+            txtJobAssigment.Visible = true;
+            txtDepartment.Visible = true;
+            
             txtSINModify.ReadOnly = true;
             dtpJobStartDateModify.Enabled = false;
             dtpSeniorityDateModify.Enabled = false;
@@ -412,11 +460,20 @@ namespace Desktop
             dtpJobStartDateModify.Value = emp[listBoxResults.SelectedIndex].JobStartDate;
             cmbDepartmentModify.SelectedValue = emp[listBoxResults.SelectedIndex].DepartmentID;
             cmbJobAssignmentModify.SelectedValue = emp[listBoxResults.SelectedIndex].JobID;
+            
             for (int i = 0; i < dept.Count; i++)
             {
                 if (dept[i].DepartmentID == emp[listBoxResults.SelectedIndex].DepartmentID)
                 {
                     txtSupervisorModify.Text = dept[i].Supervisor;
+                    txtDepartment.Text = dept[i].DepartmentName;
+                }
+            }
+            for (int i = 0; i < job.Count; i++)
+            {
+                if (job[i].JobID == emp[listBoxResults.SelectedIndex].JobID)
+                {
+                    txtJobAssigment.Text = job[i].JobTitle;
                 }
             }
             txtBiWeeklyRateModify.Text = emp[listBoxResults.SelectedIndex].BiWeeklyRate.ToString();

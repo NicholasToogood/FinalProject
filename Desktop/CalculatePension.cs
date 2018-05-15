@@ -14,14 +14,16 @@ namespace Desktop
 {
     public partial class CalculatePension : Form
     {
-        public CalculatePension()
+        int EmpID;
+        public CalculatePension(int empID)
         {
+            EmpID = empID;
+
             InitializeComponent();
         }
 
         private void CalculatePension_Load(object sender, EventArgs e)
         {
-            int EmpID = 10000001;
 
             fillInformation(EmpID);
         }

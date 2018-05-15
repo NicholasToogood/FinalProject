@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="BrowsePO.aspx" />
     <Content Include="CreatePO.aspx" />
+    <Content Include="InquireEmploymentInformation.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="main.css" />
     <Content Include="Master.Master" />
@@ -99,6 +100,13 @@
     </Compile>
     <Compile Include="CreatePO.aspx.designer.cs">
       <DependentUpon>CreatePO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InquireEmploymentInformation.aspx.cs">
+      <DependentUpon>InquireEmploymentInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InquireEmploymentInformation.aspx.designer.cs">
+      <DependentUpon>InquireEmploymentInformation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
