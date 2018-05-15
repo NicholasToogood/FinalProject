@@ -109,6 +109,8 @@ namespace Website
 
             Session["itemId"] = Convert.ToInt32(grvItems.SelectedRow.Cells[1].Text);
 
+            po = POFactory.Create(Convert.ToInt32(lstOrders.SelectedValue));
+
             if (po.OrderStatus == Types.OrderStatus.Closed)
             {
                 btnApprove.Visible = false;
