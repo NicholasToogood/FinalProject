@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.MainTab = new MdiTabControl.TabControl();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.btnCreatePO = new System.Windows.Forms.Button();
             this.btnModPO = new System.Windows.Forms.Button();
             this.btnAddEmp = new System.Windows.Forms.Button();
@@ -40,6 +40,8 @@
             this.btnModifyEmployee = new System.Windows.Forms.Button();
             this.btnSalaryChanges = new System.Windows.Forms.Button();
             this.btnInquirePayroll = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainTab
@@ -53,20 +55,10 @@
             this.MainTab.TabCloseButtonImageHot = null;
             this.MainTab.TabIndex = 6;
             // 
-            // lblTitle
-            // 
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(9, 7);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(185, 57);
-            this.lblTitle.TabIndex = 7;
-            this.lblTitle.Text = "ABC Academy";
-            // 
             // btnCreatePO
             // 
             this.btnCreatePO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreatePO.Location = new System.Drawing.Point(8, 67);
+            this.btnCreatePO.Location = new System.Drawing.Point(8, 98);
             this.btnCreatePO.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreatePO.Name = "btnCreatePO";
             this.btnCreatePO.Size = new System.Drawing.Size(186, 32);
@@ -79,7 +71,7 @@
             // btnModPO
             // 
             this.btnModPO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModPO.Location = new System.Drawing.Point(8, 102);
+            this.btnModPO.Location = new System.Drawing.Point(8, 133);
             this.btnModPO.Margin = new System.Windows.Forms.Padding(2);
             this.btnModPO.Name = "btnModPO";
             this.btnModPO.Size = new System.Drawing.Size(186, 32);
@@ -92,7 +84,7 @@
             // btnAddEmp
             // 
             this.btnAddEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEmp.Location = new System.Drawing.Point(6, 200);
+            this.btnAddEmp.Location = new System.Drawing.Point(6, 226);
             this.btnAddEmp.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddEmp.Name = "btnAddEmp";
             this.btnAddEmp.Size = new System.Drawing.Size(186, 32);
@@ -118,7 +110,7 @@
             // btnCostOfLiving
             // 
             this.btnCostOfLiving.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCostOfLiving.Location = new System.Drawing.Point(6, 236);
+            this.btnCostOfLiving.Location = new System.Drawing.Point(6, 262);
             this.btnCostOfLiving.Margin = new System.Windows.Forms.Padding(2);
             this.btnCostOfLiving.Name = "btnCostOfLiving";
             this.btnCostOfLiving.Size = new System.Drawing.Size(186, 32);
@@ -131,7 +123,7 @@
             // btnProcessPO
             // 
             this.btnProcessPO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcessPO.Location = new System.Drawing.Point(9, 138);
+            this.btnProcessPO.Location = new System.Drawing.Point(9, 169);
             this.btnProcessPO.Margin = new System.Windows.Forms.Padding(2);
             this.btnProcessPO.Name = "btnProcessPO";
             this.btnProcessPO.Size = new System.Drawing.Size(186, 32);
@@ -144,7 +136,7 @@
             // btnCalculatePension
             // 
             this.btnCalculatePension.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalculatePension.Location = new System.Drawing.Point(8, 272);
+            this.btnCalculatePension.Location = new System.Drawing.Point(8, 298);
             this.btnCalculatePension.Margin = new System.Windows.Forms.Padding(2);
             this.btnCalculatePension.Name = "btnCalculatePension";
             this.btnCalculatePension.Size = new System.Drawing.Size(186, 32);
@@ -183,7 +175,7 @@
             // btnInquirePayroll
             // 
             this.btnInquirePayroll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInquirePayroll.Location = new System.Drawing.Point(9, 308);
+            this.btnInquirePayroll.Location = new System.Drawing.Point(9, 334);
             this.btnInquirePayroll.Margin = new System.Windows.Forms.Padding(2);
             this.btnInquirePayroll.Name = "btnInquirePayroll";
             this.btnInquirePayroll.Size = new System.Drawing.Size(186, 32);
@@ -193,11 +185,22 @@
             this.btnInquirePayroll.Visible = false;
             this.btnInquirePayroll.Click += new System.EventHandler(this.btnInquirePayroll_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(49, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(95, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(901, 501);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnInquirePayroll);
             this.Controls.Add(this.btnSalaryChanges);
             this.Controls.Add(this.btnModifyEmployee);
@@ -208,12 +211,12 @@
             this.Controls.Add(this.btnAddEmp);
             this.Controls.Add(this.btnModPO);
             this.Controls.Add(this.btnCreatePO);
-            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.MainTab);
             this.KeyPreview = true;
             this.Name = "Main";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,7 +224,6 @@
         #endregion
 
         private MdiTabControl.TabControl MainTab;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnCreatePO;
         private System.Windows.Forms.Button btnModPO;
         private System.Windows.Forms.Button btnAddEmp;
@@ -232,5 +234,6 @@
         private System.Windows.Forms.Button btnModifyEmployee;
         private System.Windows.Forms.Button btnSalaryChanges;
         private System.Windows.Forms.Button btnInquirePayroll;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

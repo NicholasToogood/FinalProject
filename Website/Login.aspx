@@ -10,7 +10,7 @@
             <form runat="server" class="form-horizontal">
                 <div class="row">
                     <div class="col-sm-5 center">
-                        <h1>Modify Personal Information</h1>
+                        <h1>Welcome</h1>
                     </div>
                     <div class="col-sm-5"></div>
                 </div>
@@ -27,11 +27,11 @@
                     <div class="col-xs-12 col-sm-6" id="loginDiv" runat="server">
                         <div class="form-group">
                             <asp:Label ID="lblEmployeeID" runat="server" Text="Employee ID: "></asp:Label><br />
-                            <asp:TextBox ID="txtEmployeeID" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtEmployeeID" runat="server" ></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <asp:Label ID="lblPassword" runat="server" Text="Password: "></asp:Label><br />
-                            <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" type="password"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click"/>
