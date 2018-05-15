@@ -24,15 +24,21 @@
                     
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6">
+                    <div class="col-sm-6">
                         <div class="form-group">
                             <asp:Label ID="lblStartDate" runat="server" Text="Start Date: "></asp:Label><br />
                             <asp:Calendar ID="dtpStart" runat="server"></asp:Calendar>
                         </div>
+                    </div>
+                    <div class="col-sm-6">
                         <div class="form-group">
                             <asp:Label ID="lblEndDate" runat="server" Text="End Date: "></asp:Label><br />
                             <asp:Calendar ID="dtpEnd" runat="server"></asp:Calendar>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
                         <div class="form-group">
                             <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
                         </div>
