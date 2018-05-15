@@ -214,31 +214,34 @@
             // 
             this.lblEmpName.AutoSize = true;
             this.lblEmpName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpName.Location = new System.Drawing.Point(777, 9);
+            this.lblEmpName.Location = new System.Drawing.Point(738, 9);
             this.lblEmpName.Name = "lblEmpName";
             this.lblEmpName.Size = new System.Drawing.Size(138, 25);
             this.lblEmpName.TabIndex = 41;
             this.lblEmpName.Text = "Mike Donovan";
+            this.lblEmpName.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblDept
             // 
             this.lblDept.AutoSize = true;
             this.lblDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDept.Location = new System.Drawing.Point(698, 34);
+            this.lblDept.Location = new System.Drawing.Point(660, 34);
             this.lblDept.Name = "lblDept";
             this.lblDept.Size = new System.Drawing.Size(216, 25);
             this.lblDept.TabIndex = 42;
             this.lblDept.Text = "Information Technology";
+            this.lblDept.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblSuper
             // 
             this.lblSuper.AutoSize = true;
             this.lblSuper.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuper.Location = new System.Drawing.Point(809, 59);
+            this.lblSuper.Location = new System.Drawing.Point(771, 59);
             this.lblSuper.Name = "lblSuper";
             this.lblSuper.Size = new System.Drawing.Size(105, 25);
             this.lblSuper.TabIndex = 43;
             this.lblSuper.Text = "John Wick";
+            this.lblSuper.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblSub
             // 

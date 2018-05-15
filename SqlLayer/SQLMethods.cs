@@ -17,6 +17,13 @@ namespace SqlLayer
             return DAL.GetData("GetAllOrders", parms);
         }
 
+        public static DataTable RetrieveDepartment(int id)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@empId", id, SqlDbType.Int, ParameterDirection.Input));
+            return DAL.GetData("GetDepartment", parms);
+        }
+
         public static DataTable RetrieveAllPendingPOs()
         {
             List<parameters> parms = new List<parameters>();
@@ -58,6 +65,18 @@ namespace SqlLayer
             List<parameters> parms = new List<parameters>();
             parms.Add(new parameters("@orderNumber", orderNumber, SqlDbType.Int, ParameterDirection.Input, 8));
             return DAL.GetData("GetItemsById", parms);
+        }
+
+        public static bool ModItem(IItem item)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@id", item.ItemId, SqlDbType.Int, ParameterDirection.Input, 8));
+            parms.Add(new parameters("@qty", item.Quantity, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@price", item.Price, SqlDbType.Money, ParameterDirection.Input));
+            parms.Add(new parameters("@location", item.Location, SqlDbType.VarChar, ParameterDirection.Input, 50));
+            parms.Add(new parameters("@reason", item.ReasonForMod, SqlDbType.VarChar, ParameterDirection.Input, 255));
+            DAL.SendData("ModItem", parms);
+            return true;
         }
 
         public static bool UpdatePO(IItem item)

@@ -30,6 +30,7 @@ namespace Website
                     Job empJob = JobFactory.JobByEmpID(Convert.ToInt32(Session["empID"]));
                     if (empJob.JobID == 1)
                     { // REGULAR EMPLOYEE
+                        browsePO.Visible = true;
                         createPO.Visible = true;
                         modifyPO.Visible = true;
 
@@ -37,6 +38,7 @@ namespace Website
                     }
                     else if (empJob.JobID == 3)
                     { // HR EMPLOYEE
+                        browsePO.Visible = true;
                         createPO.Visible = true;
                         modifyPO.Visible = true;
 
@@ -44,6 +46,7 @@ namespace Website
                     }
                     else if (empJob.JobID == 4)
                     { // SUPERVISOR
+                        browsePO.Visible = true;
                         createPO.Visible = true;
                         modifyPO.Visible = true;
                         processPO.Visible = true;
@@ -52,6 +55,7 @@ namespace Website
                     }
                     else if (empJob.JobID == 5)
                     { // HR SUPERVISOR
+                        browsePO.Visible = true;
                         createPO.Visible = true;
                         modifyPO.Visible = true;
                         processPO.Visible = true;

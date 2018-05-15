@@ -17,6 +17,14 @@ namespace BusinessLayer.Factories
             return retrievedDepartments;
         }
 
+        public static List<Department> DepartmentCreateList(int id)
+        {
+            DataTable tmpTable = SqlLayer.POSQL.RetrieveDepartment(id);
+            List<Department> retrievedDepartments = new List<Department>();
+            retrievedDepartments = DepartmentRepackager(tmpTable);
+            return retrievedDepartments;
+        }
+
         private static List<Department> DepartmentRepackager(DataTable myTable)
         {
             List<Department> departments = new List<Department>();

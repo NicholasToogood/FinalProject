@@ -15,9 +15,9 @@
                     </div>
                     <div class="col-sm-5"></div>
                     <div class="col-sm-2 pagination-centered">
-                        <h5>Mike Donovan</h5>
-                        <h5>Information Technology</h5>
-                        <h5>John Wick</h5>
+                        <h5 id="lblEmpName" runat="server">Mike Donovan</h5>
+                        <h5 id="lblDept" runat="server">Information Technology</h5>
+                        <h5 id="lblSuper" runat="server">John Wick</h5>
                     </div>
                 </div>
                 <div class="row">

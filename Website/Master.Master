@@ -15,7 +15,8 @@
         <nav>
             <div id="navContent" runat="server">
                 <div id="navLinks">
-                    <a runat="server" id="home" href="#">Home</a> 
+                    <a runat="server" id="home" href="#">Home</a>
+                    <a runat="server" id="browsePO" href="~/BrowsePO.aspx" visible="false">Browse Purchase Order</a> 
                     <a runat="server" id="createPO" href="~/CreatePO.aspx" visible="false">Create Purchase Order</a> 
                     <a runat="server" id="modifyPO" href="~/ModifyPO.aspx" visible="false">Modify Purchase Order</a> 
                     <a runat="server" id="processPO" href="~/ProcessPO.aspx" visible="false">Process Purchase Order</a> 

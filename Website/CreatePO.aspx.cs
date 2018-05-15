@@ -17,6 +17,14 @@ namespace Website
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Login myLogin = new Login();
+            List<Employee> emp = EmployeeFactory.RetrieveEmployeesByID(Convert.ToInt32(Session["empID"]));
+            List<Department> dep = DepartmentFactory.DepartmentCreateList(Convert.ToInt32(Session["empID"]));
+
+            lblEmpName.InnerText = emp[0].FullName;
+            lblDept.InnerText = dep[0].DepartmentName;
+            lblSuper.InnerText = dep[0].Supervisor;
+
             lblDate.InnerText = DateTime.Now.ToLongDateString();
         }
 

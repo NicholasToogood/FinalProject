@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BrowsePO.aspx" />
     <Content Include="CreatePO.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="main.css" />
@@ -85,6 +86,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BrowsePO.aspx.cs">
+      <DependentUpon>BrowsePO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BrowsePO.aspx.designer.cs">
+      <DependentUpon>BrowsePO.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreatePO.aspx.cs">
       <DependentUpon>CreatePO.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

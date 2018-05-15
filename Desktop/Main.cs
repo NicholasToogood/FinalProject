@@ -26,7 +26,7 @@ namespace Desktop
         ModifyEmployeeHR modifyEmployeeHR;
         SalaryChangesHR salaryChangesHR;
 
-        int empID;
+        public static int empID;
 
         public Main()
         {

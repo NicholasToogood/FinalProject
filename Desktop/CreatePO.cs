@@ -80,6 +80,14 @@ namespace Desktop
 
         private void CreatePO_Load(object sender, EventArgs e)
         {
+            Login myLogin = new Login();
+            List<Employee> emp = EmployeeFactory.RetrieveEmployeesByID(Main.empID);
+            List<Department> dep = DepartmentFactory.DepartmentCreateList(Main.empID);
+
+            lblEmpName.Text = emp[0].FullName;
+            lblDept.Text = dep[0].DepartmentName;
+            lblSuper.Text = dep[0].Supervisor;
+
             lblDate.Text = DateTime.Now.ToLongDateString();
         }
 

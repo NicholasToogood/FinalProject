@@ -56,7 +56,32 @@
                 <div class="col-xs-12">
                     <asp:Button ID="btnApprove" runat="server" Text="Approve" Visible="false" OnClick="btnApprove_Click" />
                     <asp:Button ID="btnDeny" runat="server" Text="Deny" Visible="false" OnClick="btnDeny_Click" />
+                    <asp:Button ID="btnMod" runat="server" Text="Modify" Visible="false" OnClick="btnMod_Click"/>
                     <asp:Button ID="btnClose" runat="server" Text="Close Purchase Order" Visible="false" OnClick="btnClose_Click" />
+                </div>
+            </div>
+            <div class="row">
+                <br /><br />
+                <div class="col-xs-12 col-sm-4">
+                    <asp:Label ID="lblModQty" Visible="false" runat="server" Text="Quantity:"></asp:Label>
+                    <asp:TextBox ID="txtModQty" Visible="false" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <asp:Label ID="lblModPrice" Visible="false" runat="server" Text="Price:"></asp:Label>
+                    <asp:TextBox ID="txtModPrice" Visible="false" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <asp:Label ID="lblModLocation" Visible="false" runat="server" Text="Location:"></asp:Label>
+                    <asp:TextBox ID="txtModLocation" Visible="false" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <asp:Label ID="lblModReason" Visible="false" runat="server" Text="Reason For Modification:"></asp:Label>
+                    <asp:TextBox ID="txtModReason" Visible="false" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-xs-12">
+                    <asp:Button ID="btnModApprove" Visible="false" runat="server" Text="Approve With Modifications" OnClick="btnModApprove_Click" />
                 </div>
             </div>
         </form>

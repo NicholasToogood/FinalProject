@@ -15,6 +15,11 @@ namespace BusinessLayer
             return POSQL.CreatePO(po);
         }
 
+        public static bool ModItem(Item item)
+        {
+            return POSQL.ModItem(item);
+        }
+
         public static int CreateEmp(Employee emp)
         {
             return HRSQL.CreateNewEmployee(emp);
