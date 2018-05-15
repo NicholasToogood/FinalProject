@@ -267,67 +267,78 @@ namespace Website
 
         protected void btnModApprove_Click(object sender, EventArgs e)
         {
-            askToClose = true;
-            Item i = ItemFactory.Create();
-
-            i.ItemId = Convert.ToInt32(grvItems.SelectedRow.Cells[1].Text);
-            i.ItemName = grvItems.SelectedRow.Cells[2].Text;
-            i.Description = grvItems.SelectedRow.Cells[3].Text;
-            i.Price = Convert.ToDouble(txtModPrice.Text);
-            i.Quantity = Convert.ToInt32(txtModQty.Text);
-            i.Location = txtModLocation.Text;
-            i.Justification = grvItems.SelectedRow.Cells[7].Text;
-            i.OrderNumber = Convert.ToInt32(grvItems.SelectedRow.Cells[9].Text);
-            i.ReasonForMod = txtModReason.Text;
-
-            if (grvItems.SelectedRow.Cells[8].Text == "Approved")
+            try
             {
-                i.ItemStatus = Types.ItemStatus.Approved;
-            }
-            else if (grvItems.SelectedRow.Cells[8].Text == "Denied")
-            {
-                i.ItemStatus = Types.ItemStatus.Denied;
-            }
-            else if (grvItems.SelectedRow.Cells[8].Text == "Pending")
-            {
-                i.ItemStatus = Types.ItemStatus.Pending;
-            }
+                askToClose = true;
+                Item i = ItemFactory.Create();
 
-            CUDMethods.ProcessItem(Convert.ToInt32(Session["itemId"].ToString()), Convert.ToByte(2));
-            CUDMethods.ModItem(i);
-            LoadItems();
+                i.ItemId = Convert.ToInt32(grvItems.SelectedRow.Cells[1].Text);
+                i.ItemName = grvItems.SelectedRow.Cells[2].Text;
+                i.Description = grvItems.SelectedRow.Cells[3].Text;
+                i.Price = Convert.ToDouble(txtModPrice.Text);
+                i.Quantity = Convert.ToInt32(txtModQty.Text);
+                i.Location = txtModLocation.Text;
+                i.Justification = grvItems.SelectedRow.Cells[7].Text;
+                i.OrderNumber = Convert.ToInt32(grvItems.SelectedRow.Cells[9].Text);
+                i.ReasonForMod = txtModReason.Text;
 
-            po = POFactory.Create(Convert.ToInt32(lstOrders.SelectedValue));
-
-            foreach (Item item in po.Items)
-            {
-                if (item.ItemStatus == Types.ItemStatus.Pending)
+                if (grvItems.SelectedRow.Cells[8].Text == "Approved")
                 {
-                    askToClose = false;
+                    i.ItemStatus = Types.ItemStatus.Approved;
                 }
-                else
+                else if (grvItems.SelectedRow.Cells[8].Text == "Denied")
                 {
-                    CUDMethods.ProcessOrder(po.OrderNumber, Convert.ToByte(2));
+                    i.ItemStatus = Types.ItemStatus.Denied;
                 }
+                else if (grvItems.SelectedRow.Cells[8].Text == "Pending")
+                {
+                    i.ItemStatus = Types.ItemStatus.Pending;
+                }
+
+                if (txtModLocation.Text != "" && txtModPrice.Text != "" && txtModQty.Text != "" && txtModReason.Text != "")
+                {
+                    CUDMethods.ProcessItem(Convert.ToInt32(Session["itemId"].ToString()), Convert.ToByte(2));
+                    CUDMethods.ModItem(i);
+                }
+
+                LoadItems();
+
+                po = POFactory.Create(Convert.ToInt32(lstOrders.SelectedValue));
+
+                foreach (Item item in po.Items)
+                {
+                    if (item.ItemStatus == Types.ItemStatus.Pending)
+                    {
+                        askToClose = false;
+                    }
+                    else
+                    {
+                        CUDMethods.ProcessOrder(po.OrderNumber, Convert.ToByte(2));
+                    }
+                }
+
+                po = POFactory.Create(Convert.ToInt32(lstOrders.SelectedValue));
+                lblOrderStatus.Text = po.OrderStatus.ToString();
+
+                if (askToClose == true)
+                {
+                    btnClose.Visible = true;
+                }
+
+                lblModLocation.Visible = false;
+                lblModPrice.Visible = false;
+                lblModQty.Visible = false;
+                lblModReason.Visible = false;
+                txtModLocation.Visible = false;
+                txtModPrice.Visible = false;
+                txtModQty.Visible = false;
+                txtModReason.Visible = false;
+                btnModApprove.Visible = false;
             }
-
-            po = POFactory.Create(Convert.ToInt32(lstOrders.SelectedValue));
-            lblOrderStatus.Text = po.OrderStatus.ToString();
-
-            if (askToClose == true)
+            catch (Exception ex)
             {
-                btnClose.Visible = true;
-            }
 
-            lblModLocation.Visible = false;
-            lblModPrice.Visible = false;
-            lblModQty.Visible = false;
-            lblModReason.Visible = false;
-            txtModLocation.Visible = false;
-            txtModPrice.Visible = false;
-            txtModQty.Visible = false;
-            txtModReason.Visible = false;
-            btnModApprove.Visible = false;
+            }
         }
     }
 }
