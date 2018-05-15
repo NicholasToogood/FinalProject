@@ -9,10 +9,6 @@ namespace BusinessLayer.Factories
 {
     public class JobFactory
     {
-        public static Job createJob()
-        {
-            return new Job();
-        }
 
         public static List<Job> JobsCreateList()
         {

@@ -61,6 +61,8 @@
             this.btnModifyEmployee = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txtDepartment = new System.Windows.Forms.TextBox();
+            this.txtJobAssigment = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.chkPayrollEmailModify = new System.Windows.Forms.CheckBox();
             this.txtEmailAddressModify = new System.Windows.Forms.TextBox();
@@ -440,6 +442,8 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.txtDepartment);
+            this.groupBox8.Controls.Add(this.txtJobAssigment);
             this.groupBox8.Controls.Add(this.label33);
             this.groupBox8.Controls.Add(this.chkPayrollEmailModify);
             this.groupBox8.Controls.Add(this.txtEmailAddressModify);
@@ -468,6 +472,22 @@
             this.groupBox8.TabIndex = 13;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Employment Information";
+            // 
+            // txtDepartment
+            // 
+            this.txtDepartment.Location = new System.Drawing.Point(134, 118);
+            this.txtDepartment.Name = "txtDepartment";
+            this.txtDepartment.ReadOnly = true;
+            this.txtDepartment.Size = new System.Drawing.Size(139, 20);
+            this.txtDepartment.TabIndex = 13;
+            // 
+            // txtJobAssigment
+            // 
+            this.txtJobAssigment.Location = new System.Drawing.Point(134, 94);
+            this.txtJobAssigment.Name = "txtJobAssigment";
+            this.txtJobAssigment.ReadOnly = true;
+            this.txtJobAssigment.Size = new System.Drawing.Size(139, 20);
+            this.txtJobAssigment.TabIndex = 12;
             // 
             // label33
             // 
@@ -528,6 +548,7 @@
             this.cmbDepartmentModify.Name = "cmbDepartmentModify";
             this.cmbDepartmentModify.Size = new System.Drawing.Size(139, 21);
             this.cmbDepartmentModify.TabIndex = 4;
+            this.cmbDepartmentModify.Visible = false;
             // 
             // cmbJobAssignmentModify
             // 
@@ -537,6 +558,7 @@
             this.cmbJobAssignmentModify.Name = "cmbJobAssignmentModify";
             this.cmbJobAssignmentModify.Size = new System.Drawing.Size(139, 21);
             this.cmbJobAssignmentModify.TabIndex = 3;
+            this.cmbJobAssignmentModify.Visible = false;
             // 
             // dtpJobStartDateModify
             // 
@@ -944,5 +966,7 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.TextBox txtDepartment;
+        private System.Windows.Forms.TextBox txtJobAssigment;
     }
 }

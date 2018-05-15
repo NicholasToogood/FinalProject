@@ -264,6 +264,19 @@ namespace SqlLayer
             return tmpDataTable;
         }
 
+        //GETS PAYSTUBS BY EMPLOYEE ID / DATE
+        public static DataTable RetrievePaystubsForEmpBetweenDates(int empid, DateTime startDate, DateTime endDate)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@empID", empid, SqlDbType.Int, ParameterDirection.Input));
+            parms.Add(new parameters("@startDate", startDate, SqlDbType.Date, ParameterDirection.Input));
+            parms.Add(new parameters("@endDate", endDate, SqlDbType.Date, ParameterDirection.Input));
+
+            DataTable tmpDataTable = DAL.GetData("GetPaystubsForEmpBetweenDates", parms);
+
+            return tmpDataTable;
+        }
+
         //GETS Employees who want their paystubs sent to them.
         public static DataTable RetrieveEmployeesForEmailPaystubs()
         {

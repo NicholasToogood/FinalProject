@@ -32,6 +32,7 @@ namespace Website
                     { // REGULAR EMPLOYEE
                         createPO.Visible = true;
                         modifyPO.Visible = true;
+                        inquireEmpInfo.Visible = true;
 
                         modifyPersonalInformation.Visible = true;
                     }
@@ -39,6 +40,7 @@ namespace Website
                     { // HR EMPLOYEE
                         createPO.Visible = true;
                         modifyPO.Visible = true;
+                        inquireEmpInfo.Visible = true;
 
                         modifyPersonalInformation.Visible = true;
                     }
@@ -47,6 +49,7 @@ namespace Website
                         createPO.Visible = true;
                         modifyPO.Visible = true;
                         processPO.Visible = true;
+                        inquireEmpInfo.Visible = true;
 
                         modifyPersonalInformation.Visible = true;
                     }
@@ -55,6 +58,7 @@ namespace Website
                         createPO.Visible = true;
                         modifyPO.Visible = true;
                         processPO.Visible = true;
+                        inquireEmpInfo.Visible = true;
 
                         modifyPersonalInformation.Visible = true;
                     }

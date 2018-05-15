@@ -20,20 +20,20 @@ namespace BusinessLayer.Factories
             PayStub tmpPayStub = new PayStub();
 
             tmpPayStub.PayStubID = Convert.ToInt32(myTable.Rows[0]["empId"]);
-            tmpPayStub.GrossPay = Convert.ToInt64(myTable.Rows[0]["grossPay"]);
-            tmpPayStub.Deductions = Convert.ToInt64(myTable.Rows[0]["deductions"]);
-            tmpPayStub.CPP = Convert.ToInt64(myTable.Rows[0]["cPP"]);
-            tmpPayStub.EI = Convert.ToInt64(myTable.Rows[0]["eI"]);
-            tmpPayStub.CompanyPensionDeduction = Convert.ToInt64(myTable.Rows[0]["companyPensionDeduction"]);
-            tmpPayStub.Netpay = Convert.ToInt64(myTable.Rows[0]["netPay"]);
+            tmpPayStub.GrossPay = Convert.ToDouble(myTable.Rows[0]["grossPay"]);
+            tmpPayStub.Deductions = Convert.ToDouble(myTable.Rows[0]["deductions"]);
+            tmpPayStub.CPP = Convert.ToDouble(myTable.Rows[0]["cPP"]);
+            tmpPayStub.EI = Convert.ToDouble(myTable.Rows[0]["eI"]);
+            tmpPayStub.CompanyPensionDeduction = Convert.ToDouble(myTable.Rows[0]["companyPensionDeduction"]);
+            tmpPayStub.Netpay = Convert.ToDouble(myTable.Rows[0]["netPay"]);
             tmpPayStub.EmpID = Convert.ToInt32(myTable.Rows[0]["empID"]);
             tmpPayStub.CreationDate = Convert.ToDateTime(myTable.Rows[0]["creationDate"]);
-            tmpPayStub.YTDGrossPay = Convert.ToInt64(myTable.Rows[0]["ytdGrossPay"]);
-            tmpPayStub.YTDDeductions = Convert.ToInt64(myTable.Rows[0]["ytdDeductions"]);
-            tmpPayStub.YTDCPP = Convert.ToInt64(myTable.Rows[0]["ytdCPP"]);
-            tmpPayStub.YTDEI = Convert.ToInt64(myTable.Rows[0]["ytdEI"]);
-            tmpPayStub.YTDCompanyPensionDeduction = Convert.ToInt64(myTable.Rows[0]["ytdCompanyPensionDeductions"]);
-            tmpPayStub.YTDNetpay = Convert.ToInt64(myTable.Rows[0]["ytdNetPay"]);
+            tmpPayStub.YTDGrossPay = Convert.ToDouble(myTable.Rows[0]["ytdGrossPay"]);
+            tmpPayStub.YTDDeductions = Convert.ToDouble(myTable.Rows[0]["ytdDeductions"]);
+            tmpPayStub.YTDCPP = Convert.ToDouble(myTable.Rows[0]["ytdCPP"]);
+            tmpPayStub.YTDEI = Convert.ToDouble(myTable.Rows[0]["ytdEI"]);
+            tmpPayStub.YTDCompanyPensionDeduction = Convert.ToDouble(myTable.Rows[0]["ytdCompanyPensionDeductions"]);
+            tmpPayStub.YTDNetpay = Convert.ToDouble(myTable.Rows[0]["ytdNetPay"]);
 
             return tmpPayStub;
         }
@@ -53,24 +53,37 @@ namespace BusinessLayer.Factories
                 PayStub tmpPayStub = new PayStub();
 
                 tmpPayStub.PayStubID = Convert.ToInt32(tempRow["empId"]);
-                tmpPayStub.GrossPay = Convert.ToInt64(tempRow["grossPay"]);
-                tmpPayStub.Deductions = Convert.ToInt64(tempRow["deductions"]);
-                tmpPayStub.CPP = Convert.ToInt64(tempRow["cPP"]);
-                tmpPayStub.EI = Convert.ToInt64(tempRow["eI"]);
-                tmpPayStub.CompanyPensionDeduction = Convert.ToInt64(tempRow["companyPensionDeduction"]);
-                tmpPayStub.Netpay = Convert.ToInt64(myTable.Rows[0]["netPay"]);
+                tmpPayStub.GrossPay = Convert.ToDouble(tempRow["grossPay"]);
+                tmpPayStub.Deductions = Convert.ToDouble(tempRow["deductions"]);
+                tmpPayStub.CPP = Convert.ToDouble(tempRow["cPP"]);
+                tmpPayStub.EI = Convert.ToDouble(tempRow["eI"]);
+                tmpPayStub.CompanyPensionDeduction = Convert.ToDouble(tempRow["companyPensionDeduction"]);
+                tmpPayStub.Netpay = Convert.ToDouble(tempRow["netPay"]);
                 tmpPayStub.EmpID = Convert.ToInt32(tempRow["empID"]);
                 tmpPayStub.CreationDate = Convert.ToDateTime(tempRow["creationDate"]);
-                tmpPayStub.YTDGrossPay = Convert.ToInt64(tempRow["ytdGrossPay"]);
-                tmpPayStub.YTDDeductions = Convert.ToInt64(tempRow["ytdDeductions"]);
-                tmpPayStub.YTDCPP = Convert.ToInt64(tempRow["ytdCPP"]);
-                tmpPayStub.YTDEI = Convert.ToInt64(tempRow["ytdEI"]);
-                tmpPayStub.YTDCompanyPensionDeduction = Convert.ToInt64(tempRow["ytdCompanyPensionDeductions"]);
-                tmpPayStub.YTDNetpay = Convert.ToInt64(tempRow["ytdNetPay"]);
+                tmpPayStub.YTDGrossPay = Convert.ToDouble(tempRow["ytdGrossPay"]);
+                tmpPayStub.YTDDeductions = Convert.ToDouble(tempRow["ytdDeductions"]);
+                tmpPayStub.YTDCPP = Convert.ToDouble(tempRow["ytdCPP"]);
+                tmpPayStub.YTDEI = Convert.ToDouble(tempRow["ytdEI"]);
+                tmpPayStub.YTDCompanyPensionDeduction = Convert.ToDouble(tempRow["ytdCompanyPensionDeductions"]);
+                tmpPayStub.YTDNetpay = Convert.ToDouble(tempRow["ytdNetPay"]);
+                tmpPayStub.BiWeeklyRate = Math.Round(Convert.ToDouble(tempRow["biWeeklyRate"]), 2);
 
                 paystubs.Add(tmpPayStub);
             }
             return paystubs;
         }
+        
+
+        public static List<PayStub> RetrievePaystubsForEmpBetweenDates(int empId, DateTime startdate, DateTime enddate)
+        {
+            DataTable tmpTable = SqlLayer.HRSQL.RetrievePaystubsForEmpBetweenDates(empId, startdate, enddate);
+            List<PayStub> employeeList = RetrievePayStubsTodayRepackage(tmpTable);
+            return employeeList;
+        }
+
+
+
+
     }
 }
