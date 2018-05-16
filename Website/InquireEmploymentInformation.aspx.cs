@@ -30,10 +30,20 @@ namespace Website
                 {
                     if(Session["empID"] != null)
                     {
-                        List<PayStub> paystubs = PaystubFactory.RetrievePaystubsForEmpBetweenDates(Convert.ToInt32(Session["empID"]), dtpStart.SelectedDate, dtpEnd.SelectedDate);
+                        Calendar date = new Calendar();
+                        //date.TodaysDate.AddYears(-1000)
 
-                        dgvItems.DataSource = paystubs;
-                        dgvItems.DataBind();
+                        if(dtpStart.SelectedDate < date.TodaysDate.AddYears(-1000) || dtpEnd.SelectedDate < date.TodaysDate.AddYears(-1000))
+                        {
+                            lblError.Text = "Must select a start and a end date.";
+                        }
+                        else
+                        {
+                            List<PayStub> paystubs = PaystubFactory.RetrievePaystubsForEmpBetweenDates(Convert.ToInt32(Session["empID"]), dtpStart.SelectedDate, dtpEnd.SelectedDate);
+
+                            dgvItems.DataSource = paystubs;
+                            dgvItems.DataBind();
+                        }
                     }
                 }
                 catch (Exception ex)

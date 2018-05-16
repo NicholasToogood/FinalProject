@@ -189,6 +189,7 @@ namespace Desktop
                 {
                     grpBoxSearchEmp.Visible = false;
                     grpBoxModify.Visible = true;
+                    
                 }
                 else
                 {
@@ -237,6 +238,11 @@ namespace Desktop
                     {
                         dtpEmpEndModify.Enabled = true;
                     }
+
+                    lblEmploymentEndDate.Visible = false;
+                    dtpEmpEndModify.Visible = false;
+                    lblEmpStatus.Visible = false;
+                    cmbEmpStatusModify.Visible = false;
                 }
                 else
                 {
@@ -274,6 +280,11 @@ namespace Desktop
                     {
                         dtpEmpEndModify.Enabled = true;
                     }
+
+                    lblEmploymentEndDate.Visible = true;
+                    dtpEmpEndModify.Visible = true;
+                    lblEmpStatus.Visible = true;
+                    cmbEmpStatusModify.Visible = true;
                 }
                 
             }
@@ -448,6 +459,11 @@ namespace Desktop
             txtStreetAddressModify.ReadOnly = true;
             txtCityModify.ReadOnly = true;
             txtPostalCodeModify.ReadOnly = true;
+
+            lblEmploymentEndDate.Visible = false;
+            dtpEmpEndModify.Visible = false;
+            lblEmpStatus.Visible = false;
+            cmbEmpStatusModify.Visible = false;
 
             displaySignsModify();
         }

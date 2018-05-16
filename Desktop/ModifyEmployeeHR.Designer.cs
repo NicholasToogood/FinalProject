@@ -88,8 +88,8 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.dtpEmpEndModify = new System.Windows.Forms.DateTimePicker();
             this.cmbEmpStatusModify = new System.Windows.Forms.ComboBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
+            this.lblEmploymentEndDate = new System.Windows.Forms.Label();
+            this.lblEmpStatus = new System.Windows.Forms.Label();
             this.txtPostalCodeModify = new System.Windows.Forms.TextBox();
             this.txtCityModify = new System.Windows.Forms.TextBox();
             this.txtStreetAddressModify = new System.Windows.Forms.TextBox();
@@ -686,8 +686,8 @@
             // 
             this.groupBox9.Controls.Add(this.dtpEmpEndModify);
             this.groupBox9.Controls.Add(this.cmbEmpStatusModify);
-            this.groupBox9.Controls.Add(this.label44);
-            this.groupBox9.Controls.Add(this.label45);
+            this.groupBox9.Controls.Add(this.lblEmploymentEndDate);
+            this.groupBox9.Controls.Add(this.lblEmpStatus);
             this.groupBox9.Controls.Add(this.txtPostalCodeModify);
             this.groupBox9.Controls.Add(this.txtCityModify);
             this.groupBox9.Controls.Add(this.txtStreetAddressModify);
@@ -716,6 +716,7 @@
             this.dtpEmpEndModify.Name = "dtpEmpEndModify";
             this.dtpEmpEndModify.Size = new System.Drawing.Size(139, 20);
             this.dtpEmpEndModify.TabIndex = 13;
+            this.dtpEmpEndModify.Visible = false;
             // 
             // cmbEmpStatusModify
             // 
@@ -725,26 +726,27 @@
             this.cmbEmpStatusModify.Name = "cmbEmpStatusModify";
             this.cmbEmpStatusModify.Size = new System.Drawing.Size(139, 21);
             this.cmbEmpStatusModify.TabIndex = 12;
+            this.cmbEmpStatusModify.Visible = false;
             // 
-            // label44
+            // lblEmploymentEndDate
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(6, 212);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(89, 13);
-            this.label44.TabIndex = 8;
-            this.label44.Text = "Employment End:";
-            this.label44.Visible = false;
+            this.lblEmploymentEndDate.AutoSize = true;
+            this.lblEmploymentEndDate.Location = new System.Drawing.Point(6, 212);
+            this.lblEmploymentEndDate.Name = "lblEmploymentEndDate";
+            this.lblEmploymentEndDate.Size = new System.Drawing.Size(89, 13);
+            this.lblEmploymentEndDate.TabIndex = 8;
+            this.lblEmploymentEndDate.Text = "Employment End:";
+            this.lblEmploymentEndDate.Visible = false;
             // 
-            // label45
+            // lblEmpStatus
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(6, 190);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(89, 13);
-            this.label45.TabIndex = 7;
-            this.label45.Text = "Employee Status:";
-            this.label45.Visible = false;
+            this.lblEmpStatus.AutoSize = true;
+            this.lblEmpStatus.Location = new System.Drawing.Point(6, 190);
+            this.lblEmpStatus.Name = "lblEmpStatus";
+            this.lblEmpStatus.Size = new System.Drawing.Size(89, 13);
+            this.lblEmpStatus.TabIndex = 7;
+            this.lblEmpStatus.Text = "Employee Status:";
+            this.lblEmpStatus.Visible = false;
             // 
             // txtPostalCodeModify
             // 
@@ -870,8 +872,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 723);
-            this.Controls.Add(this.grpBoxSearchEmp);
             this.Controls.Add(this.grpBoxModify);
+            this.Controls.Add(this.grpBoxSearchEmp);
             this.Name = "ModifyEmployeeHR";
             this.Text = "ModifyEmployee";
             this.Load += new System.EventHandler(this.ModifyEmployeeHR_Load);
@@ -950,8 +952,8 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.DateTimePicker dtpEmpEndModify;
         private System.Windows.Forms.ComboBox cmbEmpStatusModify;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label lblEmploymentEndDate;
+        private System.Windows.Forms.Label lblEmpStatus;
         private System.Windows.Forms.TextBox txtPostalCodeModify;
         private System.Windows.Forms.TextBox txtCityModify;
         private System.Windows.Forms.TextBox txtStreetAddressModify;
