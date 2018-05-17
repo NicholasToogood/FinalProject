@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModifyEmployeeHR));
             this.grpBoxSearchEmp = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -874,6 +875,7 @@
             this.ClientSize = new System.Drawing.Size(855, 723);
             this.Controls.Add(this.grpBoxModify);
             this.Controls.Add(this.grpBoxSearchEmp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModifyEmployeeHR";
             this.Text = "ModifyEmployee";
             this.Load += new System.EventHandler(this.ModifyEmployeeHR_Load);

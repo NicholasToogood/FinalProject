@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfirmCalculaltePayroll));
             this.txtPayrollCode = new System.Windows.Forms.TextBox();
             this.lblPayroll = new System.Windows.Forms.Label();
             this.btnEnterPayrollCode = new System.Windows.Forms.Button();
@@ -67,6 +68,7 @@
             this.Controls.Add(this.btnEnterPayrollCode);
             this.Controls.Add(this.lblPayroll);
             this.Controls.Add(this.txtPayrollCode);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConfirmCalculaltePayroll";
             this.Text = "ConfirmCalculaltePayroll";
             this.ResumeLayout(false);

@@ -84,6 +84,7 @@
     <Content Include="ModifyPersonalInformation.aspx" />
     <Content Include="ModifyPO.aspx" />
     <Content Include="ProcessPO.aspx" />
+    <Content Include="sneakers.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

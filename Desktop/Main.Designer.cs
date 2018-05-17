@@ -212,6 +212,7 @@
             this.Controls.Add(this.btnModPO);
             this.Controls.Add(this.btnCreatePO);
             this.Controls.Add(this.MainTab);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Main";
             this.Text = "Main";

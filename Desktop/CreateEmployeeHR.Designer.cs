@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateEmployeeHR));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkPayrollEmailNotification = new System.Windows.Forms.CheckBox();
             this.txtEmailAddress = new System.Windows.Forms.TextBox();
@@ -449,6 +450,7 @@
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateEmployeeHR";
             this.Text = "CreateEmployee";
             this.Load += new System.EventHandler(this.CreateEmployeeHR_Load);

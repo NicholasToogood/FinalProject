@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSickDayHR));
             this.rdoSearchByName = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -540,6 +541,7 @@
             this.ClientSize = new System.Drawing.Size(759, 558);
             this.Controls.Add(this.grpBoxRecordSickDays);
             this.Controls.Add(this.grpBoxSearchEmp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddSickDayHR";
             this.Text = "Add Sick Days";
             this.Load += new System.EventHandler(this.SearchRetrieveEmployeeHR_Load);

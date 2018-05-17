@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatePayroll));
             this.GetAllPaystubsForTodayBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewPayStubs = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.GetAllPaystubsForTodayBindingSource)).BeginInit();
@@ -54,6 +55,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 241);
             this.Controls.Add(this.dataGridViewPayStubs);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CalculatePayroll";
             this.Text = "CalculatePayroll";
             this.Load += new System.EventHandler(this.CalculatePayroll_Load);

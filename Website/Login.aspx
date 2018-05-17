@@ -10,7 +10,8 @@
             <form runat="server" class="form-horizontal">
                 <div class="row">
                     <div class="col-sm-5 center">
-                        <h1>Welcome</h1>
+                        <img src="sneakers.png" style="width:150px; height:auto;" /><br />
+                        <H3>Sneaky Sneakers</H3>
                     </div>
                     <div class="col-sm-5"></div>
                 </div>

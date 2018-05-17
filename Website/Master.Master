@@ -15,6 +15,7 @@
         <nav>
             <div id="navContent" runat="server">
                 <div id="navLinks">
+                    <img src="sneakers.png"  style="width:30px; height: auto;"/>
                     <a runat="server" id="home" href="#">Home</a>
                     <a runat="server" id="browsePO" href="~/BrowsePO.aspx" visible="false">Browse Purchase Order</a> 
                     <a runat="server" id="createPO" href="~/CreatePO.aspx" visible="false">Create Purchase Order</a> 
