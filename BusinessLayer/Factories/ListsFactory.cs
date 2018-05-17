@@ -40,9 +40,23 @@ namespace BusinessLayer.Factories
             return lstPurchaseOrderLookup;
         }
 
+        public static List<PurchaseOrder> CreateName(byte orderStatus, string name)
+        {
+            DataTable dt = POSQL.RetrieveAllPOsByName(orderStatus, name);
+            List<PurchaseOrder> lstPurchaseOrderLookup = Repackage(dt);
+            return lstPurchaseOrderLookup;
+        }
+
         public static List<PurchaseOrder> Create(int orderNumber)
         {
             DataTable dt = POSQL.RetrievePOById(orderNumber);
+            List<PurchaseOrder> lstPurchaseOrderLookup = Repackage(dt);
+            return lstPurchaseOrderLookup;
+        }
+
+        public static List<PurchaseOrder> Create(string name)
+        {
+            DataTable dt = POSQL.RetrievePOByName(name);
             List<PurchaseOrder> lstPurchaseOrderLookup = Repackage(dt);
             return lstPurchaseOrderLookup;
         }

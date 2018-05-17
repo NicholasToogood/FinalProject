@@ -45,11 +45,26 @@ namespace SqlLayer
             return DAL.GetData("GetOrdersByDateProcess", parms);
         }
 
+        public static DataTable RetrieveAllPOsByName(byte orderStatus, string name)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@orderStatus", orderStatus, SqlDbType.SmallInt, ParameterDirection.Input));
+            parms.Add(new parameters("@name", name, SqlDbType.VarChar, ParameterDirection.Input));
+            return DAL.GetData("GetOrdersByNameProcess", parms);
+        }
+
         public static DataTable RetrievePOById(int orderNumber)
         {
             List<parameters> parms = new List<parameters>();
             parms.Add(new parameters("@orderNumber", orderNumber, SqlDbType.Int, ParameterDirection.Input, 8));
             return DAL.GetData("GetOrderById", parms);
+        }
+
+        public static DataTable RetrievePOByName(string name)
+        {
+            List<parameters> parms = new List<parameters>();
+            parms.Add(new parameters("@name", name, SqlDbType.VarChar, ParameterDirection.Input));
+            return DAL.GetData("GetOrderByName", parms);
         }
 
         public static DataTable RetrievePOByDate(DateTime startDate, DateTime endDate)

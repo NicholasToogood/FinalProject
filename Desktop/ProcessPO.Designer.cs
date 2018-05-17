@@ -294,6 +294,7 @@
             this.btnSearchName.TabIndex = 73;
             this.btnSearchName.Text = "Search By Name";
             this.btnSearchName.UseVisualStyleBackColor = true;
+            this.btnSearchName.Click += new System.EventHandler(this.btnSearchName_Click);
             // 
             // lblEndDate
             // 

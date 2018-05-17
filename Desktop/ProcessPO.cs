@@ -17,6 +17,7 @@ namespace Desktop
     {
 
         List<PurchaseOrder> pos;
+        List<Employee> emp;
         PurchaseOrder po;
         bool askToClose = true;
         byte orderStatus = 1;
@@ -29,6 +30,7 @@ namespace Desktop
         private void ProcessPO_Load(object sender, EventArgs e)
         {
             pos = ListsPOFactory.CreatePending();
+            emp = EmployeeFactory.RetrieveEmployeesByID(Main.empID);
 
             lstOrders.DataSource = ListsPOFactory.CreatePending();
             lstOrders.DisplayMember = "orderNumber";
@@ -61,7 +63,7 @@ namespace Desktop
             LoadItems(); ;
 
             po = POFactory.Create(Convert.ToInt32(lstOrders.SelectedValue));
-            
+
             foreach (Item item in po.Items)
             {
                 if (item.ItemStatus == Types.ItemStatus.Pending)
@@ -161,6 +163,8 @@ namespace Desktop
             lstOrders.ValueMember = "orderNumber";
             lstOrders.SelectedIndex = -1;
 
+            dgvItems.DataSource = null;
+
             orderStatus = 1;
         }
 
@@ -173,6 +177,8 @@ namespace Desktop
             lstOrders.ValueMember = "orderNumber";
             lstOrders.SelectedIndex = -1;
 
+            dgvItems.DataSource = null;
+
             orderStatus = 3;
         }
 
@@ -184,6 +190,8 @@ namespace Desktop
             lstOrders.DisplayMember = "orderNumber";
             lstOrders.ValueMember = "orderNumber";
             lstOrders.SelectedIndex = -1;
+
+            dgvItems.DataSource = null;
         }
 
         private void btnSearchDate_Click(object sender, EventArgs e)
@@ -222,12 +230,12 @@ namespace Desktop
                 message.From = new MailAddress("purchaseorders@newroads.com");
                 message.Subject = "Pruchase Order Closed";
                 message.IsBodyHtml = true;
-                message.Body += "<h2>"+date+"</h2>";
+                message.Body += "<h2>" + date + "</h2>";
                 message.Body += "<h3>Pruchase Order #" + po.OrderNumber + " has been processed!</h3><br />";
-                
+
                 foreach (Item item in po.Items)
                 {
-                    message.Body += "<p>"+ item.ItemName + " - " + item.ItemStatus +"</p>";
+                    message.Body += "<p>" + item.ItemName + " - " + item.ItemStatus + "</p>";
                 }
 
                 message.Body += "<p>Total Order Cost - $" + po.Total + "</p>";
@@ -238,6 +246,37 @@ namespace Desktop
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSearchName_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dgvItems.DataSource = null;
+
+                if (rdoAll.Checked)
+                {
+                    pos = ListsPOFactory.Create(dtpStart.Value, dtpEnd.Value);
+
+                    lstOrders.DataSource = ListsPOFactory.Create(dtpStart.Value, dtpEnd.Value);
+                    lstOrders.DisplayMember = "orderNumber";
+                    lstOrders.ValueMember = "orderNumber";
+                    lstOrders.SelectedIndex = -1;
+                }
+                else
+                {
+                    pos = ListsPOFactory.CreateName(orderStatus, txtEmpName.Text);
+
+                    lstOrders.DataSource = ListsPOFactory.CreateName(orderStatus, txtEmpName.Text);
+                    lstOrders.DisplayMember = "orderNumber";
+                    lstOrders.ValueMember = "orderNumber";
+                    lstOrders.SelectedIndex = -1;
+                }
+            }
+            catch
+            {
+
             }
         }
     }

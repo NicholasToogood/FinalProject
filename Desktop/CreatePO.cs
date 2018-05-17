@@ -15,6 +15,7 @@ namespace Desktop
     public partial class CreatePO : Form
     {
         Item item;
+        List<Employee> emp;
         PurchaseOrder po;
         double orderPrice;
 
@@ -45,7 +46,7 @@ namespace Desktop
                 po.Items = new List<Types.IItem>();
                 po.Items.Add(item);
                 po.OrderNumber = Convert.ToInt32(lblOrderNumber.Text);
-                po.EmpId = 10000004;
+                po.EmpId = emp[0].EmpID;
 
                 int orderNumber = CUDMethods.CreatPO(po);
 
@@ -57,7 +58,14 @@ namespace Desktop
                 lblOrderNumber.Visible = true;
                 lblOrderNumberLabel.Visible = true;
 
-                lstItems.Items.Add(item.ItemName);
+                if (lstItems.Items.Contains(item.ItemName))
+                {
+                    return;
+                }
+                else
+                {
+                    lstItems.Items.Add(item.ItemName);
+                }
 
                 clear();
             }
@@ -81,7 +89,7 @@ namespace Desktop
         private void CreatePO_Load(object sender, EventArgs e)
         {
             Login myLogin = new Login();
-            List<Employee> emp = EmployeeFactory.RetrieveEmployeesByID(Main.empID);
+            emp = EmployeeFactory.RetrieveEmployeesByID(Main.empID);
             List<Department> dep = DepartmentFactory.DepartmentCreateList(Main.empID);
 
             lblEmpName.Text = emp[0].FullName;
