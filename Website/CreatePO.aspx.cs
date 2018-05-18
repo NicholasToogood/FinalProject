@@ -64,10 +64,11 @@ namespace Website
                 lstItems.Items.Add(item.ItemName);
 
                 clear();
+                lblError.InnerText = "";
             }
             catch (Exception ex)
             {
-
+                lblError.InnerText = "Please fill all fields correctly!";
             }
         }
 

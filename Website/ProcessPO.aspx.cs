@@ -74,11 +74,13 @@ namespace Website
             if (lstOrders.SelectedIndex >= 0)
             {
                 po = POFactory.Create(Convert.ToInt32(lstOrders.SelectedValue));
+                List<Employee> emp = EmployeeFactory.RetrieveEmployeesByID(po.EmpId);
                 LoadItems();
                 lblOrderNumber.Text = po.OrderNumber.ToString();
                 lblDate.Text = po.OrderDate.ToShortDateString();
                 lblTotal.Text = "$" + po.Total.ToString();
                 lblOrderStatus.Text = po.OrderStatus.ToString();
+                lblEmpNameOrder.Text = emp[0].FullName;
 
                 lblModLocation.Visible = false;
                 lblModPrice.Visible = false;
@@ -334,10 +336,31 @@ namespace Website
                 txtModQty.Visible = false;
                 txtModReason.Visible = false;
                 btnModApprove.Visible = false;
+
+                lblError.InnerText = "";
             }
             catch (Exception ex)
             {
+                lblError.InnerText = "Please fill all fields correctly!";
+            }
+        }
 
+        protected void btnSearchName_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pos = ListsPOFactory.CreateName(orderStatus, txtEmpName.Text);
+
+                lstOrders.DataSource = ListsPOFactory.CreateName(orderStatus, txtEmpName.Text);
+                lstOrders.DataMember = "orderNumber";
+                lstOrders.DataValueField = "orderNumber";
+                lstOrders.DataBind();
+                lstOrders.SelectedIndex = -1;
+                lblError.InnerText = "";
+            }
+            catch
+            {
+                lblError.InnerText = "No purchase orders from " + txtEmpName.Text;
             }
         }
     }

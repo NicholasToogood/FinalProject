@@ -10,8 +10,9 @@
             <form runat="server">
                 <div class="row">
                     <div class="col-sm-5 center">
-                        <h1>Modify Pruchase Order</h1>
+                        <h1>Modify Purchase Order</h1>
                         <h5 id="lblDate" runat="server">DATE</h5>
+                        <h6 id="lblError" runat="server" style="color:red"></h6>
                     </div>
                     <div class="col-sm-5"></div>
                     <div class="col-sm-2 pagination-centered">

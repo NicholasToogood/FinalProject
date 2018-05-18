@@ -102,35 +102,44 @@ namespace Website
 
         protected void dgvItems_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            GridViewRow row = dgvItems.Rows[e.RowIndex];
+            try
+            {
+                GridViewRow row = dgvItems.Rows[e.RowIndex];
 
-            Item item = ItemFactory.Create();
-            TextBox textId = (TextBox)row.Cells[1].Controls[0];
-            TextBox textName = (TextBox)row.Cells[2].Controls[0];
-            TextBox textDesc = (TextBox)row.Cells[3].Controls[0];
-            TextBox textQty = (TextBox)row.Cells[4].Controls[0];
-            TextBox textPrice = (TextBox)row.Cells[5].Controls[0];
-            TextBox textLocation = (TextBox)row.Cells[6].Controls[0];
-            TextBox textJust = (TextBox)row.Cells[7].Controls[0];
-            TextBox textOrder = (TextBox)row.Cells[9].Controls[0];
+                Item item = ItemFactory.Create();
+                TextBox textId = (TextBox)row.Cells[1].Controls[0];
+                TextBox textName = (TextBox)row.Cells[2].Controls[0];
+                TextBox textDesc = (TextBox)row.Cells[3].Controls[0];
+                TextBox textQty = (TextBox)row.Cells[4].Controls[0];
+                TextBox textPrice = (TextBox)row.Cells[5].Controls[0];
+                TextBox textLocation = (TextBox)row.Cells[6].Controls[0];
+                TextBox textJust = (TextBox)row.Cells[7].Controls[0];
+                TextBox textOrder = (TextBox)row.Cells[9].Controls[0];
 
-            item.ItemId = Convert.ToInt32(textId.Text);
-            item.ItemName = textName.Text;
-            item.Description = textDesc.Text;
-            item.Quantity = Convert.ToInt32(textQty.Text);
-            item.Price = Convert.ToDouble(textPrice.Text);
-            item.Location = textLocation.Text;
-            item.Justification = textJust.Text;
+                item.ItemId = Convert.ToInt32(textId.Text);
+                item.ItemName = textName.Text;
+                item.Description = textDesc.Text;
+                item.Quantity = Convert.ToInt32(textQty.Text);
+                item.Price = Convert.ToDouble(textPrice.Text);
+                item.Location = textLocation.Text;
+                item.Justification = textJust.Text;
 
-            CUDMethods.UpdateItem(item);
+                CUDMethods.UpdateItem(item);
 
-            po = POFactory.Create(Convert.ToInt32(textOrder.Text));
-            lblSub.Text = "$ " + po.Total.ToString("F");
-            lblTax.Text = "$ " + (po.Total * 0.15).ToString("F");
-            lblTotal.Text = "$ " + (po.Total * 1.15).ToString("F");
+                po = POFactory.Create(Convert.ToInt32(textOrder.Text));
+                lblSub.Text = "$ " + po.Total.ToString("F");
+                lblTax.Text = "$ " + (po.Total * 0.15).ToString("F");
+                lblTotal.Text = "$ " + (po.Total * 1.15).ToString("F");
 
-            dgvItems.EditIndex = -1;
-            BindGridView();
+                dgvItems.EditIndex = -1;
+                BindGridView();
+                lblError.InnerText = "";
+            }
+            catch (Exception ex)
+            {
+                lblError.InnerText = ex.Message;
+            }
+
         }
     }
 }

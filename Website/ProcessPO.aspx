@@ -7,6 +7,11 @@
     <div class="container">
         <form runat="server">
             <div class="row">
+                <div class="col-xs-12">
+                    <h6 id="lblError" runat="server" style="color:red"></h6>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-sm-2 col-xs-6">
                     <asp:ListBox ID="lstOrders" AutoPostBack="true" runat="server" OnSelectedIndexChanged="lstOrders_SelectedIndexChanged"></asp:ListBox>
                 </div>
@@ -26,7 +31,8 @@
             </div>
             <div class="row">
                 <div class="col-sm-5">
-                    <asp:Label ID="lblOrderNumberLabel" CssClass="control-label" runat="server" Text="Order Number:"></asp:Label>
+                    <asp:Label ID="lblOrderNumberLabel"
+                        CssClass="control-label" runat="server" Text="Order Number:"></asp:Label>
                     <asp:Label ID="lblOrderNumber" CssClass="control-label" runat="server" Text="00000000"></asp:Label>
                     <br />
                     <asp:Label ID="lblEmpNameLabel" CssClass="control-label" runat="server" Text="Employee Name:"></asp:Label>
@@ -43,7 +49,7 @@
                     <asp:Label ID="lblOrderStatus" CssClass="control-label" runat="server" Text="Pending"></asp:Label>
                 </div>
                 <div class="col-sm-2">
-                    <asp:Button ID="btnSearchName" runat="server" Text="Search By Name" />
+                    <asp:Button ID="btnSearchName" runat="server" Text="Search By Name" OnClick="btnSearchName_Click" />
                     <asp:Button ID="btnSearchDate" runat="server" Text="Search By Date" />
                 </div>
             </div>
